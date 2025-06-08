@@ -132,15 +132,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar background change on scroll
     const navbar = document.querySelector('.navbar');
     
-    window.addEventListener('scroll', function() {
+    function updateNavbarScroll() {
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            if (isDarkMode) {
+                navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            }
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            if (isDarkMode) {
+                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
         }
-    });
+    }
+    
+    window.addEventListener('scroll', updateNavbarScroll);
     
     // Add scroll animations for sections
     const observerOptions = {
@@ -524,6 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.remove('dark-mode');
         }
         updateDarkModeIcon(darkMode);
+        updateNavbarScroll(); // Update navbar background when mode changes
         isDarkMode = darkMode;
     }
     
