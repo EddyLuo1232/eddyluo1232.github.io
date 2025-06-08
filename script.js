@@ -602,7 +602,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Avatar switching functionality
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profileImg = document.getElementById('profileImg');
+    let isAnimeAvatar = false;
+    const realAvatarSrc = 'images/assets/profile.jpg';
+    const animeAvatarSrc = 'images/assets/eddy_anime.png';
+    
+    profilePhoto.addEventListener('click', function() {
+        // Add flipping animation
+        profileImg.classList.add('flipping');
+        
+        // Change image source after half of the animation
+        setTimeout(() => {
+            if (isAnimeAvatar) {
+                profileImg.src = realAvatarSrc;
+                profileImg.alt = 'Eddy Luo - Real Photo';
+                profileImg.style.objectFit = 'cover';
+                isAnimeAvatar = false;
+            } else {
+                profileImg.src = animeAvatarSrc;
+                profileImg.alt = 'Eddy Luo - Anime Avatar';
+                profileImg.style.objectFit = 'contain';
+                isAnimeAvatar = true;
+            }
+            
+            // Remove flipping class after image is changed
+            setTimeout(() => {
+                profileImg.classList.remove('flipping');
+            }, 50);
+        }, 250);
+        
+        // Add click feedback
+        profilePhoto.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            profilePhoto.style.transform = '';
+        }, 150);
+    });
+    
+    // Preload anime avatar for smooth switching
+    const preloadImg = new Image();
+    preloadImg.src = animeAvatarSrc;
+
     console.log('Personal website loaded successfully!');
     console.log('Dark mode status:', isDarkMode ? 'Dark' : 'Light');
     console.log('Auto mode:', isAutoMode ? 'Enabled' : 'Disabled');
+    console.log('Avatar switching enabled');
 }); 
