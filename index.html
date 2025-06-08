@@ -34,6 +34,12 @@
     <section class="hero" id="about">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-image">
+                    <div class="profile-photo" id="profilePhoto">
+                        <img src="images/assets/profile.jpg" alt="Eddy Luo" class="profile-img" id="profileImg" />
+                        <div class="avatar-hint" data-en="Click to switch avatar" data-zh="点击切换头像">Click to switch avatar</div>
+                    </div>
+                </div>
                 <div class="hero-text">
                     <div class="language-toggle">
                         <button class="lang-btn active" data-lang="en">English</button>
@@ -67,12 +73,6 @@
                                 <img src="images/assets/rednote.png" alt="RedNote" class="rednote-icon"> <span data-en="RedNote" data-zh="小红书">RedNote</span>
                             </a>
                         </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-photo" id="profilePhoto">
-                        <img src="images/assets/profile.jpg" alt="Eddy Luo" class="profile-img" id="profileImg" />
-                        <div class="avatar-hint" data-en="Click to switch avatar" data-zh="点击切换头像">Click to switch avatar</div>
                     </div>
                 </div>
             </div>
@@ -132,15 +132,6 @@
     <section class="news-section" id="news">
         <div class="container">
             <h2 class="section-title" data-en="📰 Eddy's News" data-zh="📰 Eddy的新闻动态">📰 Eddy's News</h2>
-            <div class="news-controls">
-                <button class="news-toggle-btn" id="newsToggleBtn">
-                    <i class="fas fa-chevron-down" id="newsToggleIcon"></i>
-                    <span id="newsToggleText" data-en="Show All News" data-zh="显示所有新闻">Show All News</span>
-                </button>
-                <div class="news-count">
-                    <span id="visibleNewsCount">3</span> <span data-en="of" data-zh="共">of</span> <span id="totalNewsCount">6</span> <span data-en="news items" data-zh="条新闻">news items</span>
-                </div>
-            </div>
             <div class="news-timeline" id="newsTimeline">
                 <div class="news-item" data-news-index="0">
                     <div class="news-date">2025.05.15</div>
@@ -166,27 +157,41 @@
                     </div>
                 </div>
                 
-                <div class="news-item collapsed" data-news-index="3">
-                    <div class="news-date">2025.01.22</div>
-                    <div class="news-content">
-                        <span class="news-emoji">🎉</span>
-                        <p data-en="Our paper <em>Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</em> has been accepted by <strong>NAACL'2025</strong> findings. I served as the <strong>first author</strong>. Thanks to my collaborators." data-zh="我们的论文《Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models》被<strong>NAACL'2025</strong> findings接收。我是<strong>第一作者</strong>。感谢我的合作者们。">Our paper <em>Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</em> has been accepted by <strong>NAACL'2025</strong> findings. I served as the <strong>first author</strong>. Thanks to my collaborators.</p>
-                    </div>
+                <!-- 展开按钮 -->
+                <div class="news-toggle-inline">
+                    <button class="news-toggle-btn" id="newsToggleBtn">
+                        <i class="fas fa-chevron-down" id="newsToggleIcon"></i>
+                        <span id="newsToggleText" data-en="Show More News" data-zh="显示更多新闻">Show More News</span>
+                        <span class="news-count">
+                            <span id="moreNewsCount">3</span> <span data-en="more" data-zh="条更多">more</span>
+                        </span>
+                    </button>
                 </div>
                 
-                <div class="news-item collapsed" data-news-index="4">
-                    <div class="news-date">2024.07.16</div>
-                    <div class="news-content">
-                        <span class="news-emoji">🎉</span>
-                        <p data-en="Our paper <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> has been accepted by <strong>CIKM'2024</strong>. Thanks to my collaborators." data-zh="我们的论文《Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs》被<strong>CIKM'2024</strong>接收。感谢我的合作者们。">Our paper <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> has been accepted by <strong>CIKM'2024</strong>. Thanks to my collaborators.</p>
+                <!-- 可展开的旧新闻区域 -->
+                <div class="news-expanded-section" id="newsExpandedSection">
+                    <div class="news-item" data-news-index="3">
+                        <div class="news-date">2025.01.22</div>
+                        <div class="news-content">
+                            <span class="news-emoji">🎉</span>
+                            <p data-en="Our paper <em>Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</em> has been accepted by <strong>NAACL'2025</strong> findings. I served as the <strong>first author</strong>. Thanks to my collaborators." data-zh="我们的论文《Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models》被<strong>NAACL'2025</strong> findings接收。我是<strong>第一作者</strong>。感谢我的合作者们。">Our paper <em>Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</em> has been accepted by <strong>NAACL'2025</strong> findings. I served as the <strong>first author</strong>. Thanks to my collaborators.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="news-item collapsed" data-news-index="5">
-                    <div class="news-date">2024.07.09</div>
-                    <div class="news-content">
-                        <span class="news-emoji">🎉</span>
-                        <p data-en="Our paper <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been accepted by <strong>COLM'2024</strong>. I served as the <strong>first author</strong>. Thanks to my collaborators." data-zh="我们的论文《JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks》被<strong>COLM'2024</strong>接收。我是<strong>第一作者</strong>。感谢我的合作者们。">Our paper <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been accepted by <strong>COLM'2024</strong>. I served as the <strong>first author</strong>. Thanks to my collaborators.</p>
+                    
+                    <div class="news-item" data-news-index="4">
+                        <div class="news-date">2024.07.16</div>
+                        <div class="news-content">
+                            <span class="news-emoji">🎉</span>
+                            <p data-en="Our paper <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> has been accepted by <strong>CIKM'2024</strong>. Thanks to my collaborators." data-zh="我们的论文《Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs》被<strong>CIKM'2024</strong>接收。感谢我的合作者们。">Our paper <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> has been accepted by <strong>CIKM'2024</strong>. Thanks to my collaborators.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item" data-news-index="5">
+                        <div class="news-date">2024.07.09</div>
+                        <div class="news-content">
+                            <span class="news-emoji">🎉</span>
+                            <p data-en="Our paper <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been accepted by <strong>COLM'2024</strong>. I served as the <strong>first author</strong>. Thanks to my collaborators." data-zh="我们的论文《JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks》被<strong>COLM'2024</strong>接收。我是<strong>第一作者</strong>。感谢我的合作者们。">Our paper <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been accepted by <strong>COLM'2024</strong>. I served as the <strong>first author</strong>. Thanks to my collaborators.</p>
+                        </div>
                     </div>
                 </div>
             </div>

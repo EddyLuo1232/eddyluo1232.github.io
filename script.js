@@ -388,81 +388,45 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.background = '#2563eb';
     });
     
-    // News toggle functionality
+    // News toggle functionality - Simple dropdown style
     const newsToggleBtn = document.getElementById('newsToggleBtn');
     const newsToggleText = document.getElementById('newsToggleText');
     const newsToggleIcon = document.getElementById('newsToggleIcon');
-    const visibleNewsCount = document.getElementById('visibleNewsCount');
-    const totalNewsCount = document.getElementById('totalNewsCount');
-    const newsItems = document.querySelectorAll('.news-item');
+    const moreNewsCount = document.getElementById('moreNewsCount');
+    const newsExpandedSection = document.getElementById('newsExpandedSection');
     
     let isExpanded = false;
-    const defaultVisibleCount = 3;
     
-    // Set initial state
-    totalNewsCount.textContent = newsItems.length;
-    visibleNewsCount.textContent = defaultVisibleCount;
-    
-    // Hide items beyond the default count
-    newsItems.forEach((item, index) => {
-        if (index >= defaultVisibleCount) {
-            item.classList.add('collapsed');
-        }
-    });
+    // Set initial count of hidden news
+    moreNewsCount.textContent = '3';
     
     newsToggleBtn.addEventListener('click', function() {
         isExpanded = !isExpanded;
+        console.log('News toggle clicked, isExpanded:', isExpanded);
         
         if (isExpanded) {
-            // Show all news
-            newsItems.forEach((item, index) => {
-                if (index >= defaultVisibleCount) {
-                    item.classList.remove('collapsed');
-                    item.classList.add('show');
-                    
-                    // Stagger the animation
-                    setTimeout(() => {
-                        item.style.display = 'grid';
-                    }, (index - defaultVisibleCount) * 100);
-                }
-            });
+            // Expand the news section - smooth dropdown
+            newsExpandedSection.classList.add('expanded');
             
             if (currentLang === 'zh') {
-                newsToggleText.textContent = '显示更少';
+                newsToggleText.textContent = '收起新闻';
             } else {
                 newsToggleText.textContent = 'Show Less';
             }
             newsToggleIcon.className = 'fas fa-chevron-up';
             newsToggleBtn.classList.add('expanded');
-            visibleNewsCount.textContent = newsItems.length;
             
         } else {
-            // Hide news beyond default count
-            newsItems.forEach((item, index) => {
-                if (index >= defaultVisibleCount) {
-                    item.classList.add('collapsed');
-                    item.classList.remove('show');
-                    
-                    // Fade out animation
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(-20px)';
-                    
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                        item.style.opacity = '';
-                        item.style.transform = '';
-                    }, 300);
-                }
-            });
+            // Collapse the news section - smooth slide up
+            newsExpandedSection.classList.remove('expanded');
             
             if (currentLang === 'zh') {
-                newsToggleText.textContent = '显示所有新闻';
+                newsToggleText.textContent = '显示更多新闻';
             } else {
-                newsToggleText.textContent = 'Show All News';
+                newsToggleText.textContent = 'Show More News';
             }
             newsToggleIcon.className = 'fas fa-chevron-down';
             newsToggleBtn.classList.remove('expanded');
-            visibleNewsCount.textContent = defaultVisibleCount;
         }
         
         // Add a subtle animation to the button
