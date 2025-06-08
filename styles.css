@@ -239,9 +239,9 @@ body {
 .profile-img[src*="eddy_anime"] {
     object-fit: contain;
     background: white;
-    padding: 2px;
+    padding: 1px;
     object-position: center center;
-    transform: scale(1.05) translateX(4px) translateY(6.5px);
+    transform: scale(1.40) translateX(4px) translateY(4.5px);
     width: 100%;
     height: 100%;
 }
