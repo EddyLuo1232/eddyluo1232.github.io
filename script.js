@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ==========================================
+    // NAVIGATION & MOBILE MENU
+    // ==========================================
+    
     // Mobile menu functionality
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
@@ -26,8 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.remove('active');
         }
     });
+
+    // ==========================================
+    // LANGUAGE TOGGLE
+    // ==========================================
     
-    // Language toggle functionality
     const langButtons = document.querySelectorAll('.lang-btn');
     let currentLang = 'en'; // Default language
     
@@ -113,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ==========================================
+    // SMOOTH SCROLLING & SCROLL SPY
+    // ==========================================
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -129,7 +140,110 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar background change on scroll
+    // Scroll spy functionality for navigation
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function updateActiveNavLink() {
+        let currentSection = '';
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Check if we're near the bottom of the page
+        const isNearBottom = scrollY + windowHeight >= documentHeight - 50;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Offset for navbar
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const sectionBottom = sectionTop + sectionHeight;
+            
+            // For the last section (internships), make it active when near bottom
+            if (sectionId === 'internships' && isNearBottom) {
+                currentSection = sectionId;
+            }
+            // Regular check for other sections
+            else if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                currentSection = sectionId;
+            }
+        });
+        
+        // Remove active class from all links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Add active class to current section link
+        if (currentSection) {
+            const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+                updateSlidingIndicator(activeLink);
+                document.querySelector('.nav-menu').classList.add('has-active');
+            }
+        } else {
+            document.querySelector('.nav-menu').classList.remove('has-active');
+        }
+    }
+    
+    // 滑动蓝条指示器更新函数
+    function updateSlidingIndicator(activeLink) {
+        if (!activeLink) return;
+        
+        const navMenuElement = document.querySelector('.nav-menu');
+        const linkRect = activeLink.getBoundingClientRect();
+        const menuRect = navMenuElement.getBoundingClientRect();
+        
+        // 计算active链接相对于nav-menu的位置
+        const leftOffset = linkRect.left - menuRect.left;
+        const width = linkRect.width;
+        
+        // 更新CSS自定义属性来控制蓝条位置和宽度
+        navMenuElement.style.setProperty('--indicator-left', `${leftOffset}px`);
+        navMenuElement.style.setProperty('--indicator-width', `${width}px`);
+    }
+    
+    // Throttled scroll event for performance
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNavLink();
+                updateNavbarScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick);
+    
+    // 添加CSS自定义属性支持滑动蓝条
+    const style = document.createElement('style');
+    style.textContent = `
+        .nav-menu::before {
+            left: var(--indicator-left, 0);
+            width: var(--indicator-width, 0);
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Initial call to set active state
+    updateActiveNavLink();
+    
+    // 窗口大小改变时重新计算蓝条位置
+    window.addEventListener('resize', debounce(() => {
+        const activeLink = document.querySelector('.nav-link.active');
+        if (activeLink) {
+            updateSlidingIndicator(activeLink);
+        }
+    }, 100));
+
+    // ==========================================
+    // NAVBAR SCROLL EFFECTS
+    // ==========================================
+    
     const navbar = document.querySelector('.navbar');
     
     function updateNavbarScroll() {
@@ -153,8 +267,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
-    window.addEventListener('scroll', updateNavbarScroll);
+
+    // ==========================================
+    // INTERSECTION OBSERVER ANIMATIONS
+    // ==========================================
     
     // Add scroll animations for sections
     const observerOptions = {
@@ -201,6 +317,10 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
         cardObserver.observe(card);
     });
+
+    // ==========================================
+    // INTERACTIVE EFFECTS
+    // ==========================================
     
     // Add interactive hover effects for social links
     document.querySelectorAll('.social-link').forEach(link => {
@@ -290,6 +410,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }, 3000);
     }
+
+    // ==========================================
+    // ACCESSIBILITY & KEYBOARD NAVIGATION
+    // ==========================================
     
     // Add keyboard navigation support
     document.addEventListener('keydown', function(e) {
@@ -324,127 +448,100 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // ==========================================
+    // PROFILE PHOTO FUNCTIONALITY
+    // ==========================================
     
-    // Add print button functionality
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && e.key === 'p') {
-            e.preventDefault();
-            window.print();
-        }
-    });
+    // Profile photo click to switch between photos
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profileImg = document.getElementById('profileImg');
     
-    // Add scroll-to-top functionality
-    let scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '↑';
-    scrollToTopBtn.className = 'scroll-to-top';
-    scrollToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #2563eb;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    `;
-    
-    document.body.appendChild(scrollToTopBtn);
-    
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (profilePhoto && profileImg) {
+        profilePhoto.addEventListener('click', function() {
+            // Add flip animation
+            profileImg.classList.add('flipping');
+            
+            setTimeout(() => {
+                // Switch between profile images
+                if (profileImg.src.includes('profile.jpg')) {
+                    profileImg.src = 'images/assets/eddy_anime.png';
+                    profileImg.alt = 'Eddy Anime Avatar';
+                } else {
+                    profileImg.src = 'images/assets/profile.jpg';
+                    profileImg.alt = 'Eddy Luo';
+                }
+                
+                // Remove flip animation
+                setTimeout(() => {
+                    profileImg.classList.remove('flipping');
+                }, 300);
+            }, 150);
         });
-    });
+    }
+
+    // ==========================================
+    // NEWS SECTION FUNCTIONALITY
+    // ==========================================
     
-    // Show/hide scroll-to-top button
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.style.opacity = '1';
-            scrollToTopBtn.style.visibility = 'visible';
-        } else {
-            scrollToTopBtn.style.opacity = '0';
-            scrollToTopBtn.style.visibility = 'hidden';
-        }
-    });
-    
-    // Add hover effects for scroll-to-top button
-    scrollToTopBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
-        this.style.background = '#1d4ed8';
-    });
-    
-    scrollToTopBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-        this.style.background = '#2563eb';
-    });
-    
-    // News toggle functionality - Simple dropdown style
+    // News toggle functionality
     const newsToggleBtn = document.getElementById('newsToggleBtn');
-    const newsToggleText = document.getElementById('newsToggleText');
-    const newsToggleIcon = document.getElementById('newsToggleIcon');
-    const moreNewsCount = document.getElementById('moreNewsCount');
     const newsExpandedSection = document.getElementById('newsExpandedSection');
+    const newsToggleIcon = document.getElementById('newsToggleIcon');
+    const newsToggleText = document.getElementById('newsToggleText');
+    const moreNewsCount = document.getElementById('moreNewsCount');
     
-    let isExpanded = false;
-    
-    // Set initial count of hidden news
-    moreNewsCount.textContent = '3';
-    
-    newsToggleBtn.addEventListener('click', function() {
-        isExpanded = !isExpanded;
-        console.log('News toggle clicked, isExpanded:', isExpanded);
-        
-        if (isExpanded) {
-            // Expand the news section - smooth dropdown
-            newsExpandedSection.classList.add('expanded');
+    if (newsToggleBtn && newsExpandedSection) {
+        newsToggleBtn.addEventListener('click', function() {
+            const isExpanded = newsExpandedSection.classList.contains('expanded');
             
-            if (currentLang === 'zh') {
-                newsToggleText.textContent = '收起新闻';
+            if (!isExpanded) {
+                // Expand
+                newsExpandedSection.classList.add('expanded');
+                newsToggleBtn.classList.add('expanded');
+                if (newsToggleIcon) newsToggleIcon.style.transform = 'rotate(180deg)';
+                
+                // Update text based on current language
+                if (newsToggleText) {
+                    if (currentLang === 'zh') {
+                        newsToggleText.textContent = '显示更少';
+                    } else {
+                        newsToggleText.textContent = 'Show Less';
+                    }
+                }
+                
+                // Hide count
+                if (moreNewsCount) {
+                    moreNewsCount.parentElement.style.opacity = '0';
+                }
             } else {
-                newsToggleText.textContent = 'Show Less';
+                // Collapse
+                newsExpandedSection.classList.remove('expanded');
+                newsToggleBtn.classList.remove('expanded');
+                if (newsToggleIcon) newsToggleIcon.style.transform = 'rotate(0deg)';
+                
+                // Update text based on current language
+                if (newsToggleText) {
+                    if (currentLang === 'zh') {
+                        newsToggleText.textContent = '显示所有新闻';
+                    } else {
+                        newsToggleText.textContent = 'Show All News';
+                    }
+                }
+                
+                // Show count
+                if (moreNewsCount) {
+                    moreNewsCount.parentElement.style.opacity = '1';
+                }
             }
-            newsToggleIcon.className = 'fas fa-chevron-up';
-            newsToggleBtn.classList.add('expanded');
-            
-        } else {
-            // Collapse the news section - smooth slide up
-            newsExpandedSection.classList.remove('expanded');
-            
-            if (currentLang === 'zh') {
-                newsToggleText.textContent = '显示更多新闻';
-            } else {
-                newsToggleText.textContent = 'Show More News';
-            }
-            newsToggleIcon.className = 'fas fa-chevron-down';
-            newsToggleBtn.classList.remove('expanded');
-        }
-        
-        // Add a subtle animation to the button
-        newsToggleBtn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            newsToggleBtn.style.transform = '';
-        }, 150);
-    });
+        });
+    }
+
+    // ==========================================
+    // DARK MODE FUNCTIONALITY
+    // ==========================================
     
-    // Add keyboard support for news toggle
-    newsToggleBtn.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            this.click();
-        }
-    });
-    
-    // Performance optimization: debounce scroll events
+    // Utility functions
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -457,159 +554,84 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    // Apply debounce to scroll events
-    const debouncedScrollHandler = debounce(function() {
-        // Your scroll handling code here
-        console.log('Scroll event fired');
-    }, 100);
-    
-    window.addEventListener('scroll', debouncedScrollHandler);
-    
-    // Dark Mode functionality
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
-    const body = document.body;
-    
-    // Check for saved dark mode preference or default to auto mode
-    const savedDarkMode = localStorage.getItem('darkMode');
-    let isDarkMode = savedDarkMode === 'true';
-    let isAutoMode = savedDarkMode === null || savedDarkMode === 'auto';
-    
     function getCurrentHour() {
         return new Date().getHours();
     }
     
     function shouldBeAuto() {
         const hour = getCurrentHour();
-        // Auto dark mode between 18:00 (6 PM) and 06:00 (6 AM)
-        return hour >= 18 || hour < 6;
+        return hour >= 18 || hour <= 6; // 6 PM to 6 AM
     }
     
     function updateDarkModeIcon(darkMode) {
-        if (darkMode) {
-            darkModeIcon.className = 'fas fa-sun';
-            darkModeToggle.title = 'Switch to Light Mode';
-        } else {
-            darkModeIcon.className = 'fas fa-moon';
-            darkModeToggle.title = 'Switch to Dark Mode';
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        if (darkModeIcon) {
+            if (darkMode) {
+                darkModeIcon.className = 'fas fa-sun';
+            } else {
+                darkModeIcon.className = 'fas fa-moon';
+            }
         }
     }
     
     function applyDarkMode(darkMode) {
         if (darkMode) {
-            body.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
         } else {
-            body.classList.remove('dark-mode');
+            document.body.classList.remove('dark-mode');
         }
         updateDarkModeIcon(darkMode);
-        updateNavbarScroll(); // Update navbar background when mode changes
-        isDarkMode = darkMode;
+        updateNavbarScroll(); // Update navbar colors
     }
     
     function checkAutoMode() {
-        if (isAutoMode) {
-            const shouldBeDark = shouldBeAuto();
-            if (shouldBeDark !== isDarkMode) {
-                applyDarkMode(shouldBeDark);
-                console.log(`Auto switched to ${shouldBeDark ? 'dark' : 'light'} mode at ${getCurrentHour()}:00`);
-            }
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'auto' || (!savedMode && shouldBeAuto())) {
+            applyDarkMode(shouldBeAuto());
+        } else if (savedMode === 'dark') {
+            applyDarkMode(true);
+        } else {
+            applyDarkMode(false);
         }
+    }
+    
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const newMode = !isDarkMode;
+            
+            applyDarkMode(newMode);
+            localStorage.setItem('darkMode', newMode ? 'dark' : 'light');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
     }
     
     // Initialize dark mode
-    if (isAutoMode) {
-        isDarkMode = shouldBeAuto();
-        console.log('Auto mode enabled, current time:', getCurrentHour() + ':00');
-    }
-    applyDarkMode(isDarkMode);
+    checkAutoMode();
     
-    // Dark mode toggle event
-    darkModeToggle.addEventListener('click', function() {
-        // Toggle between manual modes (light/dark)
-        if (isAutoMode || !isDarkMode) {
-            // Switch to dark mode
-            applyDarkMode(true);
-            localStorage.setItem('darkMode', 'true');
-            isAutoMode = false;
-            console.log('Manually switched to dark mode');
-        } else {
-            // Switch to light mode
-            applyDarkMode(false);
-            localStorage.setItem('darkMode', 'false');
-            isAutoMode = false;
-            console.log('Manually switched to light mode');
-        }
-        
-        // Add button click animation
-        darkModeToggle.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            darkModeToggle.style.transform = '';
-        }, 100);
-    });
+    // Check for auto mode every hour
+    setInterval(checkAutoMode, 3600000);
     
-    // Double-click to enable auto mode
-    darkModeToggle.addEventListener('dblclick', function() {
-        isAutoMode = true;
-        localStorage.setItem('darkMode', 'auto');
-        checkAutoMode();
-        showToast(isDarkMode ? 'Auto mode enabled (Dark)' : 'Auto mode enabled (Light)');
-        console.log('Auto mode enabled');
-    });
-    
-    // Check for auto mode every minute
-    setInterval(checkAutoMode, 60000);
-    
-    // Check on visibility change (when user returns to tab)
-    document.addEventListener('visibilitychange', function() {
-        if (!document.hidden && isAutoMode) {
-            checkAutoMode();
-        }
-    });
-    
-    // Avatar switching functionality
-    const profilePhoto = document.getElementById('profilePhoto');
-    const profileImg = document.getElementById('profileImg');
-    let isAnimeAvatar = false;
-    const realAvatarSrc = 'images/assets/profile.jpg';
-    const animeAvatarSrc = 'images/assets/eddy_anime.png';
-    
-    profilePhoto.addEventListener('click', function() {
-        // Add flipping animation
-        profileImg.classList.add('flipping');
-        
-        // Change image source after half of the animation
-        setTimeout(() => {
-            if (isAnimeAvatar) {
-                profileImg.src = realAvatarSrc;
-                profileImg.alt = 'Eddy Luo - Real Photo';
-                profileImg.style.objectFit = 'cover';
-                isAnimeAvatar = false;
-            } else {
-                profileImg.src = animeAvatarSrc;
-                profileImg.alt = 'Eddy Luo - Anime Avatar';
-                profileImg.style.objectFit = 'contain';
-                isAnimeAvatar = true;
+    // Handle system preference changes
+    if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addListener(debounce(() => {
+            const savedMode = localStorage.getItem('darkMode');
+            if (!savedMode || savedMode === 'auto') {
+                applyDarkMode(mediaQuery.matches);
             }
-            
-            // Remove flipping class after image is changed
-            setTimeout(() => {
-                profileImg.classList.remove('flipping');
-            }, 50);
-        }, 250);
-        
-        // Add click feedback
-        profilePhoto.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            profilePhoto.style.transform = '';
-        }, 150);
-    });
-    
-    // Preload anime avatar for smooth switching
-    const preloadImg = new Image();
-    preloadImg.src = animeAvatarSrc;
+        }, 100));
+    }
 
     console.log('Personal website loaded successfully!');
-    console.log('Dark mode status:', isDarkMode ? 'Dark' : 'Light');
-    console.log('Auto mode:', isAutoMode ? 'Enabled' : 'Disabled');
+    console.log('Dark mode status:', document.body.classList.contains('dark-mode') ? 'Dark' : 'Light');
+    console.log('Auto mode:', localStorage.getItem('darkMode') === 'auto' ? 'Enabled' : 'Disabled');
     console.log('Avatar switching enabled');
 }); 

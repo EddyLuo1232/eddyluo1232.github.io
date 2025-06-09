@@ -49,34 +49,57 @@ body {
 .nav-menu {
     display: flex;
     gap: 2rem;
+    position: relative;
 }
+
+/* 滑动蓝条指示器 */
+.nav-menu::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 2px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.nav-menu.has-active::before {
+    opacity: 1;
+}
+
+
 
 .nav-link {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    padding: 10px 16px;
+    border-radius: 20px;
+    z-index: 1;
+    outline: none; /* 移除focus时的默认框 */
+}
+
+.nav-link:focus {
+    outline: none; /* 确保focus状态不显示框 */
+    box-shadow: none; /* 移除可能的阴影 */
 }
 
 .nav-link:hover {
     color: #2563eb;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #2563eb;
-    transition: width 0.3s ease;
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
+
 
 .hamburger {
     display: none;
@@ -508,11 +531,6 @@ section {
 .news-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.news-item {
-    opacity: 1;
-    transition: all 0.4s ease-out;
 }
 
 .news-expanded-section {
@@ -1170,6 +1188,17 @@ body.dark-mode .navbar .nav-logo h2 {
 .dark-mode .nav-link:hover {
     color: #4a9eff;
 }
+
+.dark-mode .nav-link.active {
+    color: #4a9eff;
+}
+
+.dark-mode .nav-menu::before {
+    background: linear-gradient(90deg, #4a9eff, #63b3ed);
+    box-shadow: 0 2px 8px rgba(74, 158, 255, 0.4);
+}
+
+
 
 .dark-mode .hamburger .bar {
     background: #f5f5f5;

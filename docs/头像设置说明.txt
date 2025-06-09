@@ -1,0 +1,17 @@
+个人头像设置说明
+=================
+
+请在项目根目录下添加一个名为 "profile.jpg" 的个人头像文件。
+
+推荐规格：
+- 文件名：profile.jpg（或 profile.png）
+- 尺寸：300x300像素或更大（正方形）
+- 格式：JPG 或 PNG
+- 文件大小：建议小于500KB
+- 内容：清晰的个人头像照片
+
+如果使用PNG格式，请相应修改HTML文件中的图片路径：
+将 <img src="profile.jpg" alt="Eddy Luo" />
+改为 <img src="profile.png" alt="Eddy Luo" />
+
+添加头像后，网站将正常显示您的个人照片。 

@@ -51,11 +51,34 @@
 ## 📁 文件结构
 
 ```
-├── index.html          # 主HTML文件
-├── styles.css          # 响应式CSS样式
-├── script.js           # JavaScript交互功能
-├── profile.jpg         # 个人头像（需要替换）
-└── README.md          # 项目说明文档
+page_self/
+├── index.html              # 主HTML文件
+├── styles.css              # 响应式CSS样式  
+├── script.js               # JavaScript交互功能
+├── images/                 # 图片资源
+│   ├── assets/             # 通用图片（头像、图标等）
+│   │   ├── profile.jpg     # 主要头像照片
+│   │   ├── eddy_anime.png  # 动漫头像
+│   │   ├── rednote.png     # 小红书图标
+│   │   ├── ttg.png         # 引用区域图片（右）
+│   │   └── ttr.png         # 引用区域图片（左）
+│   └── publications/       # 论文相关图片
+│       ├── agrail.png      # AGrail论文图片
+│       ├── jbv.png         # JailBreakV-28K论文图片
+│       ├── cosmo.png       # COSMO论文图片
+│       ├── teaser.png      # 动态防护论文图片
+│       ├── overview.png    # 记忆推理论文图片
+│       ├── vrp.png         # Visual-RolePlay论文图片
+│       ├── autop.png       # Auto-Prompt论文图片
+│       └── doxing_via_the_lens.png # Doxing论文图片
+├── docs/                   # 文档和文件
+│   ├── pdfs/               # PDF文档
+│   │   ├── CV_Eddy.pdf     # 简历文件
+│   │   └── doxing_via_the_lens.pdf # 研究论文
+│   ├── README.md           # 文档结构说明
+│   └── 头像设置说明.txt    # 头像设置说明
+├── CNAME                   # GitHub Pages自定义域名
+└── README.md               # 此说明文档
 ```
 
 ## 🚀 快速开始
