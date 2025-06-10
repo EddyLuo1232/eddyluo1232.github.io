@@ -58,17 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Update news toggle text
-        const newsToggleText = document.getElementById('newsToggleText');
-        const newsToggleBtn = document.getElementById('newsToggleBtn');
-        if (newsToggleText && newsToggleBtn) {
-            const isExpanded = newsToggleBtn.classList.contains('expanded');
-            if (lang === 'zh') {
-                newsToggleText.textContent = isExpanded ? '显示更少' : '显示所有新闻';
-            } else {
-                newsToggleText.textContent = isExpanded ? 'Show Less' : 'Show All News';
-            }
-        }
+
         
         // Update HTML lang attribute
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -480,62 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================
-    // NEWS SECTION FUNCTIONALITY
-    // ==========================================
-    
-    // News toggle functionality
-    const newsToggleBtn = document.getElementById('newsToggleBtn');
-    const newsExpandedSection = document.getElementById('newsExpandedSection');
-    const newsToggleIcon = document.getElementById('newsToggleIcon');
-    const newsToggleText = document.getElementById('newsToggleText');
-    const moreNewsCount = document.getElementById('moreNewsCount');
-    
-    if (newsToggleBtn && newsExpandedSection) {
-        newsToggleBtn.addEventListener('click', function() {
-            const isExpanded = newsExpandedSection.classList.contains('expanded');
-            
-            if (!isExpanded) {
-                // Expand
-                newsExpandedSection.classList.add('expanded');
-                newsToggleBtn.classList.add('expanded');
-                if (newsToggleIcon) newsToggleIcon.style.transform = 'rotate(180deg)';
-                
-                // Update text based on current language
-                if (newsToggleText) {
-                    if (currentLang === 'zh') {
-                        newsToggleText.textContent = '显示更少';
-                    } else {
-                        newsToggleText.textContent = 'Show Less';
-                    }
-                }
-                
-                // Hide count
-                if (moreNewsCount) {
-                    moreNewsCount.parentElement.style.opacity = '0';
-                }
-            } else {
-                // Collapse
-                newsExpandedSection.classList.remove('expanded');
-                newsToggleBtn.classList.remove('expanded');
-                if (newsToggleIcon) newsToggleIcon.style.transform = 'rotate(0deg)';
-                
-                // Update text based on current language
-                if (newsToggleText) {
-                    if (currentLang === 'zh') {
-                        newsToggleText.textContent = '显示所有新闻';
-                    } else {
-                        newsToggleText.textContent = 'Show All News';
-                    }
-                }
-                
-                // Show count
-                if (moreNewsCount) {
-                    moreNewsCount.parentElement.style.opacity = '1';
-                }
-            }
-        });
-    }
+
 
     // ==========================================
     // DARK MODE FUNCTIONALITY

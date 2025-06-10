@@ -422,50 +422,7 @@ section {
     background: #f8fafc;
 }
 
-.news-toggle-inline {
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
-}
 
-.news-toggle-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 0.95rem;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.news-toggle-btn:hover {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-.news-toggle-btn i {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.news-toggle-btn.expanded i {
-    transform: rotate(180deg);
-}
-
-.news-count {
-    background: rgba(255, 255, 255, 0.25);
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 600;
-}
 
 .news-timeline {
     max-width: 900px;
@@ -490,17 +447,7 @@ section {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-.news-expanded-section {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.news-expanded-section.expanded {
-    max-height: 2000px;
-    opacity: 1;
-}
 
 .news-date {
     font-weight: 600;
@@ -808,21 +755,7 @@ section {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.dark-mode .news-toggle-btn {
-    background: linear-gradient(135deg, #374151, #4b5563);
-    color: #e5e7eb;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
 
-.dark-mode .news-toggle-btn:hover {
-    background: linear-gradient(135deg, #4b5563, #6b7280);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-}
-
-.dark-mode .news-count {
-    background: rgba(229, 231, 235, 0.15);
-    color: rgba(229, 231, 235, 0.8);
-}
 
 .dark-mode .publication-badge {
     background: #4a9eff;
