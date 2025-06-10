@@ -369,19 +369,19 @@ section {
 
 .about-content {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
 .about-text {
-    flex: 1;
     font-size: 1.1rem;
     line-height: 1.8;
+    width: 100%;
 }
 
 .research-section {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .research-title {
@@ -1128,7 +1128,6 @@ html[lang="zh-CN"] .pub-link {
     
     .about-content {
         flex-direction: column;
-        text-align: center;
         gap: 1.5rem;
     }
     
