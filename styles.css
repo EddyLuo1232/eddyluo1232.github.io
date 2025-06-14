@@ -422,8 +422,6 @@ section {
     background: #f8fafc;
 }
 
-
-
 .news-timeline {
     max-width: 900px;
     margin: 0 auto;
@@ -446,8 +444,6 @@ section {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .news-date {
     font-weight: 600;
@@ -532,15 +528,23 @@ section {
 }
 
 .publication-content h4 {
-    margin-bottom: 1rem;
-    color: #1e293b;
-    line-height: 1.5;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e3a8a;
+    font-weight: 500;
+}
+
+.highlight {
+    background-color: #FFF3A3; /* A softer yellow for light mode */
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #5D4300;
 }
 
 .publication-content p {
+    color: #4b5563;
+    font-size: 1rem;
     margin-bottom: 1rem;
-    color: #555;
     line-height: 1.6;
 }
 
@@ -755,14 +759,19 @@ section {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-
-
 .dark-mode .publication-badge {
-    background: #4a9eff;
+    background: #374151;
+    color: #d1d5db;
+}
+
+.dark-mode .highlight {
+    background-color: #6D5F00; /* A darker, less intrusive yellow for dark mode */
+    color: #FFFBEA;
 }
 
 .dark-mode .pub-link {
-    color: #4a9eff;
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.4);
 }
 
 .dark-mode .pub-link:hover {
@@ -1282,4 +1291,4 @@ a:focus {
     .section-title {
         font-size: 1.8rem;
     }
-} 
+}
