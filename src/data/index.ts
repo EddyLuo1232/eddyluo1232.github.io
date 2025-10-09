@@ -27,8 +27,8 @@ export const aboutContent = {
     zh: '🚀 关于「青春との戦い」的主人公'
   },
   bio: {
-    en: `<strong>Eddy Luo</strong> (罗威迪 & 一ノ瀬 エイジ), an incoming Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
-    zh: `<strong>罗威迪（Eddy Luo）</strong>（罗威迪 & 一ノ瀬 エイジ），<a href='https://www.uga.edu/'>佐治亚大学</a>即将入学的博士研究生，我将在那里师从<a href='https://zhenxianglance.github.io/'>Xiang Zhen教授</a>。我也很幸运能够由<a href='https://www.jhu.edu/'>约翰霍普金斯大学</a>的<a href='https://xiaocw11.github.io/'>Prof. Chaowei Xiao</a>共同指导，他是我深深尊敬并由衷感激的导师。我的研究领域专注于<strong>AI安全与安全性</strong>，包括基础模型和AI智能体。`
+    en: `<strong>Eddy Luo</strong> (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
+    zh: `<strong>罗威迪（Eddy Luo）</strong>（罗威迪 & 一ノ瀬 エイジ），<a href='https://www.uga.edu/'>佐治亚大学</a>一年级博士研究生，我将在那里师从<a href='https://zhenxianglance.github.io/'>Xiang Zhen教授</a>。我也很幸运能够由<a href='https://www.jhu.edu/'>约翰霍普金斯大学</a>的<a href='https://xiaocw11.github.io/'>Prof. Chaowei Xiao</a>共同指导，他是我深深尊敬并由衷感激的导师。我的研究领域专注于<strong>AI安全与安全性</strong>，包括基础模型和AI智能体。`
   },
   contact: {
     en: `Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at <strong>Email: luo.1455[shift+2]uga[dot]edu</strong>. どうぞよろしくお願いします!`,
@@ -270,6 +270,22 @@ export const publications: Publication[] = [
 
 // Pre-prints
 export const preprints: Publication[] = [
+  {
+    id: 'advcua',
+    badge: 'Arxiv',
+    image: '/images/publications/advcua.png',
+    alt: 'AdvCUA',
+    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Tianyu Lu, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
+    title: {
+      en: '<em>Code Agent can be an End-to-end System Hacker: Benchmarking Real-world Threats of Computer-use Agent</em>',
+      zh: '<em>代码智能体可以成为端到端的系统黑客：计算机使用智能体的真实世界威胁基准测试</em>'
+    },
+    links: [
+      { href: 'https://arxiv.org/abs/2510.06607', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://eddyluo.com/AdvCUA/', label: { en: '[Project Page]', zh: '[项目页面]' } },
+      { href: 'https://github.com/EddyLuo1232/VRAP', label: { en: '[Code]', zh: '[代码]' } }
+    ]
+  },
   {
     id: 'doxing',
     badge: 'Arxiv',

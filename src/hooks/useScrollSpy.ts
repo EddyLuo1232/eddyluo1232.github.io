@@ -18,23 +18,29 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       const isNearBottom = scrollY + windowHeight >= documentHeight - 50;
       
       let currentSection = '';
+      let maxDistance = Infinity;
       
-      for (const sectionId of sectionIds) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const sectionTop = element.offsetTop - offset;
-          const sectionHeight = element.offsetHeight;
-          const sectionBottom = sectionTop + sectionHeight;
-          
-          // For the last section, make it active when near bottom
-          if (sectionId === sectionIds[sectionIds.length - 1] && isNearBottom) {
-            currentSection = sectionId;
-            break;
-          }
-          // Regular check for other sections
-          else if (scrollY >= sectionTop && scrollY < sectionBottom) {
-            currentSection = sectionId;
-            break;
+      // If near bottom, activate the last section
+      if (isNearBottom) {
+        currentSection = sectionIds[sectionIds.length - 1];
+      } else {
+        // Find the section that is currently most visible in the viewport
+        for (const sectionId of sectionIds) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const sectionTop = element.offsetTop - offset;
+            const sectionHeight = element.offsetHeight;
+            const sectionCenter = sectionTop + sectionHeight / 2;
+            const viewportCenter = scrollY + windowHeight / 2;
+            
+            // Calculate distance from viewport center to section center
+            const distance = Math.abs(viewportCenter - sectionCenter);
+            
+            // If this section is closer to viewport center, select it
+            if (distance < maxDistance && scrollY >= sectionTop - offset) {
+              maxDistance = distance;
+              currentSection = sectionId;
+            }
           }
         }
       }
