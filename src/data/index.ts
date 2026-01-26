@@ -157,6 +157,15 @@ export const researchInterests: ResearchInterest[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
+    id: 'iclr-2026',
+    date: '2026.01.26',
+    emoji: '🎉',
+    content: {
+      en: `Our work <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> has been accepted by <strong>ICLR'2026</strong>. Thanks to my collaborators.`,
+      zh: `我们的工作《Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models》被<strong>ICLR'2026</strong>接收。感谢我的合作者们。`
+    }
+  },
+  {
     id: 'nvidia-garak',
     date: '2025.07.15',
     emoji: '🚀',
@@ -197,6 +206,50 @@ export const newsItems: NewsItem[] = [
 // Publications
 export const publications: Publication[] = [
   {
+    id: 'doxing',
+    badge: 'ICLR\'2026',
+    image: '/images/publications/doxing_via_the_lens.png',
+    alt: 'Doxing via the Lens',
+    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Tianyu Lu*, Qiming Zhang*, Xiaogeng Liu, Bin Hu, Yue Zhao, Jieyu Zhao, Song Gao, Patrick McDaniel, Zhen Xiang, Chaowei Xiao',
+    title: {
+      en: '<em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em>',
+      zh: '<em>通过镜头进行人肉搜索：揭示多模态大型推理模型中与位置相关的隐私泄露</em>'
+    },
+    links: [
+      { href: 'https://arxiv.org/pdf/2504.19373', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://doxbench.github.io/', label: { en: '[Project Page]', zh: '[项目页面]' } },
+      { href: 'https://mp.weixin.qq.com/s/_pDsKWz9f9rjXFHWN2UJ_A', label: { en: '[机器之心 Synced]', zh: '[机器之心 Synced]' } }
+    ],
+    stats: {
+      en: '23,000+ views, 1,300+ shares',
+      zh: '23,000+ 浏览量, 1,300+ 分享量'
+    }
+  },
+  {
+    id: 'jailbreakv',
+    badge: 'COLM\'2024',
+    image: '/images/publications/jbv.png',
+    alt: 'JailBreakV-28K',
+    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Siyuan Ma*, Xiaogeng Liu*, Xiaoyu Guo, Chaowei Xiao',
+    title: {
+      en: '<em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em>',
+      zh: '<em>JailBreakV-28K: 评估多模态大语言模型抗越狱攻击鲁棒性的基准</em>'
+    },
+    links: [
+      { href: 'https://arxiv.org/abs/2404.03027', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://eddyluo1232.github.io/JailBreakV28K/', label: { en: '[Project Page]', zh: '[项目页面]' } },
+      { href: 'https://github.com/EddyLuo1232/JailBreakV_28K', label: { en: '[Code]', zh: '[代码]' } }
+    ],
+    award: {
+      en: '$20,000 SafeBench Award from Center for AI Safety',
+      zh: '来自人工智能安全中心的$20,000 SafeBench奖'
+    },
+    nvidia: {
+      en: 'NVIDIA\'s garak',
+      zh: 'NVIDIA\'s garak'
+    }
+  },
+  {
     id: 'agrail',
     badge: 'ACL\'2025',
     image: '/images/publications/agrail.png',
@@ -226,30 +279,6 @@ export const publications: Publication[] = [
       { href: 'https://arxiv.org/abs/2410.17922', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/IDEA-XL/G4D', label: { en: '[Code]', zh: '[代码]' } }
     ]
-  },
-  {
-    id: 'jailbreakv',
-    badge: 'COLM\'2024',
-    image: '/images/publications/jbv.png',
-    alt: 'JailBreakV-28K',
-    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Siyuan Ma*, Xiaogeng Liu*, Xiaoyu Guo, Chaowei Xiao',
-    title: {
-      en: '<em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em>',
-      zh: '<em>JailBreakV-28K: 评估多模态大语言模型抗越狱攻击鲁棒性的基准</em>'
-    },
-    links: [
-      { href: 'https://arxiv.org/abs/2404.03027', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://eddyluo1232.github.io/JailBreakV28K/', label: { en: '[Project Page]', zh: '[项目页面]' } },
-      { href: 'https://github.com/EddyLuo1232/JailBreakV_28K', label: { en: '[Code]', zh: '[代码]' } }
-    ],
-    award: {
-      en: '$20,000 SafeBench Award from Center for AI Safety',
-      zh: '来自人工智能安全中心的$20,000 SafeBench奖'
-    },
-    nvidia: {
-      en: 'NVIDIA\'s garak',
-      zh: 'NVIDIA\'s garak'
-    }
   },
   {
     id: 'memory-reasoning',
@@ -285,26 +314,6 @@ export const preprints: Publication[] = [
       { href: 'https://eddyluo.com/AdvCUA/', label: { en: '[Project Page]', zh: '[项目页面]' } },
       { href: 'https://github.com/EddyLuo1232/VRAP', label: { en: '[Code]', zh: '[代码]' } }
     ]
-  },
-  {
-    id: 'doxing',
-    badge: 'Arxiv',
-    image: '/images/publications/doxing_via_the_lens.png',
-    alt: 'Doxing via the Lens',
-    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Tianyu Lu*, Qiming Zhang*, Xiaogeng Liu, Bin Hu, Yue Zhao, Jieyu Zhao, Song Gao, Patrick McDaniel, Zhen Xiang, Chaowei Xiao',
-    title: {
-      en: '<em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em>',
-      zh: '<em>通过镜头进行人肉搜索：揭示多模态大型推理模型中与位置相关的隐私泄露</em>'
-    },
-    links: [
-      { href: 'https://arxiv.org/pdf/2504.19373', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://doxbench.github.io/', label: { en: '[Project Page]', zh: '[项目页面]' } },
-      { href: 'https://mp.weixin.qq.com/s/_pDsKWz9f9rjXFHWN2UJ_A', label: { en: '[机器之心 Synced]', zh: '[机器之心 Synced]' } }
-    ],
-    stats: {
-      en: '23,000+ views, 1,300+ shares',
-      zh: '23,000+ 浏览量, 1,300+ 分享量'
-    }
   },
   {
     id: 'visual-roleplay',
