@@ -31,8 +31,8 @@ export const aboutContent = {
     zh: `<strong>罗威迪（Eddy Luo）</strong>（罗威迪 & 一ノ瀬 エイジ），<a href='https://www.uga.edu/'>佐治亚大学</a>一年级博士研究生，我将在那里师从<a href='https://zhenxianglance.github.io/'>Xiang Zhen教授</a>。我也很幸运能够由<a href='https://www.jhu.edu/'>约翰霍普金斯大学</a>的<a href='https://xiaocw11.github.io/'>Prof. Chaowei Xiao</a>共同指导，他是我深深尊敬并由衷感激的导师。我的研究领域专注于<strong>AI安全与安全性</strong>，包括基础模型和AI智能体。`
   },
   contact: {
-    en: `Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at <strong>Email: luo.1455[shift+2]uga[dot]edu</strong>. どうぞよろしくお願いします!`,
-    zh: `Eddy热忱欢迎合作机会，并支持想要申请博士项目的本科生。他希望我们能够一起进行重要的研究。请随时通过<strong>邮箱：luo.1455[shift+2]uga[dot]edu</strong>联系他。どうぞよろしくお願いします!`
+    en: `Beyond research, Eddy is a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Yiwei Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at <strong>Email: luo.1455[shift+2]uga[dot]edu</strong>. どうぞよろしくお願いします!`,
+    zh: `除了研究之外，Eddy还是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">胡艺伟老师</a>。Eddy热忱欢迎合作机会，并支持想要申请博士项目的本科生。他希望我们能够一起进行重要的研究。请随时通过<strong>邮箱：luo.1455[shift+2]uga[dot]edu</strong>联系他。どうぞよろしくお願いします!`
   },
   researchTitle: {
     en: "Eddy's research interests:",
