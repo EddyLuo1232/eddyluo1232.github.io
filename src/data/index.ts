@@ -157,6 +157,15 @@ export const researchInterests: ResearchInterest[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
+    id: 'uga-gsra-2026',
+    date: '2026.04.01',
+    emoji: '🏆',
+    content: {
+      en: `I have been awarded the <strong>Graduate Student Research Award</strong> from the <strong>School of Computing, University of Georgia</strong> at the <strong>2026 SoC Research Day</strong>. Deeply honored and grateful!`,
+      zh: `我在<strong>2026 SoC Research Day</strong>上荣获<strong>佐治亚大学计算机学院研究生科研奖（Graduate Student Research Award）</strong>。深感荣幸，由衷感谢！`
+    }
+  },
+  {
     id: 'iclr-2026',
     date: '2026.01.26',
     emoji: '🎉',
