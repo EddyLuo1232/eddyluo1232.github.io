@@ -97,6 +97,12 @@
     text-decoration: underline;
 }
 
+.pub-link-disabled {
+    color: #94a3b8;
+    cursor: default;
+    pointer-events: none;
+}
+
 /* Dark Mode */
 .dark-mode .publications-section {
     background: #1a1a1a;

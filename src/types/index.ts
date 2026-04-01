@@ -15,7 +15,7 @@ export interface Publication {
     zh: string;
   };
   links: Array<{
-    href: string;
+    href?: string;
     label: {
       en: string;
       zh: string;

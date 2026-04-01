@@ -42,15 +42,21 @@ const Publications: React.FC = () => {
         <div dangerouslySetInnerHTML={{ __html: t(publication.title) }} />
         <div className="publication-links">
           {publication.links.map((link: any, index: number) => (
-            <a
-              key={index}
-              href={link.href}
-              className="pub-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t(link.label)}
-            </a>
+            link.href ? (
+              <a
+                key={index}
+                href={link.href}
+                className="pub-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t(link.label)}
+              </a>
+            ) : (
+              <span key={index} className="pub-link pub-link-disabled">
+                {t(link.label)}
+              </span>
+            )
           ))}
         </div>
         {publication.award && (
