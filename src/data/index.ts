@@ -313,7 +313,7 @@ export const preprints: Publication[] = [
     badge: 'Arxiv',
     image: '/images/publications/foodguardbench.png',
     alt: 'FoodGuardBench',
-    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Xiaofei Wen*, Tenghao Huang*, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligorić, Muhao Chen',
+    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Xiaofei Wen*, Tenghao Huang*, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligorić, Muhao Chen',
     title: {
       en: '<em>Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models</em>',
       zh: '<em>烹制风险：大语言模型中食品安全风险的基准测试与缓解</em>'
