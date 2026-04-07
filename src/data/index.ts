@@ -319,7 +319,7 @@ export const preprints: Publication[] = [
       zh: '<em>烹制风险：大语言模型中食品安全风险的基准测试与缓解</em>'
     },
     links: [
-      { label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://arxiv.org/abs/2604.01444', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } }
     ]
   },
