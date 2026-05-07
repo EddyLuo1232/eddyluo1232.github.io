@@ -161,8 +161,8 @@ export const newsItems: NewsItem[] = [
     date: '2026.05.07',
     emoji: '🚀',
     content: {
-      en: `I will join <strong><a href="https://virtue.ai/" target="_blank">Virtue AI</a></strong> as a <strong>Research Scientist Intern</strong>.`,
-      zh: `我将以<strong>实习Research Scientist</strong>的身份加入<strong><a href="https://virtue.ai/" target="_blank">Virtue AI</a></strong>。`
+      en: `I will join <strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong> as a <strong>Research Scientist Intern</strong> in <strong>San Francisco, CA, USA</strong>.`,
+      zh: `我将以<strong>实习Research Scientist</strong>的身份加入位于<strong>美国加利福尼亚州旧金山</strong>的<strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong>。`
     }
   },
   {
