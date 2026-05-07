@@ -157,12 +157,12 @@ export const researchInterests: ResearchInterest[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
-    id: 'uga-gsra-2026',
-    date: '2026.04.01',
-    emoji: '🏆',
+    id: 'virtue-ai-intern',
+    date: '2026.05.07',
+    emoji: '🚀',
     content: {
-      en: `I have been awarded the <strong>Graduate Student Research Award</strong> from the <strong>School of Computing, University of Georgia</strong> at the <strong>2026 SoC Research Day</strong>. Deeply honored and grateful!`,
-      zh: `我在<strong>2026 SoC Research Day</strong>上荣获<strong>佐治亚大学计算机学院研究生科研奖（Graduate Student Research Award）</strong>。深感荣幸，由衷感谢！`
+      en: `I will join <strong><a href="https://virtue.ai/" target="_blank">Virtue AI</a></strong> as a <strong>Research Scientist Intern</strong>.`,
+      zh: `我将以<strong>实习Research Scientist</strong>的身份加入<strong><a href="https://virtue.ai/" target="_blank">Virtue AI</a></strong>。`
     }
   },
   {
@@ -308,21 +308,6 @@ export const publications: Publication[] = [
 
 // Pre-prints
 export const preprints: Publication[] = [
-  {
-    id: 'foodguardbench',
-    badge: 'Arxiv',
-    image: '/images/publications/foodguardbench.png',
-    alt: 'FoodGuardBench',
-    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Xiaofei Wen*, Tenghao Huang*, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligorić, Muhao Chen',
-    title: {
-      en: '<em>Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models</em>',
-      zh: '<em>烹制风险：大语言模型中食品安全风险的基准测试与缓解</em>'
-    },
-    links: [
-      { href: 'https://arxiv.org/abs/2604.01444', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } }
-    ]
-  },
   {
     id: 'advcua',
     badge: 'Arxiv',
