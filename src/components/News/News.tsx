@@ -12,8 +12,8 @@ const News: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
+        staggerChildren: 0.07,
+        delayChildren: 0.08
       }
     }
   };
@@ -24,7 +24,7 @@ const News: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        duration: 0.28
       }
     }
   };
@@ -37,7 +37,7 @@ const News: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.28 }}
         >
           {t({ en: "Eddy's News", zh: "Eddy的新闻动态" })}
         </motion.h2>

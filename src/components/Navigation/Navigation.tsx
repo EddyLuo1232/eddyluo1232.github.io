@@ -96,7 +96,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.28, ease: 'easeOut' }}
     >
       <div className="nav-container">
         <div className="nav-logo">

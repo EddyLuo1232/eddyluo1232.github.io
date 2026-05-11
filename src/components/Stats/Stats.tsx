@@ -27,7 +27,7 @@ const Stats: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.28 }}
         >
           {t({ en: 'Visitor Statistics', zh: '访客统计' })}
         </motion.h2>
@@ -37,7 +37,7 @@ const Stats: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ delay: 0.08, duration: 0.28 }}
         >
           <div 
             ref={scriptRef}

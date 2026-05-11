@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.28 }}
     >
       <div className="container">
         <p>

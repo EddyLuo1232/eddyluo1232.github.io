@@ -4,7 +4,6 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Navigation from './components/Navigation/Navigation';
 import Hero from './components/Hero/Hero';
 import Quote from './components/Quote/Quote';
-import About from './components/About/About';
 import News from './components/News/News';
 import Publications from './components/Publications/Publications';
 import Stats from './components/Stats/Stats';
@@ -159,7 +158,6 @@ const AppContent: React.FC = () => {
       />
       <Hero />
       <Quote />
-      <About />
       <News />
       <Publications />
       <Stats />

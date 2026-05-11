@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { personalInfo, socialLinks } from '../../data';
+import { personalInfo, socialLinks, aboutContent } from '../../data';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -31,30 +31,30 @@ const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        duration: 0.3
       }
     }
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, x: 30 },
+    hidden: { opacity: 0, x: 20 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.8
+        duration: 0.35
       }
     }
   };
@@ -79,6 +79,10 @@ const Hero: React.FC = () => {
                 {language === 'zh' ? '点击切换头像' : 'Click to switch avatar'}
               </div>
             </div>
+            <motion.div className="hero-identity" variants={itemVariants}>
+              <h1 className="hero-title">{personalInfo.name}</h1>
+              <h2 className="hero-subtitle">{t(personalInfo.title)}</h2>
+            </motion.div>
           </motion.div>
 
           <div className="hero-text">
@@ -97,24 +101,21 @@ const Hero: React.FC = () => {
               </button>
             </motion.div>
 
-            <motion.h1 className="hero-title" variants={itemVariants}>
-              {personalInfo.name}
-            </motion.h1>
-
-            <motion.h2 className="hero-subtitle" variants={itemVariants}>
-              {t(personalInfo.title)}
-            </motion.h2>
-
             {personalInfo.motto && (
               <motion.p className="hero-motto" variants={itemVariants}>
                 {personalInfo.motto}
               </motion.p>
             )}
 
+            <motion.div className="hero-bio" variants={itemVariants}>
+              <div dangerouslySetInnerHTML={{ __html: t(aboutContent.bio) }} />
+              <div
+                dangerouslySetInnerHTML={{ __html: t(aboutContent.contact) }}
+                style={{ marginTop: '0.9rem' }}
+              />
+            </motion.div>
+
             <motion.div className="hero-info" variants={itemVariants}>
-              <p>
-                <i className="fas fa-map-marker-alt"></i> {t(personalInfo.location)}
-              </p>
               <div className="social-links">
                 {socialLinks.map((link) => (
                   <motion.a

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { aboutContent } from '../../data';
+import { aboutContent, researchInterests } from '../../data';
 import './About.css';
 
 const About: React.FC = () => {
@@ -42,28 +42,22 @@ const About: React.FC = () => {
           {t(aboutContent.sectionTitle)}
         </motion.h2>
 
-        <motion.div 
+        <motion.div
           className="about-content"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <motion.div className="about-text" variants={itemVariants}>
-            <div 
-              dangerouslySetInnerHTML={{ 
-                __html: t(aboutContent.bio) 
-              }}
-            />
-            
-            <div 
-              dangerouslySetInnerHTML={{ 
-                __html: t(aboutContent.contact) 
-              }}
-              style={{ marginTop: '1.5rem' }}
-            />
-          </motion.div>
-          
+          <p className="research-section-label">{t(aboutContent.researchTitle)}</p>
+          <div className="research-interests">
+            {researchInterests.map((item) => (
+              <motion.div key={item.id} className="research-item" variants={itemVariants}>
+                <h4 dangerouslySetInnerHTML={{ __html: t(item.title) }} />
+                <p dangerouslySetInnerHTML={{ __html: t(item.description) }} />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

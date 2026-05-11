@@ -105,7 +105,7 @@ const Publications: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.28 }}
         >
           {t({ en: "Eddy's Selected Pre-print", zh: "Eddy的精选预印本论文" })}
         </motion.h2>
@@ -117,7 +117,7 @@ const Publications: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.25, delay: index * 0.06 }}
             >
               <PublicationItem publication={publication} />
             </motion.div>
@@ -131,7 +131,7 @@ const Publications: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.28 }}
         >
           {t({ en: "Eddy's Selected Publication", zh: "Eddy的精选已发表论文" })}
         </motion.h2>
@@ -143,7 +143,7 @@ const Publications: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.25, delay: index * 0.06 }}
             >
               <PublicationItem publication={publication} />
             </motion.div>
