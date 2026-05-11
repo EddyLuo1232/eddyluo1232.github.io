@@ -1,6 +1,6 @@
 /* Navigation */
 .navbar {
-    background: rgba(248, 245, 239, 0.97);
+    background: rgba(236, 232, 223, 0.97);
     backdrop-filter: blur(12px);
     position: fixed;
     top: 0;
@@ -12,7 +12,7 @@
 }
 
 .navbar.scrolled {
-    background: rgba(248, 245, 239, 0.99);
+    background: rgba(236, 232, 223, 0.99);
     box-shadow: 0 1px 0 rgba(30, 50, 80, 0.12), 0 4px 16px rgba(30, 50, 80, 0.09);
 }
 
@@ -266,7 +266,7 @@
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: #f8f5ef;
+        background-color: #ece8df;
         width: 100%;
         text-align: center;
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
