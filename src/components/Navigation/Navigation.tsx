@@ -9,7 +9,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }) => {
-  const { t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -100,7 +100,18 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
     >
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>Eddy Luo's Page</h2>
+          <button
+            className={`nav-lang-btn ${language === 'en' ? 'active' : ''}`}
+            onClick={() => setLanguage('en')}
+          >
+            EN
+          </button>
+          <button
+            className={`nav-lang-btn ${language === 'zh' ? 'active' : ''}`}
+            onClick={() => setLanguage('zh')}
+          >
+            中
+          </button>
         </div>
 
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''} ${activeSection ? 'has-active' : ''}`}>

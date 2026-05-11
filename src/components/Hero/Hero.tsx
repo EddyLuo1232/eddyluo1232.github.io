@@ -5,7 +5,7 @@ import { personalInfo, socialLinks, aboutContent } from '../../data';
 import './Hero.css';
 
 const Hero: React.FC = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
   const [isAnimeAvatar, setIsAnimeAvatar] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
 
@@ -20,10 +20,6 @@ const Hero: React.FC = () => {
         setIsFlipping(false);
       }, 300);
     }, 150);
-  };
-
-  const handleLanguageChange = (newLanguage: 'en' | 'zh') => {
-    setLanguage(newLanguage);
   };
 
   const containerVariants = {
@@ -89,21 +85,6 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <div className="hero-text">
-            <motion.div className="language-toggle" variants={itemVariants}>
-              <button
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => handleLanguageChange('en')}
-              >
-                English
-              </button>
-              <button
-                className={`lang-btn ${language === 'zh' ? 'active' : ''}`}
-                onClick={() => handleLanguageChange('zh')}
-              >
-                中文
-              </button>
-            </motion.div>
-
             {personalInfo.motto && (
               <motion.p className="hero-motto" variants={itemVariants}>
                 {personalInfo.motto}

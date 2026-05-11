@@ -60,13 +60,6 @@ export const quote = {
 // Social links
 export const socialLinks: SocialLink[] = [
   {
-    id: 'email',
-    href: 'mailto:luo.1455@osu.edu',
-    iconType: 'fas',
-    icon: 'fas fa-envelope',
-    label: { en: 'Email', zh: '邮箱' }
-  },
-  {
     id: 'github',
     href: 'https://github.com/EddyLuo1232',
     iconType: 'fab',
@@ -81,13 +74,6 @@ export const socialLinks: SocialLink[] = [
     label: { en: 'Google Scholar', zh: 'Google Scholar' }
   },
   {
-    id: 'orcid',
-    href: 'https://orcid.org/0000-0001-9244-4677',
-    iconType: 'fab',
-    icon: 'fab fa-orcid',
-    label: { en: 'ORCID', zh: 'ORCID' }
-  },
-  {
     id: 'linkedin',
     href: 'https://www.linkedin.com/in/weidi-luo-aa02b5242',
     iconType: 'fab',
@@ -100,13 +86,6 @@ export const socialLinks: SocialLink[] = [
     iconType: 'fab',
     icon: 'fab fa-twitter',
     label: { en: 'Twitter', zh: 'Twitter' }
-  },
-  {
-    id: 'rednote',
-    href: 'https://www.xiaohongshu.com/user/profile/5d04cf12000000001600eb0d',
-    iconType: 'img',
-    imgSrc: '/images/assets/rednote.png',
-    label: { en: 'RedNote', zh: '小红书' }
   },
   {
     id: 'resume',
