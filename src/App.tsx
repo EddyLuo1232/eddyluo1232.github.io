@@ -40,7 +40,7 @@ const AppContent: React.FC = () => {
     // Google Fonts
     const googleFonts = document.createElement('link');
     googleFonts.rel = 'stylesheet';
-    googleFonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+    googleFonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap';
     document.head.appendChild(googleFonts);
 
     // Clustrmaps script

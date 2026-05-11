@@ -1,8 +1,8 @@
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(160deg, #f8f5ef 0%, #ede9e0 60%, #e8e3d8 100%);
+    color: #1a2a44;
     position: relative;
     overflow: hidden;
 }
@@ -14,8 +14,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,200 1000,1000"/></svg>');
-    background-size: cover;
+    background-image: radial-gradient(circle, rgba(30, 50, 80, 0.065) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, rgba(236, 232, 223, 0.5));
+    pointer-events: none;
 }
 
 .hero-content {
@@ -32,27 +44,28 @@
 }
 
 .lang-btn {
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: white;
+    background: rgba(30, 50, 80, 0.07);
+    border: 1px solid rgba(30, 50, 80, 0.2);
+    color: #1a2a44;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
     cursor: pointer;
     margin-right: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 1px 4px rgba(30, 50, 80, 0.08);
 }
 
 .lang-btn.active,
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.9);
-    color: #2563eb;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(30, 50, 80, 0.14);
+    border-color: rgba(30, 50, 80, 0.35);
+    color: #0d1d35;
+    box-shadow: 0 2px 8px rgba(30, 50, 80, 0.12);
 }
 
 .lang-btn:active {
@@ -60,31 +73,35 @@
 }
 
 .hero-title {
+    font-family: 'Source Serif 4', 'Crimson Pro', Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #fff, #f0f9ff);
+    background: linear-gradient(45deg, #0d1d35, #1e3a5f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: -0.01em;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
-    opacity: 0.9;
+    color: #2a3a52;
+    opacity: 1;
 }
 
 .hero-motto {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    opacity: 0.8;
+    color: #4a5a72;
 }
 
 .hero-info p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    color: #2a3a52;
 }
 
 .social-links {
@@ -94,20 +111,24 @@
 }
 
 .social-link {
-    color: white;
+    color: #1e3a5f;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(30, 50, 80, 0.07);
+    border-radius: 4px;
+    border: 1px solid rgba(30, 50, 80, 0.18);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
 }
 
 .social-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(30, 50, 80, 0.13);
+    border-color: rgba(30, 50, 80, 0.3);
+    color: #0d1d35;
     transform: translateY(-2px);
 }
 
@@ -121,8 +142,8 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 4px solid rgba(30, 50, 80, 0.15);
+    box-shadow: 0 12px 36px rgba(30, 50, 80, 0.15), 0 2px 8px rgba(30, 50, 80, 0.1);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     cursor: pointer;
@@ -162,8 +183,8 @@
     bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
+    background: rgba(30, 50, 80, 0.8);
+    color: #f0f4f8;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 12px;
@@ -201,48 +222,67 @@
 
 /* Dark Mode */
 .dark-mode .hero {
-    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    background: linear-gradient(160deg, #0d1929 0%, #111e30 60%, #152438 100%);
+    color: #e8e6e1;
+}
+
+.dark-mode .hero::before {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+}
+
+.dark-mode .hero::after {
+    background: linear-gradient(to bottom, transparent, rgba(13, 25, 41, 0.4));
 }
 
 .dark-mode .hero-title {
-    background: linear-gradient(45deg, #ffffff, #f0f9ff);
+    background: linear-gradient(45deg, #ffffff, #b8d4f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.dark-mode .hero-subtitle,
+.dark-mode .hero-subtitle {
+    color: #c8d8f0;
+}
+
 .dark-mode .hero-motto,
-.dark-mode .hero-info {
-    color: #f5f5f5;
+.dark-mode .hero-info p {
+    color: #9ab8d8;
 }
 
 .dark-mode .lang-btn {
-    background: rgba(45, 55, 72, 0.3);
-    border-color: rgba(74, 144, 255, 0.3);
-    color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(200, 220, 255, 0.2);
+    color: #c8d8f0;
 }
 
 .dark-mode .lang-btn.active,
 .dark-mode .lang-btn:hover {
-    background: rgba(74, 144, 255, 0.2);
-    border-color: rgba(74, 144, 255, 0.5);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(200, 220, 255, 0.4);
     color: #ffffff;
 }
 
 .dark-mode .social-link {
-    background: rgba(45, 55, 72, 0.3);
-    border-color: rgba(74, 144, 255, 0.3);
-    color: #f0f0f0;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(200, 220, 255, 0.18);
+    color: #b8cce0;
 }
 
 .dark-mode .social-link:hover {
-    background: rgba(74, 144, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(200, 220, 255, 0.35);
+    color: #dde8f5;
+}
+
+.dark-mode .profile-photo {
+    border-color: rgba(200, 220, 255, 0.2);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .dark-mode .avatar-hint {
-    background: rgba(45, 55, 72, 0.9);
-    color: #f5f5f5;
+    background: rgba(15, 25, 45, 0.92);
+    color: #c8d8f0;
 }
 
 /* Responsive Design */

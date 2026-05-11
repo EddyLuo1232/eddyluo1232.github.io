@@ -1,18 +1,19 @@
 /* Navigation */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(248, 245, 239, 0.97);
+    backdrop-filter: blur(12px);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(30, 50, 80, 0.1), 0 2px 12px rgba(30, 50, 80, 0.06);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(30, 50, 80, 0.08);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    background: rgba(248, 245, 239, 0.99);
+    box-shadow: 0 1px 0 rgba(30, 50, 80, 0.12), 0 4px 16px rgba(30, 50, 80, 0.09);
 }
 
 .nav-container {
@@ -31,10 +32,12 @@
 }
 
 .nav-logo h2 {
-    color: #2563eb;
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-family: 'Source Serif 4', 'Crimson Pro', Georgia, serif;
+    color: #1a2a44;
+    font-weight: 700;
+    font-size: 1.4rem;
     transition: color 0.3s ease;
+    letter-spacing: -0.01em;
 }
 
 .nav-menu {
@@ -51,14 +54,14 @@
     bottom: -8px;
     left: var(--droplet-left, 0);
     width: var(--droplet-width, 0);
-    height: 8px;
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
-    border-radius: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #1a2a44 0%, #2c4a7a 50%, #4a7ab5 100%);
+    border-radius: 2px;
     transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     opacity: 0;
     box-shadow: 
-        0 4px 15px rgba(37, 99, 235, 0.4),
-        0 2px 8px rgba(37, 99, 235, 0.2);
+        0 2px 8px rgba(26, 42, 68, 0.3),
+        0 1px 4px rgba(26, 42, 68, 0.15);
     transform: translateY(5px) scale(0.8);
 }
 
@@ -88,8 +91,10 @@
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: #3a4a5c;
     font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     padding: 12px 18px;
@@ -101,7 +106,7 @@
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #1a2a44;
     outline: none !important;
     border: none !important;
     background: none !important;
@@ -109,7 +114,7 @@
 }
 
 .nav-link.active {
-    color: #2563eb;
+    color: #1a2a44;
     font-weight: 600;
     outline: none !important;
     border: none !important;
@@ -118,7 +123,7 @@
 }
 
 .nav-link:focus {
-    color: #2563eb;
+    color: #1a2a44;
     outline: none !important;
     border: none !important;
     background: none !important;
@@ -126,7 +131,7 @@
 }
 
 .nav-link:active {
-    color: #2563eb;
+    color: #1a2a44;
     outline: none !important;
     border: none !important;
     background: none !important;
@@ -151,21 +156,22 @@
 
 /* Dark Mode Styles */
 .dark-mode .navbar {
-    background: rgba(26, 26, 26, 0.95);
-    border-bottom: 1px solid #333;
+    background: rgba(22, 28, 42, 0.97);
+    border-bottom: 1px solid rgba(74, 122, 181, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .navbar.scrolled {
-    background: rgba(26, 26, 26, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(22, 28, 42, 0.99);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .nav-logo h2 {
-    color: #4a9eff;
+    color: #c8d8f0;
 }
 
 .dark-mode .nav-link {
-    color: #f5f5f5;
+    color: #9ab8d8;
     outline: none !important;
     border: none !important;
     background: none !important;
@@ -176,7 +182,7 @@
 .dark-mode .nav-link.active,
 .dark-mode .nav-link:focus,
 .dark-mode .nav-link:active {
-    color: #4a9eff;
+    color: #c8d8f0;
     outline: none !important;
     border: none !important;
     background: none !important;
@@ -184,14 +190,14 @@
 }
 
 .dark-mode .nav-menu::before {
-    background: linear-gradient(135deg, #4a9eff 0%, #63b3ed 50%, #93c5fd 100%);
+    background: linear-gradient(135deg, #4a7ab5 0%, #6a9ad5 50%, #8abcf0 100%);
     box-shadow: 
-        0 4px 15px rgba(74, 158, 255, 0.5),
-        0 2px 8px rgba(74, 158, 255, 0.3);
+        0 2px 8px rgba(74, 122, 181, 0.4),
+        0 1px 4px rgba(74, 122, 181, 0.25);
 }
 
 .dark-mode .nav-menu::after {
-    background: rgba(74, 158, 255, 0.3);
+    background: rgba(74, 122, 181, 0.25);
 }
 
 .dark-mode .hamburger .bar {
@@ -212,11 +218,12 @@
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: #f8f5ef;
         width: 100%;
         text-align: center;
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(30, 50, 80, 0.08);
+        border-top: 1px solid rgba(30, 50, 80, 0.08);
         padding: 2rem 0;
         gap: 1rem;
         align-items: center;
@@ -250,12 +257,12 @@
     }
 
     .dark-mode .nav-menu {
-        background-color: #2d3748;
-        border-top: 1px solid #4a5568;
+        background-color: #1a2640;
+        border-top: 1px solid rgba(74, 122, 181, 0.25);
     }
     
     .dark-mode .nav-link {
-        color: #e2e8f0;
+        color: #9ab8d8;
     }
 }
 

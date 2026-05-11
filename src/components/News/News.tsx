@@ -39,7 +39,7 @@ const News: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
         >
-          📰 {t({ en: "Eddy's News", zh: "Eddy的新闻动态" })}
+          {t({ en: "Eddy's News", zh: "Eddy的新闻动态" })}
         </motion.h2>
 
         <div className="news-scroll-container">

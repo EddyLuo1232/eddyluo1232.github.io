@@ -29,7 +29,7 @@ const Stats: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
         >
-          🌍 {t({ en: 'Visitor Statistics', zh: '访客统计' })}
+          {t({ en: 'Visitor Statistics', zh: '访客统计' })}
         </motion.h2>
         
         <motion.div 

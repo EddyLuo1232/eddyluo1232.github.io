@@ -107,7 +107,7 @@ const Publications: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
         >
-          📝 {t({ en: "Eddy's Selected Pre-print", zh: "Eddy的精选预印本论文" })}
+          {t({ en: "Eddy's Selected Pre-print", zh: "Eddy的精选预印本论文" })}
         </motion.h2>
 
         <div className="publication-grid">
@@ -133,7 +133,7 @@ const Publications: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
         >
-          📸 {t({ en: "Eddy's Selected Publication", zh: "Eddy的精选已发表论文" })}
+          {t({ en: "Eddy's Selected Publication", zh: "Eddy的精选已发表论文" })}
         </motion.h2>
 
         <div className="publication-grid">

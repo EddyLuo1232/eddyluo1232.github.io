@@ -105,9 +105,11 @@ const Hero: React.FC = () => {
               {t(personalInfo.title)}
             </motion.h2>
 
-            <motion.p className="hero-motto" variants={itemVariants}>
-              {personalInfo.motto}
-            </motion.p>
+            {personalInfo.motto && (
+              <motion.p className="hero-motto" variants={itemVariants}>
+                {personalInfo.motto}
+              </motion.p>
+            )}
 
             <motion.div className="hero-info" variants={itemVariants}>
               <p>

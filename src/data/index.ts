@@ -8,7 +8,7 @@ export const personalInfo = {
     en: 'CS PhD student @ The University of Georgia',
     zh: '佐治亚大学计算机科学博士生'
   },
-  motto: '燃えろ! 戦う! To be the rising star!',
+  motto: '',
   location: {
     en: 'Athens, GA, United States',
     zh: '美国佐治亚州雅典市'
@@ -23,8 +23,8 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   sectionTitle: {
-    en: '🚀 About the Protagonist of 「青春との戦い」',
-    zh: '🚀 关于「青春との戦い」的主人公'
+    en: 'About the Protagonist of 「青春との戦い」',
+    zh: '关于「青春との戦い」的主人公'
   },
   bio: {
     en: `<strong>Eddy Luo</strong> (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,

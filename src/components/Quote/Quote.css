@@ -1,7 +1,7 @@
 /* Quote Section */
 .quote-section {
     padding: 60px 0;
-    background: #f8fafc;
+    background: #ece8df;
     text-align: center;
 }
 
@@ -12,11 +12,12 @@
     max-width: 1000px;
     margin: 0 auto;
     gap: 2rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #faf8f3;
+    padding: 2rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(30, 50, 80, 0.1), 0 1px 4px rgba(30, 50, 80, 0.08);
+    border: 1px solid rgba(30, 50, 80, 0.1);
+    border-left: 4px solid #1e3a5f;
 }
 
 .quote-image {
@@ -30,38 +31,49 @@
 }
 
 .quote-section blockquote {
+    font-family: 'Crimson Pro', 'Source Serif 4', Georgia, serif;
     font-size: 1.5rem;
     font-style: italic;
-    color: #555;
+    color: #2a3a52;
     flex: 1;
     margin: 0;
+    line-height: 1.7;
 }
 
 .quote-section .japanese {
     margin-top: 1rem;
     font-size: 1.2rem;
-    color: #666;
+    color: #4a5a72;
 }
 
 .quote-section cite {
     display: block;
     margin-top: 1.5rem;
-    font-size: 1rem;
-    color: #888;
+    font-size: 0.9rem;
+    color: #7a8a9a;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: normal;
 }
 
 /* Dark Mode */
 .dark-mode .quote-section {
-    background: #2d3748;
+    background: #111929;
 }
 
 .dark-mode .quote-with-images {
-    background: rgba(45, 55, 72, 0.8);
-    border: 1px solid #4a5568;
+    background: #1a2640;
+    border: 1px solid #2a3d5a;
+    border-left: 4px solid #4a7ab5;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .quote-section blockquote p {
-    color: #f5f5f5;
+    color: #c8d8f0;
+}
+
+.dark-mode .quote-section cite {
+    color: #7090b0;
 }
 
 /* Responsive Design */
