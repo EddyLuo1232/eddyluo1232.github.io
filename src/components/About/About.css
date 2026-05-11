@@ -17,13 +17,14 @@
 }
 
 .about-text a {
-    color: #2563eb;
+    color: #1e3a5f;
     text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .about-text a:hover {
-    color: #1d4ed8;
+    color: #2c4a7a;
     text-decoration: underline;
 }
 
@@ -78,6 +79,7 @@
 
 .dark-mode .about-text a {
     color: #7aaee0;
+    font-weight: 600;
 }
 
 .dark-mode .about-text a:hover {

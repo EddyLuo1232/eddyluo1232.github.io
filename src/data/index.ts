@@ -23,16 +23,16 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   sectionTitle: {
-    en: 'About the Protagonist of 「青春との戦い」',
-    zh: '关于「青春との戦い」的主人公'
+    en: 'About Me',
+    zh: '关于我'
   },
   bio: {
-    en: `<strong>Eddy Luo</strong> (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
-    zh: `<strong>罗威迪（Eddy Luo）</strong>（罗威迪 & 一ノ瀬 エイジ），<a href='https://www.uga.edu/'>佐治亚大学</a>一年级博士研究生，我将在那里师从<a href='https://zhenxianglance.github.io/'>Xiang Zhen教授</a>。我也很幸运能够由<a href='https://www.jhu.edu/'>约翰霍普金斯大学</a>的<a href='https://xiaocw11.github.io/'>Prof. Chaowei Xiao</a>共同指导，他是我深深尊敬并由衷感激的导师。我的研究领域专注于<strong>AI安全与安全性</strong>，包括基础模型和AI智能体。`
+    en: `Eddy Luo (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on AI Safety and Security, including foundation models and AI agents. Beyond research, I am broadly drawn to cognitive science, philosophy, psychology, sociology, linguistics, and classical music.`,
+    zh: `罗威迪（Eddy Luo）（罗威迪 & 一ノ瀬 エイジ），<a href='https://www.uga.edu/'>佐治亚大学</a>一年级博士研究生，我将在那里师从<a href='https://zhenxianglance.github.io/'>Xiang Zhen教授</a>。我也很幸运能够由<a href='https://www.jhu.edu/'>约翰霍普金斯大学</a>的<a href='https://xiaocw11.github.io/'>Prof. Chaowei Xiao</a>共同指导，他是我深深尊敬并由衷感激的导师。我的研究领域专注于AI安全与安全性，包括基础模型和AI智能体。研究之余，我对认知科学、哲学、心理学、社会学、语言学与古典音乐也有广泛的兴趣。`
   },
   contact: {
-    en: `Beyond research, Eddy is a <strong>violinist</strong> (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at <strong>Email: luo.1455[shift+2]uga[dot]edu</strong>. どうぞよろしくお願いします!`,
-    zh: `除了研究之外，Eddy还是一名<strong>小提琴手</strong>（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu老师</a>。Eddy热忱欢迎合作机会，并支持想要申请博士项目的本科生。他希望我们能够一起进行重要的研究。请随时通过<strong>邮箱：luo.1455[shift+2]uga[dot]edu</strong>联系他。どうぞよろしくお願いします!`
+    en: `Beyond research, Eddy is a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at Email: luo.1455[shift+2]uga[dot]edu. どうぞよろしくお願いします!`,
+    zh: `除了研究之外，Eddy还是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu老师</a>。Eddy热忱欢迎合作机会，并支持想要申请博士项目的本科生。他希望我们能够一起进行重要的研究。请随时通过邮箱：luo.1455[shift+2]uga[dot]edu联系他。どうぞよろしくお願いします!`
   },
   researchTitle: {
     en: "Eddy's research interests:",
