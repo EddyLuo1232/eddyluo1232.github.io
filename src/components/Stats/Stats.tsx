@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Stats.css';
 
@@ -8,7 +7,6 @@ const Stats: React.FC = () => {
   const scriptRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load Clustrmaps script dynamically
     if (scriptRef.current && !document.getElementById('clustrmaps')) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
@@ -22,31 +20,16 @@ const Stats: React.FC = () => {
   return (
     <section className="stats-section">
       <div className="container">
-        <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.28 }}
-        >
+        <h2 className="section-title">
           {t({ en: 'Visitor Statistics', zh: '访客统计' })}
-        </motion.h2>
-        
-        <motion.div 
-          className="stats-container"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ delay: 0.08, duration: 0.28 }}
-        >
-          <div 
+        </h2>
+        <div className="stats-container">
+          <div
             ref={scriptRef}
-            id="clustrmaps-widget" 
+            id="clustrmaps-widget"
             style={{ width: '100%', textAlign: 'center', padding: '20px' }}
-          >
-            {/* Clustrmaps widget will be loaded here dynamically */}
-          </div>
-        </motion.div>
+          />
+        </div>
       </div>
     </section>
   );

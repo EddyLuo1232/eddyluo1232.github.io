@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Navigation.css';
 
@@ -13,75 +12,50 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Navigation items
   const navItems = [
     { id: 'about', label: { en: 'About', zh: '关于' } },
     { id: 'news', label: { en: 'News', zh: '动态' } },
     { id: 'publications', label: { en: 'Publications', zh: '论文' } }
   ];
 
-  // Handle scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const nav = document.querySelector('.nav-menu');
       const hamburger = document.querySelector('.hamburger');
-      
-      if (isMobileMenuOpen && 
-          nav && 
-          hamburger &&
-          !nav.contains(event.target as Node) && 
+      if (isMobileMenuOpen && nav && hamburger &&
+          !nav.contains(event.target as Node) &&
           !hamburger.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     };
-
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMobileMenuOpen]);
 
-  // Handle escape key
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
+      if (event.key === 'Escape' && isMobileMenuOpen) setIsMobileMenuOpen(false);
     };
-
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isMobileMenuOpen]);
 
-  // Update droplet indicator position and size
   useEffect(() => {
     const navMenu = document.querySelector('.nav-menu');
     const activeLink = document.querySelector('.nav-link.active');
-    
     if (navMenu && activeLink) {
       const menuRect = navMenu.getBoundingClientRect();
       const linkRect = activeLink.getBoundingClientRect();
-      
-      const leftOffset = linkRect.left - menuRect.left;
-      const width = linkRect.width;
-      
-      // Set CSS custom properties for the droplet position and size
-      (navMenu as HTMLElement).style.setProperty('--droplet-left', `${leftOffset}px`);
-      (navMenu as HTMLElement).style.setProperty('--droplet-width', `${width}px`);
-      
-      // Trigger flow animation
+      (navMenu as HTMLElement).style.setProperty('--droplet-left', `${linkRect.left - menuRect.left}px`);
+      (navMenu as HTMLElement).style.setProperty('--droplet-width', `${linkRect.width}px`);
       navMenu.classList.add('flowing');
-      setTimeout(() => {
-        navMenu.classList.remove('flowing');
-      }, 800);
+      setTimeout(() => navMenu.classList.remove('flowing'), 800);
     }
   }, [activeSection]);
 
@@ -90,14 +64,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
     setIsMobileMenuOpen(false);
   };
 
-
   return (
-    <motion.nav 
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.28, ease: 'easeOut' }}
-    >
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
           <button
@@ -116,7 +84,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
 
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''} ${activeSection ? 'has-active' : ''}`}>
           {navItems.map((item) => (
-            <motion.a
+            <a
               key={item.id}
               href={`#${item.id}`}
               className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
@@ -124,16 +92,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
                 e.preventDefault();
                 handleNavClick(item.id);
               }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               {t(item.label)}
-            </motion.a>
+            </a>
           ))}
         </div>
 
-
-        <div 
+        <div
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           role="button"
@@ -150,7 +115,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
           <span className="bar"></span>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
