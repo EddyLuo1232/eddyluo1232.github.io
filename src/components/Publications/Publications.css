@@ -106,6 +106,17 @@
     pointer-events: none;
 }
 
+.publication-integrations {
+    margin-top: 4px;
+    color: #8b1a1a;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.publication-integration-separator {
+    color: #8b1a1a;
+}
+
 /* Dark Mode */
 .dark-mode .publications-section {
     background: #161c2a;

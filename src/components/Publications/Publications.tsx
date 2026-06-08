@@ -33,11 +33,17 @@ const Publications: React.FC = () => {
             </span>
           </div>
         )}
-        {publication.nvidia && (
-          <div style={{ marginTop: '4px' }}>
-            <span style={{ color: '#8b1a1a', fontSize: '0.9em', fontWeight: '500' }}>
-              {t(publication.nvidia)}
-            </span>
+        {publication.integrations && (
+          <div className="publication-integrations">
+            <span>{t({ en: 'Integrated into: ', zh: '已集成到：' })}</span>
+            {publication.integrations.map((integration: any, index: number) => (
+              <React.Fragment key={integration.href}>
+                {index > 0 && <span className="publication-integration-separator"> · </span>}
+                <a href={integration.href} className="pub-link" target="_blank" rel="noopener noreferrer">
+                  {t(integration.label)}
+                </a>
+              </React.Fragment>
+            ))}
           </div>
         )}
         {publication.stats && (

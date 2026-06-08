@@ -26,10 +26,13 @@ export interface Publication {
     en: string;
     zh: string;
   };
-  nvidia?: {
-    en: string;
-    zh: string;
-  };
+  integrations?: Array<{
+    href: string;
+    label: {
+      en: string;
+      zh: string;
+    };
+  }>;
   stats?: {
     en: string;
     zh: string;

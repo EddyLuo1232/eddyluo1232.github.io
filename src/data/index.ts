@@ -136,6 +136,15 @@ export const researchInterests: ResearchInterest[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
+    id: 'microsoft-pyrit',
+    date: '2026.06.07',
+    emoji: '🚀',
+    content: {
+      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been integrated into <strong><a href="https://github.com/microsoft/PyRIT" target="_blank" rel="noopener noreferrer">Microsoft's PyRIT</a></strong>, an open-source framework that helps security professionals and engineers proactively identify risks in generative AI systems.`,
+      zh: `我们的工作《JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks》已被集成到<strong><a href="https://github.com/microsoft/PyRIT" target="_blank" rel="noopener noreferrer">微软的PyRIT</a></strong>中，这是一个帮助安全人员和工程师主动识别生成式AI系统风险的开源框架。`
+    }
+  },
+  {
     id: 'virtue-ai-intern',
     date: '2026.05.07',
     emoji: '🚀',
@@ -158,8 +167,8 @@ export const newsItems: NewsItem[] = [
     date: '2025.07.15',
     emoji: '🚀',
     content: {
-      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been integrated into <strong>NVIDIA's garak</strong>, an LLM vulnerability scanner, enhancing multimodal AI security assessment capabilities.`,
-      zh: `我们的工作《JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks》已被集成到<strong>NVIDIA的garak</strong>中，这是一个LLM漏洞扫描器，增强了多模态AI安全评估能力。`
+      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> has been integrated into <strong><a href="https://github.com/NVIDIA/garak" target="_blank" rel="noopener noreferrer">NVIDIA's garak</a></strong>, an LLM vulnerability scanner, enhancing multimodal AI security assessment capabilities.`,
+      zh: `我们的工作《JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks》已被集成到<strong><a href="https://github.com/NVIDIA/garak" target="_blank" rel="noopener noreferrer">NVIDIA的garak</a></strong>中，这是一个LLM漏洞扫描器，增强了多模态AI安全评估能力。`
     }
   },
   {
@@ -232,10 +241,16 @@ export const publications: Publication[] = [
       en: '$20,000 SafeBench Award from Center for AI Safety',
       zh: '来自人工智能安全中心的$20,000 SafeBench奖'
     },
-    nvidia: {
-      en: 'NVIDIA\'s garak',
-      zh: 'NVIDIA\'s garak'
-    }
+    integrations: [
+      {
+        href: 'https://github.com/NVIDIA/garak',
+        label: { en: 'NVIDIA/garak', zh: 'NVIDIA/garak' }
+      },
+      {
+        href: 'https://github.com/microsoft/PyRIT',
+        label: { en: 'Microsoft\'s PyRIT', zh: 'Microsoft\'s PyRIT' }
+      }
+    ]
   },
   {
     id: 'agrail',
