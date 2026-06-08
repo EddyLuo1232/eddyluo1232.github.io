@@ -154,6 +154,15 @@ export const newsItems: NewsItem[] = [
     }
   },
   {
+    id: 'uga-graduate-student-research-award',
+    date: '2026.04.10',
+    emoji: '🎉',
+    content: {
+      en: `I received the <strong>Graduate Student Research Award</strong> from the <strong>University of Georgia</strong>.`,
+      zh: `我获得了<strong>佐治亚大学</strong>颁发的<strong>Graduate Student Research Award</strong>。`
+    }
+  },
+  {
     id: 'iclr-2026',
     date: '2026.01.26',
     emoji: '🎉',
