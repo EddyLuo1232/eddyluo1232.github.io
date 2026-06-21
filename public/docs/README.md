@@ -5,6 +5,7 @@
 ### 📄 PDFs 目录 (`docs/pdfs/`)
 存放所有PDF文档，包括：
 - `CV_Eddy.pdf` - Eddy的简历
+- `agentlens.pdf` - AgentLens预印本论文
 - `doxing_via_the_lens.pdf` - 研究论文PDF
 
 ### 📝 说明文档

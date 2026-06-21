@@ -312,6 +312,21 @@ export const publications: Publication[] = [
 // Pre-prints
 export const preprints: Publication[] = [
   {
+    id: 'agentlens',
+    badge: 'Pre-print',
+    image: '/images/publications/agentlens.png',
+    alt: 'AgentLens',
+    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Yihao Quan, Mingyu Jin, Jie Cai, Chaowei Xiao, Jingcheng Niu, Zhen Xiang',
+    title: {
+      en: '<em>AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent</em>',
+      zh: '<em>AgentLens: 通过机械性子空间实现多轮代码智能体的可解释安全引导</em>'
+    },
+    links: [
+      { href: '/docs/pdfs/agentlens.pdf', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://github.com/EddyLuo1232/AgentLens', label: { en: '[Code]', zh: '[代码]' } }
+    ]
+  },
+  {
     id: 'foodguardbench',
     badge: 'Arxiv',
     image: '/images/publications/foodguardbench.png',
