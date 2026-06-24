@@ -7,6 +7,7 @@ export type Theme = 'light' | 'dark' | 'auto';
 export interface Publication {
   id: string;
   badge: string;
+  badgeLogo?: string;
   image: string;
   alt: string;
   authors: string;
@@ -21,7 +22,6 @@ export interface Publication {
       zh: string;
     };
   }>;
-  highlight?: string;
   award?: {
     en: string;
     zh: string;
@@ -42,20 +42,11 @@ export interface Publication {
 export interface NewsItem {
   id: string;
   date: string;
-  emoji: string;
+  tag?: {
+    en: string;
+    zh: string;
+  };
   content: {
-    en: string;
-    zh: string;
-  };
-}
-
-export interface ResearchInterest {
-  id: string;
-  title: {
-    en: string;
-    zh: string;
-  };
-  description: {
     en: string;
     zh: string;
   };
@@ -64,13 +55,29 @@ export interface ResearchInterest {
 export interface SocialLink {
   id: string;
   href: string;
-  icon?: string;
-  iconType: 'fas' | 'fab' | 'img';
+  icon: string;
   label: {
     en: string;
     zh: string;
   };
-  imgSrc?: string;
+}
+
+export interface TimelineItem {
+  id: string;
+  name: TranslatableText;
+  dept?: TranslatableText;
+  position: TranslatableText;
+  date: TranslatableText;
+  detail?: TranslatableText;
+  initials: string;
+  logo?: string;
+}
+
+export interface AwardItem {
+  id: string;
+  name: TranslatableText;
+  date: TranslatableText;
+  detail?: TranslatableText;
 }
 
 export interface TranslatableText {

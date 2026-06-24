@@ -2,29 +2,22 @@ import React, { useEffect } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navigation from './components/Navigation/Navigation';
-import Hero from './components/Hero/Hero';
-import Quote from './components/Quote/Quote';
-import News from './components/News/News';
-import Publications from './components/Publications/Publications';
-import Stats from './components/Stats/Stats';
+import AcademicHome from './components/AcademicHome/AcademicHome';
 import Footer from './components/Footer/Footer';
 import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import './styles/global.css';
 
+const SECTION_IDS = ['about', 'experience', 'news', 'publications'];
+
 const AppContent: React.FC = () => {
-  const sectionIds = ['about', 'news', 'publications'];
-  const activeSection = useScrollSpy({ sectionIds, offset: 100 });
+  const activeSection = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });
 
   // Smooth scroll to section
   const handleSectionClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 70; // Account for fixed navbar
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -41,20 +34,6 @@ const AppContent: React.FC = () => {
     googleFonts.rel = 'stylesheet';
     googleFonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap';
     document.head.appendChild(googleFonts);
-
-    // Clustrmaps script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'clustrmaps';
-    script.src = '//clustrmaps.com/map_v2.js?d=Y7nEoZfJ7y3jwj6-jBTMdqj58PnQpNj3JkSRenEst8A&cl=ffffff&w=a';
-    
-    // Add script to the stats widget container after component mounts
-    setTimeout(() => {
-      const statsWidget = document.getElementById('clustrmaps-widget');
-      if (statsWidget && !document.getElementById('clustrmaps')) {
-        statsWidget.appendChild(script);
-      }
-    }, 2000);
 
     return () => {
       // Cleanup
@@ -117,7 +96,7 @@ const AppContent: React.FC = () => {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #2563eb;
+      background: #111111;
       color: white;
       padding: 12px 24px;
       border-radius: 8px;
@@ -156,11 +135,7 @@ const AppContent: React.FC = () => {
         activeSection={activeSection} 
         onSectionClick={handleSectionClick} 
       />
-      <Hero />
-      <Quote />
-      <News />
-      <Publications />
-      <Stats />
+      <AcademicHome />
       <Footer />
       <DarkModeToggle />
     </>

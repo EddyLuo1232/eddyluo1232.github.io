@@ -1,12 +1,11 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { Theme } from '../types';
 
 interface ThemeContextType {
-  theme: Theme;
   isDarkMode: boolean;
   toggleTheme: () => void;
-  setTheme: (theme: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -20,13 +19,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check if it should be dark mode based on time
-  const shouldBeAutoDark = (): boolean => {
+  const shouldBeAutoDark = useCallback((): boolean => {
     const hour = new Date().getHours();
     return hour >= 18 || hour <= 6; // 6 PM to 6 AM
-  };
+  }, []);
 
   // Apply theme to document
-  const applyTheme = (newTheme: Theme) => {
+  const applyTheme = useCallback((newTheme: Theme) => {
     const shouldBeDark = newTheme === 'dark' || (newTheme === 'auto' && shouldBeAutoDark());
     
     setIsDarkMode(shouldBeDark);
@@ -36,7 +35,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     } else {
       document.body.classList.remove('dark-mode');
     }
-  };
+  }, [shouldBeAutoDark]);
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
@@ -45,7 +44,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     
     setThemeState(initialTheme);
     applyTheme(initialTheme);
-  }, []);
+  }, [applyTheme]);
 
   // Handle auto theme changes based on time
   useEffect(() => {
@@ -56,7 +55,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
       return () => clearInterval(interval);
     }
-  }, [theme]);
+  }, [applyTheme, theme]);
 
   // Handle system theme preference changes
   useEffect(() => {
@@ -67,7 +66,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
     }
-  }, [theme]);
+  }, [applyTheme, theme]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
@@ -81,10 +80,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   };
 
   const value = {
-    theme,
     isDarkMode,
     toggleTheme,
-    setTheme,
   };
 
   return (
