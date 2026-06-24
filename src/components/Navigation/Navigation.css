@@ -176,6 +176,9 @@
         left: 0;
         right: 0;
         display: grid;
+        justify-content: normal;
+        justify-items: center;
+        align-items: stretch;
         gap: 0;
         padding: 10px 12px 14px;
         background: #ffffff;
@@ -197,6 +200,8 @@
     }
 
     .nav-link {
+        display: flex;
+        width: min(100%, 240px);
         justify-content: center;
         min-height: 40px;
     }
