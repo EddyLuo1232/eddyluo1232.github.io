@@ -190,22 +190,24 @@ const AcademicHome: React.FC = () => {
                 alt={isAnimeAvatar ? 'Eddy anime avatar' : 'Eddy Luo'}
               />
             </button>
-            <h1>{personalInfo.name}</h1>
-            <p className="academic-profile-subtitle">{t(personalInfo.title)}</p>
-            <p className="academic-profile-location">
-              <i className="fas fa-location-dot" aria-hidden="true"></i>
-              {t(personalInfo.location)}
-            </p>
-            <a className="academic-email" href={`mailto:${personalInfo.email}`}>
-              {personalInfo.email.replace('@', '(at)')}
-            </a>
-            <div className="academic-socials">
-              {socialLinks.map((link) => (
-                <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer">
-                  <i className={link.icon} aria-hidden="true"></i>
-                  <span>{t(link.label)}</span>
-                </a>
-              ))}
+            <div className="academic-profile-meta">
+              <h1>{personalInfo.name}</h1>
+              <p className="academic-profile-subtitle">{t(personalInfo.title)}</p>
+              <p className="academic-profile-location">
+                <i className="fas fa-location-dot" aria-hidden="true"></i>
+                {t(personalInfo.location)}
+              </p>
+              <a className="academic-email" href={`mailto:${personalInfo.email}`}>
+                {personalInfo.email.replace('@', '(at)')}
+              </a>
+              <div className="academic-socials">
+                {socialLinks.map((link) => (
+                  <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer">
+                    <i className={link.icon} aria-hidden="true"></i>
+                    <span>{t(link.label)}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </aside>
