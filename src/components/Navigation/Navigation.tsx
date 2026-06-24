@@ -11,7 +11,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
   const { language, setLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navMenuRef = useRef<HTMLDivElement>(null);
-  const hamburgerRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   const navItems = [
@@ -89,6 +89,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
 
         <div
           ref={navMenuRef}
+          id="mobile-navigation"
           className={`nav-menu ${isMobileMenuOpen ? 'active' : ''} ${activeSection ? 'has-active' : ''}`}
         >
           {navItems.map((item) => (
@@ -109,23 +110,23 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
           ))}
         </div>
 
-        <div
+        <button
           ref={hamburgerRef}
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+          type="button"
+          aria-label={
+            language === 'zh'
+              ? (isMobileMenuOpen ? '关闭导航菜单' : '打开导航菜单')
+              : (isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu')
+          }
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              setIsMobileMenuOpen(!isMobileMenuOpen);
-            }
-          }}
         >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </div>
+        </button>
       </div>
     </nav>
   );
