@@ -113,6 +113,10 @@
     width: 36px;
     height: 36px;
     padding: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -121,7 +125,7 @@
     display: block;
     width: 20px;
     height: 2px;
-    margin: 4px 0;
+    margin: 0;
     background: #111111;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -148,7 +152,8 @@
     }
 
     .hamburger {
-        display: block;
+        display: flex;
+        flex: 0 0 36px;
     }
 
     .nav-menu {
