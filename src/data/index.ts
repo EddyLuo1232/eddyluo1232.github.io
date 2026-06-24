@@ -176,8 +176,8 @@ export const awardItems: AwardItem[] = [
   {
     id: 'uga-research-award',
     name: {
-      en: 'Graduate Student Research Award, University of Georgia',
-      zh: '佐治亚大学 Graduate Student Research Award'
+      en: 'SoC Graduate Student Research Award, University of Georgia',
+      zh: '佐治亚大学 SoC Graduate Student Research Award'
     },
     date: {
       en: '2026',
@@ -222,8 +222,8 @@ export const newsItems: NewsItem[] = [
     date: '2026.04.10',
     tag: { en: 'Award', zh: '获奖' },
     content: {
-      en: `I received the <strong>Graduate Student Research Award</strong> from the <strong>University of Georgia</strong>.`,
-      zh: `我获得了<strong>佐治亚大学</strong>颁发的<strong>Graduate Student Research Award</strong>。`
+      en: `I received the <strong>SoC Graduate Student Research Award</strong> from the <strong>University of Georgia</strong>.`,
+      zh: `我获得了<strong>佐治亚大学</strong>颁发的<strong>SoC Graduate Student Research Award</strong>。`
     }
   },
   {
