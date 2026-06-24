@@ -2,8 +2,6 @@
 
 export type Language = 'en' | 'zh';
 
-export type Theme = 'light' | 'dark' | 'auto';
-
 export interface Publication {
   id: string;
   badge: string;

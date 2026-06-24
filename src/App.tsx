@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navigation from './components/Navigation/Navigation';
 import AcademicHome from './components/AcademicHome/AcademicHome';
 import Footer from './components/Footer/Footer';
-import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import './styles/global.css';
 
@@ -20,6 +18,11 @@ const AppContent: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  useEffect(() => {
+    document.body.classList.remove('dark-mode');
+    localStorage.removeItem('darkMode');
+  }, []);
 
   // Add Font Awesome and Google Fonts
   useEffect(() => {
@@ -137,18 +140,15 @@ const AppContent: React.FC = () => {
       />
       <AcademicHome />
       <Footer />
-      <DarkModeToggle />
     </>
   );
 };
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <AppContent />
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 };
 
