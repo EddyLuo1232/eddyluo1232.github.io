@@ -132,7 +132,6 @@ export const experienceItems: TimelineItem[] = [
     id: 'meta-superintelligence-labs',
     initials: 'MSL',
     logo: '/images/assets/meta.jpg',
-    href: 'https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs',
     name: {
       en: 'Meta Superintelligence Labs',
       zh: 'Meta Superintelligence Labs'
