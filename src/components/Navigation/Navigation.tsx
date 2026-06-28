@@ -15,7 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   const navItems = [
-    { id: 'about', label: { en: 'About', zh: '关于' } },
+    { id: 'about', label: { en: 'About', zh: '简介' } },
     { id: 'experience', label: { en: 'Experience', zh: '经历' } },
     { id: 'news', label: { en: 'News', zh: '动态' } },
     { id: 'publications', label: { en: 'Publications', zh: '论文' } }

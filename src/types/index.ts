@@ -63,6 +63,7 @@ export interface SocialLink {
 export interface TimelineItem {
   id: string;
   name: TranslatableText;
+  href?: string;
   dept?: TranslatableText;
   position: TranslatableText;
   date: TranslatableText;

@@ -344,6 +344,15 @@
     gap: 10px;
 }
 
+.academic-timeline-heading a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.academic-timeline-heading a:hover {
+    text-decoration: underline;
+}
+
 .academic-timeline-heading strong {
     color: #171717;
     font-size: 0.9rem;

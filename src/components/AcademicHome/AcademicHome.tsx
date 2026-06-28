@@ -55,26 +55,38 @@ const AcademicHome: React.FC = () => {
     <div className="academic-timeline-column">
       <h3>{title}</h3>
       <ul className="academic-timeline-list">
-        {items.map((item) => (
-          <li key={item.id} className="academic-timeline-item">
-            {item.logo ? (
-              <div className={`academic-logo-mark academic-logo-${item.id}`}>
-                <img src={item.logo} alt={t(item.name)} />
+        {items.map((item) => {
+          const itemName = t(item.name);
+
+          return (
+            <li key={item.id} className="academic-timeline-item">
+              {item.logo ? (
+                <div className={`academic-logo-mark academic-logo-${item.id}`}>
+                  <img src={item.logo} alt={itemName} />
+                </div>
+              ) : (
+                <div className={`academic-initials ${getInitialClass(item.initials)}`}>{item.initials}</div>
+              )}
+              <div className="academic-timeline-body">
+                <div className="academic-timeline-heading">
+                  <strong>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        {itemName}
+                      </a>
+                    ) : (
+                      itemName
+                    )}
+                  </strong>
+                  <span>{t(item.date)}</span>
+                </div>
+                {item.dept && <p className="academic-muted">{t(item.dept)}</p>}
+                <p>{t(item.position)}</p>
+                {item.detail && <p className="academic-detail">{t(item.detail)}</p>}
               </div>
-            ) : (
-              <div className={`academic-initials ${getInitialClass(item.initials)}`}>{item.initials}</div>
-            )}
-            <div className="academic-timeline-body">
-              <div className="academic-timeline-heading">
-                <strong>{t(item.name)}</strong>
-                <span>{t(item.date)}</span>
-              </div>
-              {item.dept && <p className="academic-muted">{t(item.dept)}</p>}
-              <p>{t(item.position)}</p>
-              {item.detail && <p className="academic-detail">{t(item.detail)}</p>}
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -183,7 +195,7 @@ const AcademicHome: React.FC = () => {
             <button
               className="academic-avatar-button"
               onClick={() => setIsAnimeAvatar((value) => !value)}
-              title={language === 'zh' ? '点击切换头像' : 'Click to switch avatar'}
+              title={language === 'zh' ? '切换头像' : 'Click to switch avatar'}
             >
               <img
                 src={isAnimeAvatar ? personalInfo.profileImages.anime : personalInfo.profileImages.photo}
@@ -220,7 +232,7 @@ const AcademicHome: React.FC = () => {
             </div>
           </section>
 
-          <section className="academic-panel academic-anime-banner" aria-label={t({ en: 'Quote', zh: '引言' })}>
+          <section className="academic-panel academic-anime-banner" aria-label={t({ en: 'Quote', zh: '引语' })}>
             <img src={quote.images.left} alt="" className="academic-banner-character left" />
             <blockquote>
               <p>{t(quote.text)}</p>
@@ -232,7 +244,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel" id="experience">
             <div className="academic-card-body academic-experience-grid">
-              <TimelineList title={t({ en: 'Education & Experience', zh: '教育与经历' })} items={educationAndExperienceItems} />
+              <TimelineList title={t({ en: 'Education & Experience', zh: '教育与研究经历' })} items={educationAndExperienceItems} />
               <div className="academic-awards">
                 <h3>{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h3>
                 <ul>
@@ -274,7 +286,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel" id="publications">
             <div className="academic-section-heading">
-              <h2>{t({ en: 'Selected Preprints', zh: '精选预印本论文' })}</h2>
+              <h2>{t({ en: 'Selected Preprints', zh: '精选预印本' })}</h2>
             </div>
             <div className="academic-card-body academic-publication-list">
               {preprints.map((publication) => (
@@ -285,7 +297,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel">
             <div className="academic-section-heading">
-              <h2>{t({ en: 'Selected Publications', zh: '精选已发表论文' })}</h2>
+              <h2>{t({ en: 'Selected Publications', zh: '精选发表论文' })}</h2>
             </div>
             <div className="academic-card-body academic-publication-list">
               {publications.map((publication) => (
