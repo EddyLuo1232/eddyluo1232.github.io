@@ -110,6 +110,12 @@ const AcademicHome: React.FC = () => {
         <em>{getVenueLabel(publication.badge)}</em>
       </>
     );
+    const citationLabel = publication.citation
+      ? t({
+        en: `Cited by ${publication.citation.count.toLocaleString('en-US')}`,
+        zh: `引用 ${publication.citation.count.toLocaleString('zh-CN')} 次`
+      })
+      : '';
 
     return (
       <article className="academic-publication">
@@ -130,6 +136,22 @@ const AcademicHome: React.FC = () => {
               <span className={badgeClassName} title={getVenueLabel(publication.badge)}>
                 {badgeContent}
               </span>
+            )}
+            {publication.citation && (
+              <a
+                className="academic-publication-citation"
+                href={publication.citation.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Google Scholar"
+                aria-label={t({
+                  en: `${citationLabel} on Google Scholar`,
+                  zh: `Google Scholar ${citationLabel}`
+                })}
+              >
+                <i className="fas fa-quote-right" aria-hidden="true"></i>
+                <span>{citationLabel}</span>
+              </a>
             )}
             {actionLinks.map((link) => (
               link.href ? (() => {

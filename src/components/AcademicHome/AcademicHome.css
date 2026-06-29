@@ -585,6 +585,29 @@
     text-decoration: none;
 }
 
+.academic-publication-links .academic-publication-citation {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 24px;
+    padding: 0 7px;
+    border-radius: 4px;
+    background: #f4f4f4;
+    color: #333333;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.academic-publication-links .academic-publication-citation i {
+    color: #666666;
+    font-size: 0.72rem;
+}
+
+.academic-publication-links .academic-publication-citation:hover {
+    background: #eeeeee;
+    text-decoration: none;
+}
+
 .academic-publication-links .academic-publication-icon-link {
     width: 24px;
     height: 24px;

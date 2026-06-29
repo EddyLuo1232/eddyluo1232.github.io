@@ -20,6 +20,10 @@ export interface Publication {
       zh: string;
     };
   }>;
+  citation?: {
+    count: number;
+    href: string;
+  };
   award?: {
     en: string;
     zh: string;
