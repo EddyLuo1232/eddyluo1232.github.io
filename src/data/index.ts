@@ -138,8 +138,8 @@ export const experienceItems: TimelineItem[] = [
       zh: 'Meta Superintelligence Labs'
     },
     dept: {
-      en: 'San Jose, CA, USA',
-      zh: '美国加州圣何塞'
+      en: 'Menlo Park, CA, USA',
+      zh: '美国加州门洛帕克'
     },
     position: {
       en: 'Internship, Research Scientist',

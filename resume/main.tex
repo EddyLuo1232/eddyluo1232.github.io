@@ -1,0 +1,234 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,left=1.2cm,right=1.2cm,top=1.6cm,bottom=1.6cm]{geometry}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{lastpage}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+
+\definecolor{linkpink}{RGB}{140,21,21}
+\definecolor{lightgray}{gray}{0.7}
+
+\newcommand{\sepspace}{\vspace{6pt}}
+\newcommand{\me}{\underline{Weidi Luo}}
+\newcommand{\eq}{$^*$}
+\newcommand{\link}[2]{\textcolor{linkpink}{\href{#1}{\textbf{#2}}}}
+\newcommand{\paper}[6]{\item[#1] #3. \link{#2}{#4}. In \textit{#5}. #6}
+\newcommand{\cventry}[5]{\raggedleft \textbf{#1} & #2\\ \raggedleft #3 & #4\\ & #5\\}
+\newcommand{\employmententry}[5]{\raggedleft \textbf{#1} & {#2}\\ \raggedleft #3 & #4~~\textcolor{gray}{#5}\\}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Weidi Luo}
+\fancyfoot[R]{\footnotesize Last updated: \today. Page~\thepage~of~\pageref{LastPage}}
+
+\begin{document}
+
+\begin{center}
+    \Large{\textbf{\textsc{Weidi Luo}}}
+\end{center}
+
+\vspace{-18pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\noindent
+\begin{minipage}[t]{0.54\textwidth}
+    \faEnvelope~\textcolor{linkpink}{\href{mailto:luo.1455@uga.edu}{luo.1455@uga.edu}}\\
+    \faHome~\textcolor{linkpink}{\href{https://eddyluo.com/}{eddyluo.com}}\\
+    \faGoogle~\textcolor{linkpink}{\href{https://scholar.google.com/citations?user=EZzmjVUAAAAJ}{google scholar}}\\
+    \faGithub~\textcolor{linkpink}{\href{https://github.com/EddyLuo1232}{github.com/EddyLuo1232}}\\
+    \faTwitter~\textcolor{linkpink}{\href{https://x.com/luoweidi84}{x.com/luoweidi84}}\\
+    \faLinkedin~\textcolor{linkpink}{\href{https://www.linkedin.com/in/weidi-luo-aa02b5242}{linkedin.com/in/weidi-luo}}
+\end{minipage}
+\begin{minipage}[t]{0.46\textwidth}
+    \raggedleft
+    School of Computing\\
+    University of Georgia\\
+    Athens, GA\\
+    United States\\
+\end{minipage}
+
+\sepspace
+\section*{Research Overview}
+
+My research focuses on \textbf{AI safety and security}, with a particular emphasis on trustworthy foundation models, including multimodal and reasoning models, and autonomous AI agents. Across my research and industry experience, I study how advanced models fail under realistic adversarial, privacy, and security threats, and how to build evaluations and safeguards that remain effective in deployment.
+
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=4pt]
+    \item[$\circ$] \textbf{AI Safety and Security}: detecting real-world threats, jailbreak and privacy-risk analysis, mechanistic safety analysis, and risk mitigation for foundation models.
+    \item[$\circ$] \textbf{Agent Safety}: adaptive agent guardrails, agent interpretability, computer-use and coding-agent red-teaming, and real-world threat benchmarking.
+    \item[$\circ$] \textbf{AI for Security Applications}: vulnerability discovery, cybersecurity evaluation, and security-focused applications of foundation models and AI agents.
+\end{itemize}
+
+\sepspace
+\section*{Education}
+
+\begin{tabular}{p{4.1cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    \raggedleft \textbf{Ph.D. Student} & University of Georgia, School of Computing\\
+    \raggedleft CS & Advisor: Zhen Xiang\\
+    \raggedleft Aug 2025 -- Present & Co-advised by Chaowei Xiao, Johns Hopkins University\\
+    & \\
+
+    \raggedleft \textbf{B.A.} & The Ohio State University, College of Arts and Sciences\\
+    \raggedleft CS & Advisors: Chaowei Xiao, Yu Li, Ruixiang Tang, and Yu Su\\
+    \raggedleft Aug 2022 -- Jul 2025 & \\
+\end{tabular}
+
+\sepspace
+\section*{Industry Experience}
+
+\begin{tabular}{p{4.1cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    \employmententry{Research Intern}{Meta Superintelligence Labs}{Jun 2026 -- Present}{Menlo Park, CA, USA}{Advisor: Bo Li}
+    & \\
+
+    \employmententry{Research Intern}{Virtue AI}{May 2026 -- Jun 2026}{San Francisco, CA, USA}{Advisor: Zhaorun Chen}
+    & \\
+
+    \employmententry{MLE Intern}{IDEA}{Jul 2024 -- Oct 2024}{Shenzhen, Guangdong, China}{Advisor: Yu Li}
+\end{tabular}
+
+\sepspace
+\section*{Research Experience}
+
+\begin{tabular}{p{4.1cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    \cventry{Research Intern}{Johns Hopkins University}{Dec 2023 -- Apr 2025}{Department of Electrical and Computer Engineering}{Advisor: Chaowei Xiao}
+    & \\
+
+    \cventry{Research Intern}{Rutgers University}{Oct 2024 -- Dec 2024}{Department of Computer Science}{Advisor: Ruixiang Tang}
+    & \\
+
+    \cventry{Research Assistant}{ICICLE Institute, The Ohio State University}{Apr 2023 -- Aug 2023}{College of Engineering}{Advisor: Yu Su}
+\end{tabular}
+
+\sepspace
+\section*{Honors and Awards}
+
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    SoC Graduate Student Research Award, University of Georgia & 2026\\
+    \$20,000 SafeBench Prize, Center for AI Safety & 2025\\
+\end{tabular}
+
+\sepspace
+\section*{Selected Publications}
+The~\eq~sign denotes equal contribution.
+
+\subsection*{Peer-Reviewed Papers}
+\begin{enumerate}[leftmargin=2.4em,itemsep=4pt]
+
+\paper
+    {C6}
+    {https://arxiv.org/pdf/2504.19373}
+    {\me\eq, Tianyu Lu\eq, Qiming Zhang\eq, Xiaogeng Liu, Bin Hu, Yue Zhao, Jieyu Zhao, Song Gao, Patrick McDaniel, Zhen Xiang, and Chaowei Xiao}
+    {Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models}
+    {International Conference on Learning Representations (ICLR)}
+    {2026.}
+
+\paper
+    {C5}
+    {https://arxiv.org/abs/2502.11448}
+    {\me, Shenghong Dai, Xiaogeng Liu, Suman Banerjee, Huan Sun, Muhao Chen, and Chaowei Xiao}
+    {AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection}
+    {Annual Meeting of the Association for Computational Linguistics (ACL) Main}
+    {2025.}
+
+\paper
+    {C4}
+    {https://arxiv.org/abs/2404.03027}
+    {\me\eq, Siyuan Ma\eq, Xiaogeng Liu\eq, Xiaoyu Guo, and Chaowei Xiao}
+    {JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks}
+    {Conference on Language Modeling (COLM)}
+    {2024. \textcolor{gray}{Winner of the \$20,000 SafeBench Prize; integrated into NVIDIA/garak and Microsoft's PyRIT.}}
+
+\paper
+    {C3}
+    {https://arxiv.org/abs/2410.17922}
+    {\me\eq, He Cao\eq, Yu Wang, Zijing Liu, Aidan Wong, Bin Feng, Yuan Yao, and Yu Li}
+    {Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models}
+    {Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL) Findings}
+    {2025.}
+
+\paper
+    {C2}
+    {https://arxiv.org/abs/2411.13504}
+    {Mingyu Jin, \me, Sitao Cheng, Xinyi Wang, Wenyue Hua, Ruixiang Tang, William Yang Wang, and Yongfeng Zhang}
+    {Disentangling Memory and Reasoning Ability in Large Language Models}
+    {Annual Meeting of the Association for Computational Linguistics (ACL) Main}
+    {2025.}
+
+\item[C1] Vardaan Pahuja, \me, Yu Gu, Cheng-Hao Tu, Hong-You Chen, Tanya Berger-Wolf, Charles Stewart, Song Gao, Wei-Lun Chao, and Yu Su. \textcolor{linkpink}{\textbf{Bringing Back the Context: Image Classification as Link Prediction on Multimodal Knowledge Graphs}}. In \textit{ACM International Conference on Information and Knowledge Management (CIKM) Oral}. 2024.
+
+\end{enumerate}
+
+\subsection*{Workshop Papers}
+\begin{enumerate}[leftmargin=2.4em,itemsep=4pt]
+
+\paper
+    {W2}
+    {https://arxiv.org/abs/2510.06607}
+    {\me, Qiming Zhang, Tianyu Lu, Xiaogeng Liu, Bin Hu, Hung-Chun Chiu, Siyuan Ma, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, and Chaowei Xiao}
+    {Code Agent can be an End-to-end System Hacker: Benchmarking Real-world Threats of Computer-use Agent}
+    {ICML AIWILD Workshop (Oral)}
+    {2026.}
+
+\end{enumerate}
+
+\subsection*{Preprints}
+\begin{enumerate}[leftmargin=2.4em,itemsep=4pt]
+
+\paper
+    {P3}
+    {https://arxiv.org/pdf/2606.22673}
+    {\me, Qiming Zhang, Yihao Quan, Mingyu Jin, Jie Cai, Chaowei Xiao, Jingcheng Niu, and Zhen Xiang}
+    {AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent}
+    {arXiv Preprint}
+    {2026.}
+
+\paper
+    {P2}
+    {https://arxiv.org/pdf/2604.01444}
+    {\me\eq, Xiaofei Wen\eq, Tenghao Huang\eq, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligoric, and Muhao Chen}
+    {Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models}
+    {arXiv Preprint}
+    {2026.}
+
+\paper
+    {P1}
+    {https://arxiv.org/abs/2405.20773}
+    {Siyuan Ma\eq, \me\eq, Yu Wang, Xiaogeng Liu, Muhao Chen, Bo Li, and Chaowei Xiao}
+    {Visual-RolePlay: Universal Jailbreak Attack on MultiModal Large Language Models via Role-playing Image Character}
+    {arXiv Preprint}
+    {2024.}
+
+\end{enumerate}
+
+\sepspace
+\section*{Professional Service}
+
+\subsection*{Conference Reviewing}
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    Annual Meeting of the Association for Computational Linguistics (ACL) & 2025, 2026\\
+    Empirical Methods in Natural Language Processing (EMNLP) & 2025\\
+    European Chapter of the Association for Computational Linguistics (EACL) & 2026\\
+    International Conference on Machine Learning (ICML) & 2026\\
+    Conference on Language Modeling (COLM) & 2026\\
+    Neural Information Processing Systems (NeurIPS) & 2026\\
+\end{tabular}
+
+\sepspace
+\section*{Hobbies}
+
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    Violin, Level 10, Sichuan Musicians Association & \\
+\end{tabular}
+
+\end{document}
