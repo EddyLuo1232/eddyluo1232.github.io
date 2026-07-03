@@ -1,14 +1,14 @@
 export const scholarCitationSource = "https://scholar.google.com/citations?hl=zh-CN&user=EZzmjVUAAAAJ&pagesize=100";
-export const scholarCitationUpdatedAt = "2026-06-29T22:31:08.265Z";
+export const scholarCitationUpdatedAt = "2026-07-03T11:01:08.451Z";
 
 export const scholarCitations = {
   "doxing": {
-    count: 25,
+    count: 24,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=6942052149324763966,9752615384406517593",
     sourceTitle: "Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models"
   },
   "jailbreakv": {
-    count: 266,
+    count: 268,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=601264157085775298",
     sourceTitle: "JailBreakV: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks"
   },
@@ -43,7 +43,7 @@ export const scholarCitations = {
     sourceTitle: "Your Cursor is Not Secure: Command Line Interface Agent Can Expose Realistic Risks Through Tactics, Techniques, and Procedures"
   },
   "visual-roleplay": {
-    count: 91,
+    count: 92,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=5999857732852095703,8868438552451128454",
     sourceTitle: "Visual-RolePlay: Universal Jailbreak Attack on MultiModal Large Language Models via Role-playing Image Character"
   }
