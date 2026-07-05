@@ -1,5 +1,5 @@
 export const scholarCitationSource = "https://scholar.google.com/citations?hl=zh-CN&user=EZzmjVUAAAAJ&pagesize=100";
-export const scholarCitationUpdatedAt = "2026-07-03T11:01:08.451Z";
+export const scholarCitationUpdatedAt = "2026-07-05T10:28:43.239Z";
 
 export const scholarCitations = {
   "doxing": {
