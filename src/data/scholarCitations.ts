@@ -1,5 +1,5 @@
 export const scholarCitationSource = "https://scholar.google.com/citations?hl=zh-CN&user=EZzmjVUAAAAJ&pagesize=100";
-export const scholarCitationUpdatedAt = "2026-07-05T10:28:43.239Z";
+export const scholarCitationUpdatedAt = "2026-07-09T11:20:03.397Z";
 
 export const scholarCitations = {
   "doxing": {
@@ -8,12 +8,12 @@ export const scholarCitations = {
     sourceTitle: "Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models"
   },
   "jailbreakv": {
-    count: 268,
+    count: 269,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=601264157085775298",
     sourceTitle: "JailBreakV: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks"
   },
   "agrail": {
-    count: 74,
+    count: 76,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=2582607623046763543,9459528092417189637",
     sourceTitle: "AGrail: A lifelong Agent Guardrail with Effective and Adaptive Safety Detection"
   },
@@ -23,7 +23,7 @@ export const scholarCitations = {
     sourceTitle: "Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models"
   },
   "memory-reasoning": {
-    count: 75,
+    count: 78,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=14821059652117426426",
     sourceTitle: "Disentangling Memory and Reasoning Ability in Large Language Models"
   },
@@ -43,7 +43,7 @@ export const scholarCitations = {
     sourceTitle: "Your Cursor is Not Secure: Command Line Interface Agent Can Expose Realistic Risks Through Tactics, Techniques, and Procedures"
   },
   "visual-roleplay": {
-    count: 92,
+    count: 94,
     href: "https://scholar.google.com/scholar?oi=bibs&hl=zh-CN&cites=5999857732852095703,8868438552451128454",
     sourceTitle: "Visual-RolePlay: Universal Jailbreak Attack on MultiModal Large Language Models via Role-playing Image Character"
   }
