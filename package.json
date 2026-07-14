@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "update:scholar": "node scripts/update-scholar-citations.mjs",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "homepage": "https://eddyluo1232.github.io",

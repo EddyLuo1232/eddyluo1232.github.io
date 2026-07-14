@@ -1,5 +1,4 @@
 import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem } from '../types';
-import { scholarCitations } from './scholarCitations';
 
 // Personal information
 export const personalInfo = {
@@ -308,7 +307,6 @@ export const publications: Publication[] = [
       en: '<em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em>',
       zh: '<em>镜头中的开盒风险：揭示多模态大型推理模型中的位置相关隐私泄露</em>'
     },
-    citation: scholarCitations.doxing,
     links: [
       { href: 'https://arxiv.org/pdf/2504.19373', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://doxbench.github.io/', label: { en: '[Project Page]', zh: '[项目主页]' } },
@@ -331,7 +329,6 @@ export const publications: Publication[] = [
       en: '<em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em>',
       zh: '<em>JailBreakV-28K：面向多模态大语言模型越狱攻击鲁棒性评估的基准</em>'
     },
-    citation: scholarCitations.jailbreakv,
     links: [
       { href: 'https://arxiv.org/abs/2404.03027', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://eddyluo1232.github.io/JailBreakV28K/', label: { en: '[Project Page]', zh: '[项目主页]' } },
@@ -363,7 +360,6 @@ export const publications: Publication[] = [
       en: '<em>AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection</em>',
       zh: '<em>AGrail：面向终身智能体的护栏与有效自适应安全检测</em>'
     },
-    citation: scholarCitations.agrail,
     links: [
       { href: 'https://arxiv.org/abs/2502.11448', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://eddyluo1232.github.io/AGrail/', label: { en: '[Project Page]', zh: '[项目主页]' } },
@@ -381,7 +377,6 @@ export const publications: Publication[] = [
       en: '<em>Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</em>',
       zh: '<em>面向大语言模型安全增强的动态引导与领域适配防护</em>'
     },
-    citation: scholarCitations['dynamic-safeguards'],
     links: [
       { href: 'https://arxiv.org/abs/2410.17922', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/IDEA-XL/G4D', label: { en: '[Code]', zh: '[代码]' } }
@@ -398,7 +393,6 @@ export const publications: Publication[] = [
       en: '<em>Disentangling Memory and Reasoning Ability in Large Language Models</em>',
       zh: '<em>解耦大语言模型中的记忆与推理能力</em>'
     },
-    citation: scholarCitations['memory-reasoning'],
     links: [
       { href: 'https://arxiv.org/abs/2411.13504', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/MingyuJ666/Disentangling-Memory-and-Reasoning', label: { en: '[Code]', zh: '[代码]' } }
@@ -419,7 +413,6 @@ export const preprints: Publication[] = [
       en: '<em>AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent</em>',
       zh: '<em>AgentLens：基于机制子空间的多轮代码智能体可解释安全引导</em>'
     },
-    citation: scholarCitations.agentlens,
     links: [
       { href: 'https://arxiv.org/pdf/2606.22673', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/EddyLuo1232/AgentLens', label: { en: '[Code]', zh: '[代码]' } }
@@ -436,7 +429,6 @@ export const preprints: Publication[] = [
       en: '<em>Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models</em>',
       zh: '<em>烹调风险：大语言模型食品安全风险的基准评测与缓解</em>'
     },
-    citation: scholarCitations.foodguardbench,
     links: [
       { href: 'https://arxiv.org/pdf/2604.01444', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } }
@@ -453,7 +445,6 @@ export const preprints: Publication[] = [
       en: '<em>Code Agent can be an End-to-end System Hacker: Benchmarking Real-world Threats of Computer-use Agent</em>',
       zh: '<em>代码智能体也可以成为端到端系统黑客：计算机使用智能体真实世界威胁基准评测</em>'
     },
-    citation: scholarCitations.advcua,
     links: [
       { href: 'https://arxiv.org/abs/2510.06607', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://eddyluo.com/AdvCUA/', label: { en: '[Project Page]', zh: '[项目主页]' } },
@@ -471,7 +462,6 @@ export const preprints: Publication[] = [
       en: '<em>Visual-RolePlay: Universal Jailbreak Attack on MultiModal Large Language Models via Role-playing Image Character</em>',
       zh: '<em>Visual-RolePlay：通过角色扮演图像角色实现对多模态大语言模型的通用越狱攻击</em>'
     },
-    citation: scholarCitations['visual-roleplay'],
     links: [
       { href: 'https://arxiv.org/abs/2405.20773', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/SiyuanMaCS/VisualRoleplay', label: { en: '[Code]', zh: '[代码]' } }
