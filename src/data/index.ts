@@ -221,6 +221,15 @@ export const awardItems: AwardItem[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
+    id: 'meta-superintelligence-labs',
+    date: '2026.07.20',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I will join <strong><a href="https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs" target="_blank" rel="noopener noreferrer">Meta Superintelligence Labs</a></strong>, where I will work on <strong>agent red-teaming</strong> under the guidance of <strong>Bo Li</strong>.`,
+      zh: `我将加入 <strong><a href="https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs" target="_blank" rel="noopener noreferrer">Meta Superintelligence Labs</a></strong>，在 <strong>Bo Li</strong> 的指导下开展<strong>智能体红队测试</strong>相关研究。`
+    }
+  },
+  {
     id: 'microsoft-pyrit',
     date: '2026.06.07',
     tag: { en: 'Industry', zh: '行业' },
