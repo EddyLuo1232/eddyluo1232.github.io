@@ -606,6 +606,28 @@
     font-size: 0.82rem !important;
 }
 
+.academic-visitor-panel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.academic-visitor-map {
+    width: 300px;
+    min-height: 150px;
+}
+
+.academic-visitor-map #mapmyvisitors-widget {
+    max-width: none;
+}
+
 @media (max-width: 980px) {
     .academic-shell {
         grid-template-columns: 1fr;

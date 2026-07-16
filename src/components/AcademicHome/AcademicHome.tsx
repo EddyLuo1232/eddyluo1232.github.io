@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
   aboutContent,
@@ -23,6 +23,36 @@ const getPublicationActionIcon = (label: string) => {
   return '';
 };
 const getPublicationActionLabel = (label: string) => label.replace(/^\[|\]$/g, '');
+const VISITOR_MAP_SCRIPT_SRC = '//mapmyvisitors.com/map.js?d=7CTeFyC3wT_A3DlE7A976YOUbxvdVPWluGcvGoy_E6A&cl=ffffff&w=a';
+
+const VisitorMap: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (!container) {
+      return;
+    }
+
+    container.replaceChildren();
+
+    const existingScript = document.getElementById('mapmyvisitors');
+    existingScript?.remove();
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'mapmyvisitors';
+    script.src = VISITOR_MAP_SCRIPT_SRC;
+    container.appendChild(script);
+
+    return () => {
+      container.replaceChildren();
+    };
+  }, []);
+
+  return <div ref={containerRef} className="academic-visitor-map" />;
+};
 
 const AcademicHome: React.FC = () => {
   const { language, t } = useLanguage();
@@ -303,6 +333,10 @@ const AcademicHome: React.FC = () => {
                 <PublicationItem key={publication.id} publication={publication} />
               ))}
             </div>
+          </section>
+
+          <section className="academic-visitor-panel" aria-hidden="true">
+            <VisitorMap />
           </section>
         </div>
       </div>
