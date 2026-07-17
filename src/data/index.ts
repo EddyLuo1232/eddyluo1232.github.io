@@ -183,8 +183,8 @@ export const experienceItems: TimelineItem[] = [
       zh: '中国广东深圳'
     },
     position: {
-      en: 'Internship, Large Language Model Engineer',
-      zh: '大语言模型工程师实习生'
+      en: 'Internship, Machine Learning Engineer',
+      zh: '机器学习工程师实习生'
     },
     date: {
       en: 'Jul 2024 - Oct 2024',
@@ -225,8 +225,8 @@ export const newsItems: NewsItem[] = [
     date: '2026.07.20',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I will join <strong>Meta Superintelligence Labs</strong>, where I will work on <strong>agent red-teaming</strong>.`,
-      zh: `我将加入 <strong>Meta Superintelligence Labs</strong>，开展<strong>智能体红队测试</strong>相关研究。`
+      en: `I will join <strong>Meta Superintelligence Labs</strong> as a <strong>Research Scientist Intern</strong> in <strong>Menlo Park, CA, USA</strong>, where I will work on AI <strong>agent red-teaming</strong>.`,
+      zh: `我将以<strong>研究科学家实习生</strong>的身份加入位于<strong>美国加州门洛帕克</strong>的 <strong>Meta Superintelligence Labs</strong>，开展 AI <strong>智能体红队测试</strong>相关研究。`
     }
   },
   {
