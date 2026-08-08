@@ -49,8 +49,8 @@ export const quote = {
 
 // Interests
 export const interestIntro = {
-  en: 'Outside research, I am also an avant-garde artist with a deep interest in fashion design. I am drawn to classical music, concerts, visual communication, and the long conversation between cognitive science, philosophy, psychology, sociology, language, and form.',
-  zh: '科研之外，我也是一名先锋艺术家，并对时装设计抱有浓厚兴趣。我喜欢古典音乐、音乐会、视觉传达，也长期关注认知科学、哲学、心理学、社会学、语言与形式之间的关系。'
+  en: 'Outside research, I am also an avant-garde artist with a deep interest in anti-fashion design. I am drawn to classical music, concerts, visual communication, and the long conversation between cognitive science, philosophy, psychology, sociology, language, and form.',
+  zh: '科研之外，我也是一名先锋艺术家，并对反时尚设计抱有浓厚兴趣。我喜欢古典音乐、音乐会、视觉传达，也长期关注认知科学、哲学、心理学、社会学、语言与形式之间的关系。'
 };
 
 export const interestGroups: InterestGroup[] = [
