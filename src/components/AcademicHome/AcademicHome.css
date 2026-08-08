@@ -641,11 +641,16 @@
 
 .academic-interest-listing {
     display: grid;
-    border-top: 1px solid #e6e6e6;
 }
 
 .academic-interest-row {
-    border-bottom: 1px solid #eeeeee;
+    min-width: 0;
+}
+
+.academic-interest-row[open] {
+    display: grid;
+    grid-template-columns: 172px minmax(0, 1fr);
+    column-gap: 18px;
 }
 
 .academic-interest-row summary {
@@ -685,10 +690,23 @@
     content: '-';
 }
 
+.academic-interest-row[open] summary {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .academic-interest-content {
     min-width: 0;
     margin-left: 190px;
     padding: 0 0 13px;
+}
+
+.academic-interest-row[open] .academic-interest-content {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0;
+    padding-top: 12px;
 }
 
 .academic-interest-list {
@@ -901,6 +919,24 @@
     .academic-interest-row summary {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .academic-interest-row[open] {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-interest-row[open] summary,
+    .academic-interest-row[open] .academic-interest-content {
+        grid-column: 1;
+    }
+
+    .academic-interest-row[open] summary {
+        grid-row: 1;
+    }
+
+    .academic-interest-row[open] .academic-interest-content {
+        grid-row: 2;
+        padding-top: 0;
     }
 
     .academic-interest-content {
