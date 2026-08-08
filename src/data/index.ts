@@ -116,6 +116,25 @@ export const interestGroups: InterestGroup[] = [
     ]
   },
   {
+    id: 'fashion-designers',
+    eyebrow: {
+      en: 'Silhouette / Cut / Form',
+      zh: '廓形 / 剪裁 / 形式'
+    },
+    title: {
+      en: 'Favorite Fashion Designers',
+      zh: '最爱的时尚设计师'
+    },
+    items: [
+      { id: 'demna-gvasalia', title: { en: 'Demna Gvasalia', zh: 'Demna Gvasalia' } },
+      { id: 'martin-margiela', title: { en: 'Martin Margiela', zh: 'Martin Margiela' } },
+      { id: 'helmut-lang', title: { en: 'Helmut Lang', zh: 'Helmut Lang' } },
+      { id: 'ann-demeulemeester', title: { en: 'Ann Demeulemeester', zh: 'Ann Demeulemeester' } },
+      { id: 'yohji-yamamoto', title: { en: 'Yohji Yamamoto', zh: 'Yohji Yamamoto' } },
+      { id: 'cristobal-balenciaga', title: { en: 'Cristóbal Balenciaga', zh: 'Cristóbal Balenciaga' } }
+    ]
+  },
+  {
     id: 'works',
     eyebrow: {
       en: 'Pieces I Return To',
