@@ -122,8 +122,8 @@ export const interestGroups: InterestGroup[] = [
       zh: '经常回到的曲目'
     },
     title: {
-      en: 'Favorite Classical Works',
-      zh: '喜欢的古典音乐'
+      en: 'Favorite Music',
+      zh: '喜欢的音乐'
     },
     items: [
       { id: 'monti-csardas', title: { en: 'Vittorio Monti: Csárdás', zh: '维托里奥·蒙蒂：《查尔达什》' } },

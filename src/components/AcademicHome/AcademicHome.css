@@ -653,7 +653,6 @@
     list-style: none;
 }
 
-.academic-interest-row-aesthetic .academic-interest-list,
 .academic-interest-row-works .academic-interest-list {
     display: grid;
     gap: 5px;
