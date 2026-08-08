@@ -345,11 +345,13 @@ const AcademicHome: React.FC = () => {
               <p className="academic-interest-intro">{t(interestIntro)}</p>
               <div className="academic-interest-listing">
                 {interestGroups.map((group) => (
-                  <article
+                  <details
                     key={group.id}
                     className={`academic-interest-row academic-interest-row-${group.id}`}
                   >
-                    <h3>{t(group.title)}</h3>
+                    <summary>
+                      <h3>{t(group.title)}</h3>
+                    </summary>
                     <div className="academic-interest-content">
                       <ul className="academic-interest-list">
                         {group.items.map((item) => (
@@ -360,7 +362,7 @@ const AcademicHome: React.FC = () => {
                         ))}
                       </ul>
                     </div>
-                  </article>
+                  </details>
                 ))}
               </div>
             </div>
