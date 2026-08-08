@@ -131,6 +131,13 @@ export const interestGroups: InterestGroup[] = [
       { id: 'mozart-k218', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 4 in D major, K. 218', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《D 大调第四小提琴协奏曲，K. 218》' } },
       { id: 'mozart-k216', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 3 in G major, K. 216', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《G 大调第三小提琴协奏曲，K. 216》' } },
       { id: 'vivaldi-rv356', title: { en: 'Antonio Vivaldi: Violin Concerto in A minor, Op. 3 No. 6, RV 356', zh: '安东尼奥·维瓦尔第：《a 小调小提琴协奏曲，Op. 3 No. 6, RV 356》' } },
+      {
+        id: 'vivaldi-rv279',
+        title: {
+          en: 'Antonio Vivaldi: Violin Concerto in E minor, Op. 4 No. 2, RV 279',
+          zh: '安东尼奥·维瓦尔第：《e 小调小提琴协奏曲，Op. 4 No. 2, RV 279》'
+        }
+      },
       { id: 'vivaldi-four-seasons', title: { en: 'Antonio Vivaldi: The Four Seasons, Op. 8, Nos. 1-4', zh: '安东尼奥·维瓦尔第：《四季，Op. 8, Nos. 1-4》' } },
       { id: 'bach-solo', title: { en: 'Johann Sebastian Bach: Sonatas and Partitas for Solo Violin, BWV 1001-1006', zh: '约翰·塞巴斯蒂安·巴赫：《无伴奏小提琴奏鸣曲与组曲，BWV 1001-1006》' } },
       { id: 'bach-bwv1041', title: { en: 'Johann Sebastian Bach: Violin Concerto in A minor, BWV 1041', zh: '约翰·塞巴斯蒂安·巴赫：《a 小调小提琴协奏曲，BWV 1041》' } },
