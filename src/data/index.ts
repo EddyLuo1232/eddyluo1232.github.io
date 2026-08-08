@@ -126,12 +126,12 @@ export const interestGroups: InterestGroup[] = [
       zh: '时尚参照'
     },
     items: [
-      { id: 'demna-gvasalia', title: { en: 'Demna Gvasalia', zh: 'Demna Gvasalia' } },
-      { id: 'martin-margiela', title: { en: 'Martin Margiela', zh: 'Martin Margiela' } },
-      { id: 'helmut-lang', title: { en: 'Helmut Lang', zh: 'Helmut Lang' } },
-      { id: 'ann-demeulemeester', title: { en: 'Ann Demeulemeester', zh: 'Ann Demeulemeester' } },
-      { id: 'yohji-yamamoto', title: { en: 'Yohji Yamamoto', zh: 'Yohji Yamamoto' } },
-      { id: 'cristobal-balenciaga', title: { en: 'Cristóbal Balenciaga', zh: 'Cristóbal Balenciaga' } }
+      { id: 'demna-gvasalia', title: { en: 'Demna Gvasalia', zh: '登姆纳·格瓦萨利亚' } },
+      { id: 'martin-margiela', title: { en: 'Martin Margiela', zh: '马丁·马吉拉' } },
+      { id: 'helmut-lang', title: { en: 'Helmut Lang', zh: '赫尔穆特·朗' } },
+      { id: 'ann-demeulemeester', title: { en: 'Ann Demeulemeester', zh: '安·德穆勒梅斯特' } },
+      { id: 'yohji-yamamoto', title: { en: 'Yohji Yamamoto', zh: '山本耀司' } },
+      { id: 'cristobal-balenciaga', title: { en: 'Cristóbal Balenciaga', zh: '克里斯托瓦尔·巴黎世家' } }
     ]
   },
   {
