@@ -69,6 +69,7 @@ export const interestGroups: InterestGroup[] = [
       zh: '关于自由、欲望、主体性、知觉，以及符号如何生产意义的问题。'
     },
     items: [
+      { id: 'rationalism', title: { en: 'Rationalism', zh: '理性主义' } },
       { id: 'existentialism', title: { en: 'Existentialism', zh: '存在主义' } },
       { id: 'post-structuralism', title: { en: 'Post-structuralism', zh: '后结构主义' } },
       { id: 'deconstruction', title: { en: 'Deconstruction', zh: '解构主义' } },
@@ -96,6 +97,27 @@ export const interestGroups: InterestGroup[] = [
       { id: 'minimalism', title: { en: 'Minimalism', zh: '极简主义' } },
       { id: 'post-soviet', title: { en: 'Post-Soviet', zh: '后苏维埃' } },
       { id: 'dark-gothic', title: { en: 'Dark Gothic', zh: '暗黑哥特' } }
+    ]
+  },
+  {
+    id: 'philosophers',
+    eyebrow: {
+      en: 'Reason / Being / Critique',
+      zh: '理性 / 存在 / 批判'
+    },
+    title: {
+      en: 'Favorite Philosophers',
+      zh: '喜欢的哲学家'
+    },
+    items: [
+      { id: 'immanuel-kant', title: { en: 'Immanuel Kant', zh: '伊曼努尔·康德' } },
+      { id: 'friedrich-nietzsche', title: { en: 'Friedrich Nietzsche', zh: '弗里德里希·尼采' } },
+      { id: 'martin-heidegger', title: { en: 'Martin Heidegger', zh: '马丁·海德格尔' } },
+      { id: 'ludwig-wittgenstein', title: { en: 'Ludwig Wittgenstein', zh: '路德维希·维特根斯坦' } },
+      { id: 'jean-paul-sartre', title: { en: 'Jean-Paul Sartre', zh: '让-保罗·萨特' } },
+      { id: 'michel-foucault', title: { en: 'Michel Foucault', zh: '米歇尔·福柯' } },
+      { id: 'albert-camus', title: { en: 'Albert Camus', zh: '阿尔贝·加缪' } },
+      { id: 'jacques-derrida', title: { en: 'Jacques Derrida', zh: '雅克·德里达' } }
     ]
   },
   {
