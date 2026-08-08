@@ -122,8 +122,8 @@ export const interestGroups: InterestGroup[] = [
       zh: '廓形 / 剪裁 / 形式'
     },
     title: {
-      en: 'Favorite Fashion Designers',
-      zh: '最爱的时尚设计师'
+      en: 'Fashion References',
+      zh: '时尚参照'
     },
     items: [
       { id: 'demna-gvasalia', title: { en: 'Demna Gvasalia', zh: 'Demna Gvasalia' } },
