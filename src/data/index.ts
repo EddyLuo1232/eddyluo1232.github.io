@@ -72,7 +72,7 @@ export const interestGroups: InterestGroup[] = [
       { id: 'existentialism', title: { en: 'Existentialism', zh: '存在主义' } },
       { id: 'post-structuralism', title: { en: 'Post-structuralism', zh: '后结构主义' } },
       { id: 'deconstruction', title: { en: 'Deconstruction', zh: '解构主义' } },
-      { id: 'psychoanalysis', title: { en: 'Freudian psychoanalysis', zh: '弗洛伊德精神分析学' } },
+      { id: 'psychoanalysis', title: { en: 'Psychoanalysis', zh: '精神分析' } },
       { id: 'phenomenology', title: { en: 'Phenomenology', zh: '现象学' } },
       { id: 'semiotics', title: { en: 'Semiotics', zh: '符号学' } }
     ]
