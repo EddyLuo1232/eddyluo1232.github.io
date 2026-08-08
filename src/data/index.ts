@@ -121,6 +121,49 @@ export const interestGroups: InterestGroup[] = [
     ]
   },
   {
+    id: 'books',
+    eyebrow: {
+      en: 'Reason / Mind / History',
+      zh: '理性 / 心智 / 历史'
+    },
+    title: {
+      en: 'Favorite Books',
+      zh: '喜欢的书'
+    },
+    items: [
+      {
+        id: 'critique-of-pure-reason',
+        title: { en: 'Critique of Pure Reason', zh: '《纯粹理性批判》' },
+        detail: { en: 'Immanuel Kant', zh: '伊曼努尔·康德' }
+      },
+      {
+        id: 'time-and-being',
+        title: { en: 'Time and Being', zh: '《时间与存在》' },
+        detail: { en: 'Martin Heidegger', zh: '马丁·海德格尔' }
+      },
+      {
+        id: 'the-second-sex',
+        title: { en: 'The Second Sex', zh: '《第二性》' },
+        detail: { en: 'Simone de Beauvoir', zh: '西蒙娜·德·波伏娃' }
+      },
+      {
+        id: 'sapiens',
+        title: { en: 'Sapiens: A Brief History of Humankind', zh: '《人类简史》' },
+        detail: { en: 'Yuval Noah Harari', zh: '尤瓦尔·诺亚·赫拉利' }
+      },
+      {
+        id: 'antifragile',
+        title: { en: 'Antifragile: Things That Gain from Disorder', zh: '《反脆弱》' },
+        detail: { en: 'Nassim Nicholas Taleb', zh: '纳西姆·尼古拉斯·塔勒布' }
+      },
+      {
+        id: 'how-the-mind-works',
+        title: { en: 'How the Mind Works', zh: '《心智探奇》' },
+        detail: { en: 'Steven Pinker', zh: '史蒂芬·平克' }
+      }
+    ]
+  },
+  {
     id: 'composers',
     eyebrow: {
       en: 'Violin / Concerto / Counterpoint',
