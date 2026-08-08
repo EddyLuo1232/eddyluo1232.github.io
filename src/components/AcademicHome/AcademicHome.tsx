@@ -303,7 +303,11 @@ const AcademicHome: React.FC = () => {
                     {group.items.map((item) => (
                       <article key={item.id} className="academic-news-item">
                         <div className="academic-news-copy">
-                          {item.tag && <span className="academic-news-tag">{t(item.tag)}</span>}
+                          {item.tag && (
+                            <span className={`academic-news-tag academic-news-tag-${item.tag.en.toLowerCase()}`}>
+                              {t(item.tag)}
+                            </span>
+                          )}
                           <span dangerouslySetInnerHTML={{ __html: t(item.content) }} />
                         </div>
                         <time>{formatDate(item.date)}</time>
@@ -357,7 +361,11 @@ const AcademicHome: React.FC = () => {
                         {group.items.map((item) => (
                           <li key={item.id}>
                             <span>{t(item.title)}</span>
-                            {item.detail && <em>{t(item.detail)}</em>}
+                            {item.detail && (
+                              <em className={item.detailTone ? `academic-interest-detail-${item.detailTone}` : undefined}>
+                                {t(item.detail)}
+                              </em>
+                            )}
                           </li>
                         ))}
                       </ul>

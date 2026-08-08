@@ -441,8 +441,28 @@
     font-size: 0.72rem;
     font-weight: 700;
     line-height: 1.35;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
     vertical-align: 1px;
+}
+
+.academic-news-tag-industry {
+    background: #edf4ef;
+    color: #496b55;
+}
+
+.academic-news-tag-paper {
+    background: #eaf0f5;
+    color: #4b6679;
+}
+
+.academic-news-tag-award {
+    background: #f6f0e5;
+    color: #80683e;
+}
+
+.academic-news-tag-position {
+    background: #f1edf3;
+    color: #6b5a70;
 }
 
 .academic-news-item a,
@@ -686,6 +706,28 @@
     gap: 5px;
 }
 
+.academic-interest-row-works .academic-interest-list li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.academic-interest-row-works .academic-interest-list em {
+    display: inline-flex;
+    align-items: center;
+    justify-self: end;
+    min-height: 18px;
+    margin-top: 0;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: right;
+    white-space: nowrap;
+}
+
 .academic-interest-list li {
     min-width: 0;
     color: #262626;
@@ -701,6 +743,16 @@
     font-size: 0.78rem;
     font-style: normal;
     line-height: 1.45;
+}
+
+.academic-interest-list .academic-interest-detail-repertoire {
+    background: #edf5f0;
+    color: #3f765d;
+}
+
+.academic-interest-list .academic-interest-detail-learning {
+    background: #fbf3e7;
+    color: #9a671f;
 }
 
 .academic-visitor-panel {
@@ -853,6 +905,10 @@
 
     .academic-interest-content {
         margin-left: 0;
+    }
+
+    .academic-interest-row-works .academic-interest-list li {
+        gap: 8px;
     }
 
     .academic-news-item time {

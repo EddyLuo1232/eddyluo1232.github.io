@@ -83,6 +83,7 @@ export interface InterestItem {
   id: string;
   title: TranslatableText;
   detail?: TranslatableText;
+  detailTone?: 'repertoire' | 'learning';
 }
 
 export interface InterestGroup {
