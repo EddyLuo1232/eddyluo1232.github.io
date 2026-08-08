@@ -633,11 +633,23 @@
 }
 
 .academic-interest-row h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
     margin: 0;
     color: #111111;
     font-size: 0.86rem;
     font-weight: 700;
     line-height: 1.48;
+}
+
+.academic-interest-row h3::before {
+    content: '+';
+    color: #8a8a8a;
+    font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .academic-interest-content {
