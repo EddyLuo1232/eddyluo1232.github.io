@@ -5,6 +5,8 @@ import {
   awardItems,
   educationItems,
   experienceItems,
+  interestGroups,
+  interestIntro,
   newsItems,
   personalInfo,
   preprints,
@@ -332,6 +334,35 @@ const AcademicHome: React.FC = () => {
               {publications.map((publication) => (
                 <PublicationItem key={publication.id} publication={publication} />
               ))}
+            </div>
+          </section>
+
+          <section className="academic-panel" id="interests">
+            <div className="academic-section-heading">
+              <h2>{t({ en: 'Interests', zh: '兴趣' })}</h2>
+            </div>
+            <div className="academic-card-body academic-interests">
+              <p className="academic-interest-intro">{t(interestIntro)}</p>
+              <div className="academic-interest-listing">
+                {interestGroups.map((group) => (
+                  <article
+                    key={group.id}
+                    className={`academic-interest-row academic-interest-row-${group.id}`}
+                  >
+                    <h3>{t(group.title)}</h3>
+                    <div className="academic-interest-content">
+                      <ul className="academic-interest-list">
+                        {group.items.map((item) => (
+                          <li key={item.id}>
+                            <span>{t(item.title)}</span>
+                            {item.detail && <em>{t(item.detail)}</em>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
 

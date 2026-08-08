@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import './styles/global.css';
 
-const SECTION_IDS = ['about', 'experience', 'news', 'publications'];
+const SECTION_IDS = ['about', 'experience', 'news', 'publications', 'interests'];
 
 const AppContent: React.FC = () => {
   const activeSection = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });

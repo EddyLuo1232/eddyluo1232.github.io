@@ -1,4 +1,4 @@
-import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem } from '../types';
+import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, InterestGroup } from '../types';
 
 // Personal information
 export const personalInfo = {
@@ -21,12 +21,12 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `Eddy Luo (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. Beyond research, I am broadly drawn to cognitive science, philosophy, psychology, sociology, linguistics, and classical music.`,
-    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。研究之外，我也广泛关注认知科学、哲学、心理学、社会学、语言学与古典音乐。`
+    en: `Eddy Luo (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
+    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。`
   },
   contact: {
-    en: `Beyond research, Eddy is a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at Email: luo.1455[shift+2]uga[dot]edu. どうぞよろしくお願いします!`,
-    zh: `研究之外，我也是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。どうぞよろしくお願いします!`
+    en: `Beyond research, Eddy is an avant-garde artist and violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at Email: luo.1455[shift+2]uga[dot]edu. どうぞよろしくお願いします!`,
+    zh: `研究之外，我也是一名先锋艺术家和小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。どうぞよろしくお願いします!`
   }
 };
 
@@ -46,6 +46,98 @@ export const quote = {
     right: '/images/assets/ttg.png'
   }
 };
+
+// Interests
+export const interestIntro = {
+  en: 'Outside research, I am also an avant-garde artist with a deep interest in fashion design. I am drawn to classical music, concerts, visual communication, and the long conversation between cognitive science, philosophy, psychology, sociology, language, and form.',
+  zh: '科研之外，我也是一名先锋艺术家，并对时装设计抱有浓厚兴趣。我喜欢古典音乐、音乐会、视觉传达，也长期关注认知科学、哲学、心理学、社会学、语言与形式之间的关系。'
+};
+
+export const interestGroups: InterestGroup[] = [
+  {
+    id: 'intellectual',
+    eyebrow: {
+      en: 'Mind / Language / Signs',
+      zh: '心灵 / 语言 / 符号'
+    },
+    title: {
+      en: 'Intellectual Interests',
+      zh: '思想兴趣'
+    },
+    description: {
+      en: 'Questions of freedom, desire, subjectivity, perception, and how signs produce meaning.',
+      zh: '关于自由、欲望、主体性、知觉，以及符号如何生产意义的问题。'
+    },
+    items: [
+      { id: 'existentialism', title: { en: 'Existentialism', zh: '存在主义' } },
+      { id: 'post-structuralism', title: { en: 'Post-structuralism', zh: '后结构主义' } },
+      { id: 'deconstruction', title: { en: 'Deconstruction', zh: '解构主义' } },
+      { id: 'psychoanalysis', title: { en: 'Freudian psychoanalysis', zh: '弗洛伊德精神分析学' } },
+      { id: 'phenomenology', title: { en: 'Phenomenology', zh: '现象学' } },
+      { id: 'semiotics', title: { en: 'Semiotics', zh: '符号学' } }
+    ]
+  },
+  {
+    id: 'aesthetic',
+    eyebrow: {
+      en: 'Form / Memory / Ideology',
+      zh: '形式 / 记忆 / 意识形态'
+    },
+    title: {
+      en: 'Visual Language',
+      zh: '视觉语言'
+    },
+    description: {
+      en: 'The tension between discipline and rupture, order and decay, memory and ideology.',
+      zh: '纪律与断裂、秩序与废墟、记忆与意识形态之间的张力。'
+    },
+    items: [
+      { id: 'avant-garde', title: { en: 'Avant-garde', zh: '先锋' } },
+      { id: 'minimalism', title: { en: 'Minimalism', zh: '极简主义' } },
+      { id: 'post-soviet', title: { en: 'Post-Soviet', zh: '后苏维埃' } },
+      { id: 'dark-gothic', title: { en: 'Dark Gothic', zh: '暗黑哥特' } }
+    ]
+  },
+  {
+    id: 'composers',
+    eyebrow: {
+      en: 'Violin / Concerto / Counterpoint',
+      zh: '小提琴 / 协奏曲 / 对位'
+    },
+    title: {
+      en: 'Favorite Composers',
+      zh: '喜欢的音乐家'
+    },
+    items: [
+      { id: 'paganini', title: { en: 'Niccolò Paganini', zh: '尼科罗·帕格尼尼' } },
+      { id: 'bach', title: { en: 'Johann Sebastian Bach', zh: '约翰·塞巴斯蒂安·巴赫' } },
+      { id: 'vivaldi', title: { en: 'Antonio Vivaldi', zh: '安东尼奥·维瓦尔第' } },
+      { id: 'mozart', title: { en: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿马德乌斯·莫扎特' } }
+    ]
+  },
+  {
+    id: 'works',
+    eyebrow: {
+      en: 'Pieces I Return To',
+      zh: '经常回到的曲目'
+    },
+    title: {
+      en: 'Favorite Classical Works',
+      zh: '喜欢的古典音乐'
+    },
+    items: [
+      { id: 'monti-csardas', title: { en: 'Vittorio Monti: Csárdás', zh: '维托里奥·蒙蒂：《查尔达什》' } },
+      { id: 'mozart-k219', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 5 in A major, K. 219', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《A 大调第五小提琴协奏曲，K. 219》' } },
+      { id: 'mozart-k218', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 4 in D major, K. 218', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《D 大调第四小提琴协奏曲，K. 218》' } },
+      { id: 'mozart-k216', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 3 in G major, K. 216', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《G 大调第三小提琴协奏曲，K. 216》' } },
+      { id: 'vivaldi-rv356', title: { en: 'Antonio Vivaldi: Violin Concerto in A minor, Op. 3 No. 6, RV 356', zh: '安东尼奥·维瓦尔第：《a 小调小提琴协奏曲，Op. 3 No. 6, RV 356》' } },
+      { id: 'vivaldi-four-seasons', title: { en: 'Antonio Vivaldi: The Four Seasons, Op. 8, Nos. 1-4', zh: '安东尼奥·维瓦尔第：《四季，Op. 8, Nos. 1-4》' } },
+      { id: 'bach-solo', title: { en: 'Johann Sebastian Bach: Sonatas and Partitas for Solo Violin, BWV 1001-1006', zh: '约翰·塞巴斯蒂安·巴赫：《无伴奏小提琴奏鸣曲与组曲，BWV 1001-1006》' } },
+      { id: 'bach-bwv1041', title: { en: 'Johann Sebastian Bach: Violin Concerto in A minor, BWV 1041', zh: '约翰·塞巴斯蒂安·巴赫：《a 小调小提琴协奏曲，BWV 1041》' } },
+      { id: 'paganini-caprice-24', title: { en: 'Niccolò Paganini: 24 Caprices for Solo Violin, Op. 1: No. 24 in A minor', zh: '尼科罗·帕格尼尼：《24 首无伴奏小提琴随想曲，Op. 1：第 24 首 a 小调》' } }
+    ]
+  }
+];
 
 // Social links
 export const socialLinks: SocialLink[] = [
@@ -69,7 +161,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     id: 'scholar',
-    href: 'https://scholar.google.com/citations?hl=zh-CN&user=EZzmjVUAAAAJ',
+    href: 'https://scholar.google.com/citations?user=EZzmjVUAAAAJ&hl=zh-CN',
     icon: 'fas fa-graduation-cap',
     label: { en: 'Google Scholar', zh: 'Google Scholar' }
   },

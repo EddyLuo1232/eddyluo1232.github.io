@@ -79,6 +79,20 @@ export interface AwardItem {
   detail?: TranslatableText;
 }
 
+export interface InterestItem {
+  id: string;
+  title: TranslatableText;
+  detail?: TranslatableText;
+}
+
+export interface InterestGroup {
+  id: string;
+  eyebrow: TranslatableText;
+  title: TranslatableText;
+  description?: TranslatableText;
+  items: InterestItem[];
+}
+
 export interface TranslatableText {
   en: string;
   zh: string;

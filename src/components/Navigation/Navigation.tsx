@@ -18,7 +18,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
     { id: 'about', label: { en: 'About', zh: '简介' } },
     { id: 'experience', label: { en: 'Experience', zh: '经历' } },
     { id: 'news', label: { en: 'News', zh: '动态' } },
-    { id: 'publications', label: { en: 'Publications', zh: '论文' } }
+    { id: 'publications', label: { en: 'Publications', zh: '论文' } },
+    { id: 'interests', label: { en: 'Interests', zh: '兴趣' } }
   ];
 
   useEffect(() => {
