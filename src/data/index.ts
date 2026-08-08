@@ -115,9 +115,10 @@ export const interestGroups: InterestGroup[] = [
       { id: 'martin-heidegger', title: { en: 'Martin Heidegger', zh: '马丁·海德格尔' } },
       { id: 'ludwig-wittgenstein', title: { en: 'Ludwig Wittgenstein', zh: '路德维希·维特根斯坦' } },
       { id: 'jean-paul-sartre', title: { en: 'Jean-Paul Sartre', zh: '让-保罗·萨特' } },
-      { id: 'michel-foucault', title: { en: 'Michel Foucault', zh: '米歇尔·福柯' } },
       { id: 'albert-camus', title: { en: 'Albert Camus', zh: '阿尔贝·加缪' } },
-      { id: 'jacques-derrida', title: { en: 'Jacques Derrida', zh: '雅克·德里达' } }
+      { id: 'michel-foucault', title: { en: 'Michel Foucault', zh: '米歇尔·福柯' } },
+      { id: 'jacques-derrida', title: { en: 'Jacques Derrida', zh: '雅克·德里达' } },
+      { id: 'pierre-bourdieu', title: { en: 'Pierre Bourdieu', zh: '皮埃尔·布迪厄' } }
     ]
   },
   {
