@@ -249,7 +249,7 @@ export const socialLinks: SocialLink[] = [
     id: 'instagram',
     href: 'https://www.instagram.com/edddddy_is_rising_star/',
     icon: 'fab fa-instagram',
-    label: { en: 'Instagram', zh: '作品参考' }
+    label: { en: 'Instagram', zh: 'Instagram' }
   },
   {
     id: 'linkedin',
