@@ -180,6 +180,12 @@ export const socialLinks: SocialLink[] = [
     label: { en: 'Twitter', zh: 'Twitter' }
   },
   {
+    id: 'instagram',
+    href: 'https://www.instagram.com/edddddy_is_rising_star/',
+    icon: 'fab fa-instagram',
+    label: { en: 'Instagram', zh: '作品参考' }
+  },
+  {
     id: 'linkedin',
     href: 'https://www.linkedin.com/in/weidi-luo-aa02b5242',
     icon: 'fab fa-linkedin',
