@@ -406,7 +406,12 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel" id="interests">
             <div className="academic-section-heading">
-              <h2>{t({ en: 'Interests', zh: '兴趣' })}</h2>
+              <h2 className="academic-interest-heading-title">
+                <span>{t({ en: 'Interests', zh: '兴趣' })}</span>
+                <span className="academic-interest-heading-note">
+                  {t({ en: '(If You’d Like to Know Me)', zh: '（如果你想了解我）' })}
+                </span>
+              </h2>
             </div>
             <div className="academic-card-body academic-interests">
               <p className="academic-interest-intro">{t(interestIntro)}</p>

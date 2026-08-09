@@ -272,6 +272,19 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     color: #111111;
 }
 
+.academic-section-heading .academic-interest-heading-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.academic-interest-heading-note {
+    color: #777777;
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
 .academic-timeline-list,
 .academic-awards ul {
     list-style: none;
