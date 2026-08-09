@@ -812,9 +812,9 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
 }
 
 .academic-interest-photo-grid {
-    width: min(480px, 100%);
+    width: min(620px, 100%);
     display: grid;
-    grid-template-columns: minmax(0, 9fr) minmax(0, 16fr);
+    grid-template-columns: minmax(0, 9fr) minmax(0, 9fr) minmax(0, 16fr);
     align-items: stretch;
     gap: 10px;
     margin-left: 0;
@@ -992,8 +992,13 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
 
     .academic-interest-photo-grid {
         width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
         margin-left: 0;
+    }
+
+    .academic-interest-photo-grid .academic-interest-visual-landscape {
+        grid-column: 1 / -1;
     }
 
     .academic-interest-content {
