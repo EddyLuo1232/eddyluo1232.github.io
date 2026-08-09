@@ -92,6 +92,11 @@ export interface InterestGroup {
   title: TranslatableText;
   description?: TranslatableText;
   items: InterestItem[];
+  visuals?: Array<{
+    src: string;
+    alt: TranslatableText;
+    variant: 'portrait' | 'landscape';
+  }>;
 }
 
 export interface TranslatableText {

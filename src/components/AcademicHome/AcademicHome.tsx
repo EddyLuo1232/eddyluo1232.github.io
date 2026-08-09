@@ -81,6 +81,70 @@ const AcademicHome: React.FC = () => {
     return language === 'zh' ? `${Number(month)}月${dayNumber}日` : `${monthNames[monthIndex]} ${dayNumber}`;
   };
 
+  const handleInterestToggle = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+
+    const summary = event.currentTarget;
+    const details = summary.parentElement as HTMLDetailsElement | null;
+    const content = details?.querySelector<HTMLElement>(':scope > .academic-interest-content');
+
+    if (!details || !content || details.dataset.animating === 'true') {
+      return;
+    }
+
+    const opening = !details.open;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      details.open = opening;
+      return;
+    }
+
+    details.dataset.animating = 'true';
+    details.style.overflow = 'hidden';
+
+    if (opening) {
+      details.open = true;
+    }
+
+    const collapsedHeight = summary.getBoundingClientRect().height;
+    const expandedHeight = collapsedHeight + content.getBoundingClientRect().height;
+    const startHeight = opening ? collapsedHeight : details.getBoundingClientRect().height;
+    const endHeight = opening ? expandedHeight : collapsedHeight;
+    const timing: KeyframeAnimationOptions = {
+      duration: 220,
+      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      fill: 'both'
+    };
+
+    const heightAnimation = details.animate(
+      [{ height: `${startHeight}px` }, { height: `${endHeight}px` }],
+      timing
+    );
+    const contentAnimation = content.animate(
+      opening
+        ? [
+            { opacity: 0, transform: 'translateY(-5px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ]
+        : [
+            { opacity: 1, transform: 'translateY(0)' },
+            { opacity: 0, transform: 'translateY(-5px)' }
+          ],
+      timing
+    );
+
+    heightAnimation.addEventListener('finish', () => {
+      if (!opening) {
+        details.open = false;
+      }
+
+      heightAnimation.cancel();
+      contentAnimation.cancel();
+      details.style.removeProperty('overflow');
+      delete details.dataset.animating;
+    }, { once: true });
+  };
+
   const educationAndExperienceItems = [...educationItems, ...experienceItems];
 
   const TimelineList: React.FC<{ title: string; items: TimelineItem[] }> = ({ title, items }) => (
@@ -352,22 +416,45 @@ const AcademicHome: React.FC = () => {
                     key={group.id}
                     className={`academic-interest-row academic-interest-row-${group.id}`}
                   >
-                    <summary>
+                    <summary onClick={handleInterestToggle}>
                       <h3>{t(group.title)}</h3>
                     </summary>
                     <div className="academic-interest-content">
-                      <ul className="academic-interest-list">
-                        {group.items.map((item) => (
-                          <li key={item.id}>
-                            <span>{t(item.title)}</span>
-                            {item.detail && (
-                              <em className={item.detailTone ? `academic-interest-detail-${item.detailTone}` : undefined}>
-                                {t(item.detail)}
-                              </em>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
+                      {group.items.length > 0 && (
+                        <ul className="academic-interest-list">
+                          {group.items.map((item) => (
+                            <li key={item.id}>
+                              <span>{t(item.title)}</span>
+                              {item.detail && (
+                                <em className={item.detailTone ? `academic-interest-detail-${item.detailTone}` : undefined}>
+                                  {t(item.detail)}
+                                </em>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {group.visuals && (
+                        <div className="academic-interest-photo-grid">
+                          {group.visuals.map((visual) => (
+                            <a
+                              key={visual.src}
+                              className={`academic-interest-visual academic-interest-visual-${visual.variant}`}
+                              href={visual.src}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={t({ en: 'View full image', zh: '查看大图' })}
+                            >
+                              <img
+                                src={visual.src}
+                                alt={t(visual.alt)}
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </details>
                 ))}

@@ -253,6 +253,30 @@ export const interestGroups: InterestGroup[] = [
       { id: 'bach-bwv1041', title: { en: 'Johann Sebastian Bach: Violin Concerto in A minor, BWV 1041', zh: '约翰·塞巴斯蒂安·巴赫：《a 小调小提琴协奏曲，BWV 1041》' } },
       { id: 'paganini-caprice-24', title: { en: 'Niccolò Paganini: 24 Caprices for Solo Violin, Op. 1: No. 24 in A minor', zh: '尼科罗·帕格尼尼：《24 首无伴奏小提琴随想曲，Op. 1：第 24 首 a 小调》' } }
     ]
+  },
+  {
+    id: 'photos',
+    eyebrow: {
+      en: 'Two Studies',
+      zh: '两则片段'
+    },
+    title: {
+      en: 'Photos',
+      zh: '照片'
+    },
+    items: [],
+    visuals: [
+      {
+        src: '/images/interests/fashion-portrait.jpg',
+        alt: { en: 'Eddy in an avant-garde black suit', zh: 'Eddy 身着先锋黑色西装' },
+        variant: 'portrait'
+      },
+      {
+        src: '/images/interests/violin-performance.jpg',
+        alt: { en: 'Eddy playing the violin', zh: 'Eddy 演奏小提琴' },
+        variant: 'landscape'
+      }
+    ]
   }
 ];
 
