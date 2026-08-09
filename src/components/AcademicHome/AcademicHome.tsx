@@ -267,7 +267,6 @@ const AcademicHome: React.FC = () => {
             <img src={quote.images.left} alt="" className="academic-banner-character left" />
             <blockquote>
               <p>{t(quote.text)}</p>
-              <p className="academic-banner-japanese">{quote.japanese}</p>
               <cite>{t(quote.author)}</cite>
             </blockquote>
             <img src={quote.images.right} alt="" className="academic-banner-character right" />

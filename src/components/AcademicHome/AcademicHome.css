@@ -73,6 +73,7 @@
 
 .academic-profile-subtitle {
     margin: 0 0 9px;
+    overflow-wrap: anywhere;
 }
 
 .academic-profile-location {
@@ -141,9 +142,11 @@
 .academic-main {
     display: grid;
     gap: 16px;
+    min-width: 0;
 }
 
 .academic-panel {
+    min-width: 0;
     padding: 0;
     scroll-margin-top: 96px;
 }
@@ -156,6 +159,7 @@
     color: #242424;
     font-size: 0.96rem;
     line-height: 1.72;
+    overflow-wrap: anywhere;
 }
 
 .academic-bio a {
@@ -179,19 +183,15 @@
     margin: 0;
     text-align: center;
     color: #202020;
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.55;
+    font-family: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
+    font-size: 1.16rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.48;
 }
 
 .academic-anime-banner blockquote p {
     margin: 0;
-}
-
-.academic-banner-japanese {
-    margin-top: 5px !important;
-    color: #555555;
-    font-size: 0.9rem;
 }
 
 .academic-anime-banner cite {
@@ -204,6 +204,21 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+}
+
+html[lang="zh-CN"] .academic-anime-banner blockquote {
+    font-family: 'Songti SC', STSong, 'Noto Serif CJK SC', serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.academic-japanese-signoff {
+    font-family: 'Klee One', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-size: 0.96em;
+    font-weight: 400;
+    white-space: nowrap;
 }
 
 .academic-banner-character {
@@ -894,20 +909,24 @@
     }
 
     .academic-socials {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px 8px;
+        text-align: left;
     }
 
     .academic-socials a {
-        width: fit-content;
+        width: 100%;
         max-width: 100%;
-        justify-content: center;
-        padding: 0 10px;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 7px;
+        padding: 0 5px;
+        font-size: 0.82rem;
     }
 
     .academic-socials span {
-        flex: initial;
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 
     .academic-news-year,

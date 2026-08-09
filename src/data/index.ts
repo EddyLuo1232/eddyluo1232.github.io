@@ -2,7 +2,7 @@ import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, Intere
 
 // Personal information
 export const personalInfo = {
-  name: 'Weidi(Eddy) Luo',
+  name: 'Weidi (Eddy) Luo',
   title: {
     en: 'CS PhD student @ The University of Georgia',
     zh: '佐治亚大学计算机科学博士研究生'
@@ -21,25 +21,24 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `Eddy Luo (罗威迪 & 一ノ瀬 エイジ), 1st year Ph.D. student at <a href="https://www.uga.edu/">University of Georgia</a>, where I will be advised by Prof.<a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
+    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
     zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。`
   },
   contact: {
-    en: `Beyond research, Eddy is an avant-garde artist and violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. Eddy warmly welcomes collaboration opportunities and supports undergraduates who want to apply for a PhD program. He hopes we can conduct significant research together. Please feel free to contact him at Email: luo.1455[shift+2]uga[dot]edu. どうぞよろしくお願いします!`,
-    zh: `研究之外，我也是一名先锋艺术家和小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。どうぞよろしくお願いします!`
+    en: `Beyond research, I am an avant-garde artist and violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I warmly welcome collaboration opportunities and am happy to support undergraduates planning to apply to Ph.D. programs. I hope we can pursue meaningful research together. Please feel free to contact me at luo.1455[shift+2]uga[dot]edu. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
+    zh: `研究之外，我也是一名先锋艺术家和小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
   }
 };
 
 // Quote section
 export const quote = {
   text: {
-    en: `"It's not that life has dreams, but that dreams create life."`,
-    zh: `"不是人生拥有梦想，而是梦想塑造人生。"`
+    en: `“From the idea that the self is not given to us, I think that there is only one practical consequence: we have to create ourselves as a work of art.”`,
+    zh: `“既然自我并不是预先给定的，那么实际的结果只有一个：我们必须把自己创造为一件艺术品。”`
   },
-  japanese: '「人生に夢があるのではなく、夢が人生をつくるのです」',
   author: {
-    en: '— Taeko Uzuki',
-    zh: '— 宇月拓雄'
+    en: '— Michel Foucault',
+    zh: '— 米歇尔·福柯'
   },
   images: {
     left: '/images/assets/ttr.png',
