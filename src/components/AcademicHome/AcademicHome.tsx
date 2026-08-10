@@ -26,6 +26,10 @@ const getPublicationActionIcon = (label: string) => {
 };
 const getPublicationActionLabel = (label: string) => label.replace(/^\[|\]$/g, '');
 const VISITOR_MAP_SCRIPT_SRC = '//mapmyvisitors.com/map.js?d=7CTeFyC3wT_A3DlE7A976YOUbxvdVPWluGcvGoy_E6A&cl=ffffff&w=a';
+const CLARITY_PROJECT_ID = 'xzzdv845p3';
+
+type ClarityFunction = ((...args: unknown[]) => void) & { q?: unknown[][] };
+type WindowWithClarity = Window & { clarity?: ClarityFunction };
 
 const VisitorMap: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,6 +51,22 @@ const VisitorMap: React.FC = () => {
     script.id = 'mapmyvisitors';
     script.src = VISITOR_MAP_SCRIPT_SRC;
     container.appendChild(script);
+
+    const clarityWindow = window as WindowWithClarity;
+    if (!clarityWindow.clarity) {
+      const clarity: ClarityFunction = (...args) => {
+        (clarity.q ??= []).push(args);
+      };
+      clarityWindow.clarity = clarity;
+    }
+
+    if (!document.getElementById('microsoft-clarity')) {
+      const clarityScript = document.createElement('script');
+      clarityScript.async = true;
+      clarityScript.id = 'microsoft-clarity';
+      clarityScript.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+      document.head.appendChild(clarityScript);
+    }
 
     return () => {
       container.replaceChildren();
