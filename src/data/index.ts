@@ -257,8 +257,8 @@ export const interestGroups: InterestGroup[] = [
   {
     id: 'photos',
     eyebrow: {
-      en: 'Two Studies',
-      zh: '两则片段'
+      en: 'A Study',
+      zh: '一则片段'
     },
     title: {
       en: 'Photos',
@@ -266,16 +266,6 @@ export const interestGroups: InterestGroup[] = [
     },
     items: [],
     visuals: [
-      {
-        src: '/images/interests/fashion-portrait.jpg',
-        alt: { en: 'Eddy in an avant-garde black suit', zh: 'Eddy 身着先锋黑色西装' },
-        variant: 'portrait'
-      },
-      {
-        src: '/images/interests/post-soviet-portrait.jpg',
-        alt: { en: 'Eddy in a post-Soviet-inspired black denim look', zh: 'Eddy 身着后苏维埃风格黑色丹宁造型' },
-        variant: 'portrait'
-      },
       {
         src: '/images/interests/violin-performance.jpg',
         alt: { en: 'Eddy playing the violin', zh: 'Eddy 演奏小提琴' },

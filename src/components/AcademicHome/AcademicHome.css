@@ -833,6 +833,10 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     margin-left: 0;
 }
 
+.academic-interest-photo-grid-single {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .academic-visitor-panel {
     position: absolute;
     width: 1px;

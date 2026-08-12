@@ -460,7 +460,7 @@ const AcademicHome: React.FC = () => {
                         </ul>
                       )}
                       {group.visuals && (
-                        <div className="academic-interest-photo-grid">
+                        <div className={`academic-interest-photo-grid${group.visuals.length === 1 ? ' academic-interest-photo-grid-single' : ''}`}>
                           {group.visuals.map((visual) => (
                             <a
                               key={visual.src}
