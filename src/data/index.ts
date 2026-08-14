@@ -21,8 +21,8 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents.`,
-    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。`
+    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA).`,
+    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。`
   },
   contact: {
     en: `Beyond research, I am an avant-garde artist and violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I warmly welcome collaboration opportunities and am happy to support undergraduates planning to apply to Ph.D. programs. I hope we can pursue meaningful research together. Please feel free to contact me at luo.1455[shift+2]uga[dot]edu. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
@@ -388,8 +388,8 @@ export const experienceItems: TimelineItem[] = [
       zh: '研究科学家实习生'
     },
     date: {
-      en: 'Jun 2026 - Present',
-      zh: '2026.06 - 至今'
+      en: 'Jun 2026 - Aug 2026',
+      zh: '2026.06 - 2026.08'
     }
   },
   {
