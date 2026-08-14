@@ -25,8 +25,8 @@ export const aboutContent = {
     zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。`
   },
   contact: {
-    en: `Beyond research, I am an avant-garde artist and violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I warmly welcome collaboration opportunities and am happy to support undergraduates planning to apply to Ph.D. programs. I hope we can pursue meaningful research together. Please feel free to contact me at luo.1455[shift+2]uga[dot]edu. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
-    zh: `研究之外，我也是一名先锋艺术家和小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
+    en: `Beyond research, I am a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I warmly welcome collaboration opportunities and am happy to support undergraduates planning to apply to Ph.D. programs. I hope we can pursue meaningful research together. Please feel free to contact me at luo.1455[shift+2]uga[dot]edu. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
+    zh: `研究之外，我也是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
   }
 };
 
@@ -48,8 +48,8 @@ export const quote = {
 
 // Interests
 export const interestIntro = {
-  en: 'Outside research, I am also an avant-garde artist with a deep interest in anti-fashion design. I am drawn to classical music, concerts, visual communication, and the long conversation between cognitive science, philosophy, psychology, sociology, language, and form.',
-  zh: '科研之外，我也是一名先锋艺术家，并对反时尚设计抱有浓厚兴趣。我喜欢古典音乐、音乐会、视觉传达，也长期关注认知科学、哲学、心理学、社会学、语言与形式之间的关系。'
+  en: 'Outside research, I am drawn to avant-garde art, anti-fashion design, classical music, and visual communication. I am equally interested in how cognitive science, philosophy, psychology, sociology, and language shape perception and form.',
+  zh: '科研之外，我喜欢先锋艺术、反时尚设计、古典音乐与视觉传达。我也关注认知科学、哲学、心理学、社会学和语言如何塑造感知与形式。'
 };
 
 export const interestGroups: InterestGroup[] = [
