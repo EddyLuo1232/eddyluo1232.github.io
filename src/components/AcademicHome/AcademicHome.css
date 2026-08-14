@@ -759,6 +759,14 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     gap: 12px;
 }
 
+.academic-interest-work-title {
+    min-width: 0;
+}
+
+.academic-interest-work-creator::after {
+    content: ': ';
+}
+
 .academic-interest-row-works .academic-interest-list em {
     display: inline-flex;
     align-items: center;
@@ -1022,8 +1030,37 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
         margin-left: 0;
     }
 
+    .academic-interest-row-works .academic-interest-list {
+        gap: 10px;
+    }
+
     .academic-interest-row-works .academic-interest-list li {
-        gap: 8px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+    }
+
+    .academic-interest-row-works .academic-interest-list em {
+        justify-self: start;
+    }
+
+    .academic-interest-work-title {
+        display: grid;
+        gap: 2px;
+    }
+
+    .academic-interest-work-creator {
+        color: #6f6f6f;
+        font-size: 0.74rem;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
+    .academic-interest-work-creator::after {
+        content: '';
+    }
+
+    .academic-interest-work-name {
+        line-height: 1.48;
     }
 
     .academic-news-item time {

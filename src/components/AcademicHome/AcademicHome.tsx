@@ -449,7 +449,14 @@ const AcademicHome: React.FC = () => {
                         <ul className="academic-interest-list">
                           {group.items.map((item) => (
                             <li key={item.id}>
-                              <span>{t(item.title)}</span>
+                              {item.creator ? (
+                                <span className="academic-interest-work-title">
+                                  <span className="academic-interest-work-creator">{t(item.creator)}</span>
+                                  <span className="academic-interest-work-name">{t(item.title)}</span>
+                                </span>
+                              ) : (
+                                <span>{t(item.title)}</span>
+                              )}
                               {item.detail && (
                                 <em className={item.detailTone ? `academic-interest-detail-${item.detailTone}` : undefined}>
                                   {t(item.detail)}

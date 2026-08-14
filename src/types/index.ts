@@ -81,6 +81,7 @@ export interface AwardItem {
 
 export interface InterestItem {
   id: string;
+  creator?: TranslatableText;
   title: TranslatableText;
   detail?: TranslatableText;
   detailTone?: 'repertoire' | 'learning';

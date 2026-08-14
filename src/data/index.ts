@@ -164,23 +164,6 @@ export const interestGroups: InterestGroup[] = [
     ]
   },
   {
-    id: 'composers',
-    eyebrow: {
-      en: 'Violin / Concerto / Counterpoint',
-      zh: '小提琴 / 协奏曲 / 对位'
-    },
-    title: {
-      en: 'Favorite Composers',
-      zh: '喜欢的音乐家'
-    },
-    items: [
-      { id: 'paganini', title: { en: 'Niccolò Paganini', zh: '尼科罗·帕格尼尼' } },
-      { id: 'bach', title: { en: 'Johann Sebastian Bach', zh: '约翰·塞巴斯蒂安·巴赫' } },
-      { id: 'vivaldi', title: { en: 'Antonio Vivaldi', zh: '安东尼奥·维瓦尔第' } },
-      { id: 'mozart', title: { en: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿马德乌斯·莫扎特' } }
-    ]
-  },
-  {
     id: 'fashion-designers',
     eyebrow: {
       en: 'Silhouette / Cut / Form',
@@ -212,46 +195,72 @@ export const interestGroups: InterestGroup[] = [
     items: [
       {
         id: 'monti-csardas',
-        title: { en: 'Vittorio Monti: Csárdás', zh: '维托里奥·蒙蒂：《查尔达什》' },
+        creator: { en: 'Vittorio Monti', zh: '维托里奥·蒙蒂' },
+        title: { en: 'Csárdás', zh: '《查尔达什》' },
         detail: { en: 'Repertoire', zh: '会演奏' },
         detailTone: 'repertoire'
       },
       {
         id: 'mozart-k219',
-        title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 5 in A major, K. 219', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《A 大调第五小提琴协奏曲，K. 219》' },
+        creator: { en: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿马德乌斯·莫扎特' },
+        title: { en: 'Violin Concerto No. 5 in A major, K. 219', zh: '《A 大调第五小提琴协奏曲，K. 219》' },
         detail: { en: 'Learning · Movement I', zh: '学习中 · 第一乐章' },
         detailTone: 'learning'
       },
-      { id: 'mozart-k218', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 4 in D major, K. 218', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《D 大调第四小提琴协奏曲，K. 218》' } },
-      { id: 'mozart-k216', title: { en: 'Wolfgang Amadeus Mozart: Violin Concerto No. 3 in G major, K. 216', zh: '沃尔夫冈·阿马德乌斯·莫扎特：《G 大调第三小提琴协奏曲，K. 216》' } },
+      {
+        id: 'mozart-k218',
+        creator: { en: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿马德乌斯·莫扎特' },
+        title: { en: 'Violin Concerto No. 4 in D major, K. 218', zh: '《D 大调第四小提琴协奏曲，K. 218》' }
+      },
+      {
+        id: 'mozart-k216',
+        creator: { en: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿马德乌斯·莫扎特' },
+        title: { en: 'Violin Concerto No. 3 in G major, K. 216', zh: '《G 大调第三小提琴协奏曲，K. 216》' }
+      },
       {
         id: 'vivaldi-rv356',
-        title: { en: 'Antonio Vivaldi: Violin Concerto in A minor, Op. 3 No. 6, RV 356', zh: '安东尼奥·维瓦尔第：《a 小调小提琴协奏曲，Op. 3 No. 6, RV 356》' },
+        creator: { en: 'Antonio Vivaldi', zh: '安东尼奥·维瓦尔第' },
+        title: { en: 'Violin Concerto in A minor, Op. 3 No. 6, RV 356', zh: '《a 小调小提琴协奏曲，Op. 3 No. 6, RV 356》' },
         detail: { en: 'Repertoire · Movement I', zh: '会演奏 · 第一乐章' },
         detailTone: 'repertoire'
       },
       {
         id: 'vivaldi-rv279',
+        creator: { en: 'Antonio Vivaldi', zh: '安东尼奥·维瓦尔第' },
         title: {
-          en: 'Antonio Vivaldi: Violin Concerto in E minor, Op. 4 No. 2, RV 279',
-          zh: '安东尼奥·维瓦尔第：《e 小调小提琴协奏曲，Op. 4 No. 2, RV 279》'
+          en: 'Violin Concerto in E minor, Op. 4 No. 2, RV 279',
+          zh: '《e 小调小提琴协奏曲，Op. 4 No. 2, RV 279》'
         }
       },
       {
         id: 'vivaldi-four-seasons',
-        title: { en: 'Antonio Vivaldi: The Four Seasons, Op. 8, Nos. 1-4', zh: '安东尼奥·维瓦尔第：《四季，Op. 8, Nos. 1-4》' },
+        creator: { en: 'Antonio Vivaldi', zh: '安东尼奥·维瓦尔第' },
+        title: { en: 'The Four Seasons, Op. 8, Nos. 1-4', zh: '《四季，Op. 8, Nos. 1-4》' },
         detail: { en: 'Repertoire · Spring', zh: '会演奏 ·《春》' },
         detailTone: 'repertoire'
       },
       {
         id: 'handel-hwv371',
-        title: { en: 'George Frideric Handel: Violin Sonata in D major, HWV 371', zh: '乔治·弗里德里克·亨德尔：《D 大调小提琴奏鸣曲，HWV 371》' },
+        creator: { en: 'George Frideric Handel', zh: '乔治·弗里德里克·亨德尔' },
+        title: { en: 'Violin Sonata in D major, HWV 371', zh: '《D 大调小提琴奏鸣曲，HWV 371》' },
         detail: { en: 'Repertoire · Movements I–II', zh: '会演奏 · 第一、二乐章' },
         detailTone: 'repertoire'
       },
-      { id: 'bach-solo', title: { en: 'Johann Sebastian Bach: Sonatas and Partitas for Solo Violin, BWV 1001-1006', zh: '约翰·塞巴斯蒂安·巴赫：《无伴奏小提琴奏鸣曲与组曲，BWV 1001-1006》' } },
-      { id: 'bach-bwv1041', title: { en: 'Johann Sebastian Bach: Violin Concerto in A minor, BWV 1041', zh: '约翰·塞巴斯蒂安·巴赫：《a 小调小提琴协奏曲，BWV 1041》' } },
-      { id: 'paganini-caprice-24', title: { en: 'Niccolò Paganini: 24 Caprices for Solo Violin, Op. 1: No. 24 in A minor', zh: '尼科罗·帕格尼尼：《24 首无伴奏小提琴随想曲，Op. 1：第 24 首 a 小调》' } }
+      {
+        id: 'bach-solo',
+        creator: { en: 'Johann Sebastian Bach', zh: '约翰·塞巴斯蒂安·巴赫' },
+        title: { en: 'Sonatas and Partitas for Solo Violin, BWV 1001-1006', zh: '《无伴奏小提琴奏鸣曲与组曲，BWV 1001-1006》' }
+      },
+      {
+        id: 'bach-bwv1041',
+        creator: { en: 'Johann Sebastian Bach', zh: '约翰·塞巴斯蒂安·巴赫' },
+        title: { en: 'Violin Concerto in A minor, BWV 1041', zh: '《a 小调小提琴协奏曲，BWV 1041》' }
+      },
+      {
+        id: 'paganini-caprice-24',
+        creator: { en: 'Niccolò Paganini', zh: '尼科罗·帕格尼尼' },
+        title: { en: '24 Caprices for Solo Violin, Op. 1: No. 24 in A minor', zh: '《24 首无伴奏小提琴随想曲，Op. 1：第 24 首 a 小调》' }
+      }
     ]
   },
   {
