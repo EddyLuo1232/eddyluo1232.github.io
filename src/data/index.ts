@@ -464,6 +464,15 @@ export const awardItems: AwardItem[] = [
 // News items
 export const newsItems: NewsItem[] = [
   {
+    id: 'emnlp-2026-findings',
+    date: '2026.08.21',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em>Your Harness is Not Secure: Benchmark Real-world threat of Command Line Interface Agent</em> has been accepted by <strong>EMNLP'2026 Findings</strong>. Thanks to my collaborators.`,
+      zh: `我们的论文 <em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em> 被 <strong>EMNLP 2026 Findings</strong> 接收。感谢所有合作者。`
+    }
+  },
+  {
     id: 'meta-superintelligence-labs',
     date: '2026.07.20',
     tag: { en: 'Position', zh: '职位' },
@@ -548,6 +557,23 @@ export const newsItems: NewsItem[] = [
 
 // Publications
 export const publications: Publication[] = [
+  {
+    id: 'advcua',
+    badge: 'EMNLP\'2026',
+    badgeLogo: '/images/conference/ACL.svg.png',
+    image: '/images/publications/advcua.png',
+    alt: 'AdvCUA',
+    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Tianyu Lu, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
+    title: {
+      en: '<em>Your Harness is Not Secure: Benchmark Real-world threat of Command Line Interface Agent</em>',
+      zh: '<em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em>'
+    },
+    links: [
+      { href: 'https://arxiv.org/abs/2510.06607', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://eddyluo.com/AdvCUA/', label: { en: '[Project Page]', zh: '[项目主页]' } },
+      { href: 'https://github.com/EddyLuo1232/VRAP', label: { en: '[Code]', zh: '[代码]' } }
+    ]
+  },
   {
     id: 'doxing',
     badge: 'ICLR\'2026',
@@ -684,23 +710,6 @@ export const preprints: Publication[] = [
     links: [
       { href: 'https://arxiv.org/pdf/2604.01444', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } }
-    ]
-  },
-  {
-    id: 'advcua',
-    badge: 'Arxiv',
-    badgeLogo: '/images/conference/Arxiv.jpeg',
-    image: '/images/publications/advcua.png',
-    alt: 'AdvCUA',
-    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Tianyu Lu, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
-    title: {
-      en: '<em>Code Agent can be an End-to-end System Hacker: Benchmarking Real-world Threats of Computer-use Agent</em>',
-      zh: '<em>代码智能体也可以成为端到端系统黑客：计算机使用智能体真实世界威胁基准评测</em>'
-    },
-    links: [
-      { href: 'https://arxiv.org/abs/2510.06607', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://eddyluo.com/AdvCUA/', label: { en: '[Project Page]', zh: '[项目主页]' } },
-      { href: 'https://github.com/EddyLuo1232/VRAP', label: { en: '[Code]', zh: '[代码]' } }
     ]
   },
   {
