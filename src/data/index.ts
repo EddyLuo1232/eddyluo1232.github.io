@@ -491,6 +491,15 @@ export const newsItems: NewsItem[] = [
     }
   },
   {
+    id: 'aiwild-2026-oral',
+    date: '2026.05.23',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> has been accepted by the <strong>Second Workshop on Agents in the Wild: Safety, Security, and Beyond (ICML 2026 AIWILD)</strong> as an <strong>Oral Presentation (Top 1.22%)</strong>.`,
+      zh: `我们的工作 <em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em> 被 <strong>第二届 Agents in the Wild：Safety, Security, and Beyond 研讨会（ICML 2026 AIWILD）</strong> 接收为<strong>口头报告（Top 1.22%）</strong>。`
+    }
+  },
+  {
     id: 'virtue-ai-intern',
     date: '2026.05.07',
     tag: { en: 'Position', zh: '职位' },
@@ -515,6 +524,15 @@ export const newsItems: NewsItem[] = [
     content: {
       en: `Our work <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> has been accepted by <strong>ICLR'2026</strong>. Thanks to my collaborators.`,
       zh: `我们的工作 <em>镜头中的开盒风险：揭示多模态大型推理模型中的位置相关隐私泄露</em> 被 <strong>ICLR 2026</strong> 接收。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'iccv-trustworthy-fms-2025-oral',
+    date: '2025.08.16',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> has been accepted by the <strong>ICCV Trustworthy FMs Workshop</strong> as an <strong>Oral Presentation</strong>.`,
+      zh: `我们的工作 <em>镜头中的开盒风险：揭示多模态大型推理模型中的位置相关隐私泄露</em> 被 <strong>ICCV Trustworthy FMs Workshop</strong> 接收为<strong>口头报告</strong>。`
     }
   },
   {
