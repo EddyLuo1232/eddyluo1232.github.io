@@ -468,7 +468,7 @@ export const newsItems: NewsItem[] = [
     date: '2026.08.21',
     tag: { en: 'Paper', zh: '论文' },
     content: {
-      en: `Our work <em>Your Harness is Not Secure: Benchmark Real-world threat of Command Line Interface Agent</em> has been accepted by <strong>EMNLP'2026 Findings</strong>. Thanks to my collaborators.`,
+      en: `Our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> has been accepted by <strong>EMNLP'2026 Findings</strong>. Thanks to my collaborators.`,
       zh: `我们的论文 <em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em> 被 <strong>EMNLP 2026 Findings</strong> 接收。感谢所有合作者。`
     }
   },
@@ -565,7 +565,7 @@ export const publications: Publication[] = [
     alt: 'AdvCUA',
     authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Qiming Zhang*, Tianyu Lu*, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
     title: {
-      en: '<em>Your Harness is Not Secure: Benchmark Real-world threat of Command Line Interface Agent</em>',
+      en: '<em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em>',
       zh: '<em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em>'
     },
     links: [
