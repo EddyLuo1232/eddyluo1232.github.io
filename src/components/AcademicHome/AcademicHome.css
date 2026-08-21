@@ -483,6 +483,11 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     color: #4b6679;
 }
 
+.academic-news-tag-workshop {
+    background: #f7ebe7;
+    color: #875648;
+}
+
 .academic-news-tag-award {
     background: #f6f0e5;
     color: #80683e;
