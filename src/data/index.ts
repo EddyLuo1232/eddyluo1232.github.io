@@ -563,7 +563,7 @@ export const publications: Publication[] = [
     badgeLogo: '/images/conference/ACL.svg.png',
     image: '/images/publications/advcua.png',
     alt: 'AdvCUA',
-    authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Tianyu Lu, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
+    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Qiming Zhang*, Tianyu Lu*, Xiaogeng Liu, CHIU Hung Chun, Siyuan Ma, Bin Hu, Yizhe Zhang, Xusheng Xiao, Yinzhi Cao, Zhen Xiang, Chaowei Xiao',
     title: {
       en: '<em>Your Harness is Not Secure: Benchmark Real-world threat of Command Line Interface Agent</em>',
       zh: '<em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em>'
