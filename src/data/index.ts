@@ -679,8 +679,8 @@ export const badNewsItems: NewsItem[] = [
     date: '2026.05',
     tag: { en: 'Paper', zh: '论文' },
     content: {
-      en: `During 2026, our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> was rejected by <strong>ICLR 2026</strong>, desk-rejected by <strong>ICML 2026</strong>, and later withdrawn from <strong>COLM 2026</strong> as we continued refining it and looking for the right audience.`,
-      zh: `2026 年，我们的工作 <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> 先后被 <strong>ICLR 2026</strong> 拒绝、被 <strong>ICML 2026</strong> desk reject，之后又从 <strong>COLM 2026</strong> 撤稿。在这个过程中，我们继续完善工作，也继续寻找真正适合它的读者。`
+      en: `During 2026, our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> was rejected by <strong>ICLR 2026</strong>, desk-rejected by <strong>ICML 2026</strong>, and later withdrawn from <strong>COLM 2026</strong> while we continued refining the work.`,
+      zh: `2026 年，我们的工作 <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> 先后被 <strong>ICLR 2026</strong> 拒绝、被 <strong>ICML 2026</strong> desk reject，之后又从 <strong>COLM 2026</strong> 撤稿。在这个过程中，我们继续完善这项工作。`
     }
   },
   {
