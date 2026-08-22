@@ -3,11 +3,12 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import {
   aboutContent,
   awardItems,
+  badNewsItems,
   educationItems,
   experienceItems,
+  goodNewsItems,
   interestGroups,
   interestIntro,
-  newsItems,
   personalInfo,
   preprints,
   publications,
@@ -79,9 +80,21 @@ const VisitorMap: React.FC = () => {
 const AcademicHome: React.FC = () => {
   const { language, t } = useLanguage();
   const [isAnimeAvatar, setIsAnimeAvatar] = useState(false);
+  const [newsMode, setNewsMode] = useState<'good' | 'bad'>('good');
 
   const groupedNews = useMemo(() => {
-    return newsItems.reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
+    const activeNewsItems = newsMode === 'good' ? goodNewsItems : badNewsItems;
+
+    return [...activeNewsItems]
+      .sort((first, second) => {
+        const toSortableDate = (date: string) => {
+          const [year, month = 0, day = 0] = date.split('.').map(Number);
+          return year * 10000 + month * 100 + day;
+        };
+
+        return toSortableDate(second.date) - toSortableDate(first.date);
+      })
+      .reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
       const year = item.date.split('.')[0];
       const group = groups.find((entry) => entry.year === year);
       if (group) {
@@ -91,13 +104,23 @@ const AcademicHome: React.FC = () => {
       }
       return groups;
     }, []);
-  }, []);
+  }, [newsMode]);
 
   const formatDate = (date: string) => {
     const [, month, day] = date.split('.');
+
+    if (!month) {
+      return '';
+    }
+
     const monthIndex = Number(month) - 1;
-    const dayNumber = Number(day);
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    if (!day) {
+      return language === 'zh' ? `${Number(month)}月` : monthNames[monthIndex];
+    }
+
+    const dayNumber = Number(day);
     return language === 'zh' ? `${Number(month)}月${dayNumber}日` : `${monthNames[monthIndex]} ${dayNumber}`;
   };
 
@@ -375,10 +398,42 @@ const AcademicHome: React.FC = () => {
           </section>
 
           <section className="academic-panel" id="news">
-            <div className="academic-section-heading">
+            <div className="academic-section-heading academic-news-heading">
               <h2>{t({ en: 'News', zh: '动态' })}</h2>
+              <div
+                className={`academic-news-toggle academic-news-toggle-${newsMode}`}
+                role="group"
+                aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
+              >
+                <button
+                  type="button"
+                  className={`academic-news-toggle-button academic-news-toggle-good${newsMode === 'good' ? ' is-active' : ''}`}
+                  aria-pressed={newsMode === 'good'}
+                  onClick={() => setNewsMode('good')}
+                >
+                  <span className="academic-news-toggle-dot" aria-hidden="true" />
+                  {t({ en: 'Milestones', zh: '里程碑' })}
+                </button>
+                <button
+                  type="button"
+                  className={`academic-news-toggle-button academic-news-toggle-bad${newsMode === 'bad' ? ' is-active' : ''}`}
+                  aria-pressed={newsMode === 'bad'}
+                  onClick={() => setNewsMode('bad')}
+                >
+                  <span className="academic-news-toggle-dot" aria-hidden="true" />
+                  {t({ en: 'The Road There', zh: '来时的路' })}
+                </button>
+              </div>
             </div>
-            <div className="academic-card-body academic-news-list">
+            <div
+              key={newsMode}
+              className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
+              aria-live="polite"
+              aria-label={t(newsMode === 'good'
+                ? { en: 'Milestones timeline', zh: '里程碑时间线' }
+                : { en: 'The road there timeline', zh: '来时的路时间线' })}
+              tabIndex={0}
+            >
               {groupedNews.map((group) => (
                 <div key={group.year} className="academic-news-year">
                   <div className="academic-news-year-label">{group.year}</div>
@@ -393,7 +448,7 @@ const AcademicHome: React.FC = () => {
                           )}
                           <span dangerouslySetInnerHTML={{ __html: t(item.content) }} />
                         </div>
-                        <time>{formatDate(item.date)}</time>
+                        {formatDate(item.date) && <time dateTime={item.date.replaceAll('.', '-')}>{formatDate(item.date)}</time>}
                       </article>
                     ))}
                   </div>

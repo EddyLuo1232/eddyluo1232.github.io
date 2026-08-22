@@ -461,8 +461,8 @@ export const awardItems: AwardItem[] = [
   }
 ];
 
-// News items
-export const newsItems: NewsItem[] = [
+// Good news items
+export const goodNewsItems: NewsItem[] = [
   {
     id: 'emnlp-2026-findings',
     date: '2026.08.21',
@@ -569,6 +569,163 @@ export const newsItems: NewsItem[] = [
     content: {
       en: `I will join the University of Georgia as a <strong>PhD student</strong> in August 2025.`,
       zh: `我将于 2025 年 8 月加入佐治亚大学，攻读<strong>博士学位</strong>。`
+    }
+  },
+  {
+    id: 'naacl-2025-findings',
+    date: '2025.01',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em><a href="https://aclanthology.org/2025.findings-naacl.368/" target="_blank" rel="noopener noreferrer">Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</a></em> was accepted by <strong>NAACL 2025 Findings</strong>. Thanks to my collaborators.`,
+      zh: `我们的工作 <em><a href="https://aclanthology.org/2025.findings-naacl.368/" target="_blank" rel="noopener noreferrer">Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models</a></em> 被 <strong>NAACL 2025 Findings</strong> 接收。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'idea-ml-engineer',
+    date: '2024.07',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I joined the <strong>International Digital Economy Academy (IDEA)</strong> in Shenzhen, Guangdong, as a <strong>Machine Learning Engineer</strong>.`,
+      zh: `我以<strong>机器学习工程师</strong>的身份加入位于广东深圳的 <strong>International Digital Economy Academy（IDEA）</strong>。`
+    }
+  },
+  {
+    id: 'cikm-2024-context',
+    date: '2024.07',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em>Reviving the Context: Camera Trap Species Classification as Link Prediction on Multimodal Knowledge Graphs</em> was accepted by <strong>CIKM 2024</strong>. Thanks to my collaborators.`,
+      zh: `我们的工作 <em>Reviving the Context: Camera Trap Species Classification as Link Prediction on Multimodal Knowledge Graphs</em> 被 <strong>CIKM 2024</strong> 接收。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'colm-2024-jailbreakv',
+    date: '2024.07',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> was accepted by the inaugural <strong>COLM 2024</strong>. Thanks to my collaborators.`,
+      zh: `我们的工作 <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> 被首届 <strong>COLM 2024</strong> 接收。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'cv4animals-2024-oral',
+    date: '2024.05',
+    tag: { en: 'Workshop', zh: '研讨会' },
+    content: {
+      en: `My first work, <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em>, was accepted by the <strong>CVPR 2024 CV4Animals Workshop</strong> as an <strong>Oral Presentation</strong>. Thanks to my collaborators.`,
+      zh: `我的第一项工作 <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> 被 <strong>CVPR 2024 CV4Animals Workshop</strong> 接收为<strong>口头报告</strong>。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'safo-lab',
+    date: '2023.12',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I joined <strong>SaFo Lab</strong> at the <strong>University of Wisconsin–Madison</strong>, advised by <strong>Prof. Chaowei Xiao</strong>.`,
+      zh: `我加入了<strong>威斯康星大学麦迪逊分校</strong>的 <strong>SaFo Lab</strong>，师从 <strong>Chaowei Xiao 教授</strong>。`
+    }
+  },
+  {
+    id: 'osu-nlp-icicle',
+    date: '2022.08',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I joined the <strong>OSU NLP Group</strong> and <strong>ICICLE</strong> under the guidance of <strong>Prof. Yu Su</strong>. This was my first experience with formal academic research.`,
+      zh: `我加入了 <strong>OSU NLP Group</strong> 和 <strong>ICICLE</strong>，接受 <strong>Yu Su 教授</strong>的指导。这是我第一次接触正式的学术研究。`
+    }
+  },
+  {
+    id: 'osu-undergraduate',
+    date: '2022.08',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I will join the <strong>College of Arts and Sciences</strong> at <strong>The Ohio State University</strong> as an undergraduate student in <strong>Computer and Information Science</strong> in August 2022.`,
+      zh: `我将于 2022 年 8 月加入<strong>俄亥俄州立大学文理学院</strong>，攻读<strong>计算机与信息科学</strong>本科学位。`
+    }
+  },
+  {
+    id: 'imperial-data-science-summer-school',
+    date: '2021.06',
+    tag: { en: 'Award', zh: '奖学金' },
+    content: {
+      en: `I was admitted to the <strong>Imperial Data Science Online Summer School</strong> at <strong>Imperial College London</strong> with an <strong>£800 scholarship</strong>, though I ultimately declined the offer.`,
+      zh: `我被<strong>帝国理工学院</strong>的 <strong>Imperial Data Science Online Summer School</strong> 录取，并获得了 <strong>800 英镑奖学金</strong>，但最终选择放弃这一机会。`
+    }
+  },
+  {
+    id: 'uc-berkeley-summer-school',
+    date: '2021.06',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I attended the <strong>UC Berkeley Summer School</strong>, where I learned Python.`,
+      zh: `我参加了 <strong>UC Berkeley Summer School</strong>，并在那里学会了 Python。`
+    }
+  },
+  {
+    id: 'nc-state-geats',
+    date: '2021',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `I was admitted to the <strong>NC State GEATS Summer Research Program</strong> and began my first research experience. Although the program was intended for second-year students, I was delighted to receive an exception as a first-year student.`,
+      zh: `我被 <strong>NC State GEATS Summer Research Program</strong> 录取，开启了人生中的第一段科研经历。虽然项目原本面向大二学生，我很开心能在大一时被破格录取。`
+    }
+  }
+];
+
+// Setbacks are kept separate so visitors can choose which side of the journey to read.
+export const badNewsItems: NewsItem[] = [
+  {
+    id: 'harness-submission-journey',
+    date: '2026.05',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `During 2026, our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> was rejected by <strong>ICLR 2026</strong>, desk-rejected by <strong>ICML 2026</strong>, and later withdrawn from <strong>COLM 2026</strong> as we continued refining it and looking for the right audience.`,
+      zh: `2026 年，我们的工作 <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> 先后被 <strong>ICLR 2026</strong> 拒绝、被 <strong>ICML 2026</strong> desk reject，之后又从 <strong>COLM 2026</strong> 撤稿。在这个过程中，我们继续完善工作，也继续寻找真正适合它的读者。`
+    }
+  },
+  {
+    id: 'ieee-sp-2026-rejection',
+    date: '2025.10',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `The first submission of <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> was rejected by <strong>IEEE S&amp;P</strong>, and we continued developing the work.`,
+      zh: `<em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> 的第一次投稿被 <strong>IEEE S&amp;P</strong> 拒绝，我们选择继续完善这项工作。`
+    }
+  },
+  {
+    id: 'phd-applications-2025',
+    date: '2025.03',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `My initial round of PhD applications ended without an offer.`,
+      zh: `我的第一轮 PhD 申请最终没有收到 offer。`
+    }
+  },
+  {
+    id: 'context-submission-journey',
+    date: '2024.03',
+    tag: { en: 'Paper', zh: '论文' },
+    content: {
+      en: `From 2023 to 2024, my first conference paper, <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em>, received low scores at <strong>NeurIPS 2023</strong> and was withdrawn, then was rejected by <strong>AAAI 2024</strong> and <strong>Methods in Ecology and Evolution</strong>. These cycles prompted us to keep revising the work and how we communicated it.`,
+      zh: `从 2023 年到 2024 年，我的第一篇 conference 论文 <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> 在 <strong>NeurIPS 2023</strong> 得到较低评分后撤稿，随后又被 <strong>AAAI 2024</strong> 和 <strong>Methods in Ecology and Evolution</strong> 拒绝。这些经历促使我们不断修改工作，也重新思考如何更好地表达它。`
+    }
+  },
+  {
+    id: 'us-transfer-rejections-2022',
+    date: '2022.06',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `My initial transfer applications did not work out as expected. <strong>The Ohio State University</strong> was the only school that offered me admission, and I chose to continue my undergraduate journey there.`,
+      zh: `最初的转学申请没有像预期那样展开，只有<strong>俄亥俄州立大学</strong>录取了我，于是我选择在那里继续自己的本科旅程。`
+    }
+  },
+  {
+    id: 'undergraduate-admission-2020',
+    date: '2020.08',
+    tag: { en: 'Position', zh: '职位' },
+    content: {
+      en: `My original university plan did not work out, and I began my undergraduate studies at <strong>Xi'an Jiaotong-Liverpool University</strong>.`,
+      zh: `最初的大学计划没有实现，我在<strong>西交利物浦大学</strong>开始了自己的本科学习。`
     }
   }
 ];

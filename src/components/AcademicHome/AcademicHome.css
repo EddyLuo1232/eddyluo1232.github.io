@@ -255,6 +255,91 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     letter-spacing: 0;
 }
 
+.academic-news-heading {
+    gap: 12px;
+}
+
+.academic-news-toggle {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid #e6e6e6;
+    border-radius: 999px;
+    background: #f4f4f4;
+}
+
+.academic-news-toggle::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: calc((100% - 8px) / 2);
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(17, 17, 17, 0.1);
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), background-color 160ms ease;
+}
+
+.academic-news-toggle-bad::before {
+    transform: translateX(calc(100% + 2px));
+}
+
+.academic-news-toggle-button {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #777777;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+.academic-news-toggle-button:hover {
+    color: #333333;
+}
+
+.academic-news-toggle-button.is-active {
+    background: transparent;
+}
+
+.academic-news-toggle-good.is-active {
+    color: #496b55;
+}
+
+.academic-news-toggle-bad.is-active {
+    color: #6f6654;
+}
+
+.academic-news-toggle-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a0a0a0;
+}
+
+.academic-news-toggle-good .academic-news-toggle-dot {
+    background: #70907b;
+}
+
+.academic-news-toggle-bad .academic-news-toggle-dot {
+    background: #91836b;
+}
+
 .academic-card-body {
     padding: 16px 18px 18px;
 }
@@ -420,6 +505,58 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
 .academic-news-list {
     display: grid;
     gap: 12px;
+    max-height: 520px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: #c6c6c6 transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+}
+
+.academic-news-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.academic-news-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.academic-news-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #c6c6c6;
+}
+
+.academic-news-list-good {
+    animation: academic-news-reveal-left 220ms ease-out both;
+}
+
+.academic-news-list-bad {
+    animation: academic-news-reveal-right 220ms ease-out both;
+}
+
+@keyframes academic-news-reveal-left {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes academic-news-reveal-right {
+    from {
+        opacity: 0;
+        transform: translateX(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .academic-news-year {
@@ -995,6 +1132,10 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     .academic-news-item,
     .academic-publication {
         grid-template-columns: 1fr;
+    }
+
+    .academic-news-list {
+        max-height: 440px;
     }
 
     .academic-interest-row summary {
