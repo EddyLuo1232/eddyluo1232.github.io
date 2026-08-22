@@ -621,8 +621,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2023.12',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I joined <strong>SaFo Lab</strong> at the <strong>University of Wisconsin–Madison</strong>, advised by <strong>Prof. Chaowei Xiao</strong>.`,
-      zh: `我加入了<strong>威斯康星大学麦迪逊分校</strong>的 <strong>SaFo Lab</strong>，师从 <strong>Chaowei Xiao 教授</strong>。`
+      en: `I joined <strong>SaFo Lab</strong> as a <strong>Research Student Intern</strong> at the <strong>University of Wisconsin–Madison</strong>, advised by <strong>Prof. Chaowei Xiao</strong>.`,
+      zh: `我以<strong>研究实习生</strong>身份加入<strong>威斯康星大学麦迪逊分校</strong>的 <strong>SaFo Lab</strong>，师从 <strong>Chaowei Xiao 教授</strong>。`
     }
   },
   {
