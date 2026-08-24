@@ -411,7 +411,6 @@ const AcademicHome: React.FC = () => {
                   aria-pressed={newsMode === 'good'}
                   onClick={() => setNewsMode('good')}
                 >
-                  <span className="academic-news-toggle-dot" aria-hidden="true" />
                   {t({ en: 'Milestones', zh: '里程碑' })}
                 </button>
                 <button
@@ -420,8 +419,7 @@ const AcademicHome: React.FC = () => {
                   aria-pressed={newsMode === 'bad'}
                   onClick={() => setNewsMode('bad')}
                 >
-                  <span className="academic-news-toggle-dot" aria-hidden="true" />
-                  {t({ en: 'The Road There', zh: '来时的路' })}
+                  {t({ en: 'Detours', zh: '转折' })}
                 </button>
               </div>
             </div>
@@ -431,7 +429,7 @@ const AcademicHome: React.FC = () => {
               aria-live="polite"
               aria-label={t(newsMode === 'good'
                 ? { en: 'Milestones timeline', zh: '里程碑时间线' }
-                : { en: 'The road there timeline', zh: '来时的路时间线' })}
+                : { en: 'Detours timeline', zh: '转折时间线' })}
               tabIndex={0}
             >
               {groupedNews.map((group) => (
