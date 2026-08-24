@@ -72,7 +72,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <div className="nav-language">
+          <div className={`nav-language nav-language-${language}`} role="group" aria-label="Language">
             <button
               className={`nav-lang-btn ${language === 'en' ? 'active' : ''}`}
               onClick={() => setLanguage('en')}

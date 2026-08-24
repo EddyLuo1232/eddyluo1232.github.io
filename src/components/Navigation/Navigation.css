@@ -26,29 +26,51 @@
 }
 
 .nav-language {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2px;
+    border-radius: 8px;
+    background: rgba(118, 118, 128, 0.12);
+}
+
+.nav-language::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: calc((100% - 4px) / 2);
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-language-zh::before {
+    transform: translateX(100%);
 }
 
 .nav-lang-btn {
-    height: 28px;
+    position: relative;
+    z-index: 1;
+    height: 26px;
     min-width: 34px;
     padding: 0 8px;
-    border: 1px solid #d5d5d5;
-    border-radius: 4px;
-    background: #ffffff;
-    color: #555555;
-    font-size: 0.75rem;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #6e6e73;
+    font: inherit;
+    font-size: 0.71rem;
     font-weight: 600;
     cursor: pointer;
+    transition: color 160ms ease;
 }
 
 .nav-lang-btn:hover,
 .nav-lang-btn.active {
-    color: #111111;
-    border-color: #111111;
-    background: #f1f1f1;
+    color: #1d1d1f;
 }
 
 .nav-menu {
