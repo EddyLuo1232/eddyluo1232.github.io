@@ -703,6 +703,11 @@ html[lang="zh-CN"] .academic-anime-banner blockquote {
     height: 22px;
 }
 
+.academic-publication-badge-cikm img {
+    width: 36px;
+    height: 16px;
+}
+
 .academic-publication-badge em {
     color: #555555;
     font-style: normal;

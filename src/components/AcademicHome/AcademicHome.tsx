@@ -239,6 +239,7 @@ const AcademicHome: React.FC = () => {
     const badgeClassName = [
       'academic-publication-badge',
       publication.badge.includes('ACL') ? 'academic-publication-badge-acl' : '',
+      publication.badge.includes('CIKM') ? 'academic-publication-badge-cikm' : '',
       publication.badge === 'Arxiv' ? 'academic-publication-badge-arxiv' : ''
     ].filter(Boolean).join(' ');
     const badgeContent = (

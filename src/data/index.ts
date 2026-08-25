@@ -850,6 +850,23 @@ export const publications: Publication[] = [
       { href: 'https://arxiv.org/abs/2411.13504', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://github.com/MingyuJ666/Disentangling-Memory-and-Reasoning', label: { en: '[Code]', zh: '[代码]' } }
     ]
+  },
+  {
+    id: 'cosmo',
+    badge: 'CIKM\'2024',
+    badgeLogo: '/images/conference/CIKM.png',
+    image: '/images/publications/COSMO.png',
+    alt: 'COSMO multimodal knowledge graph and model architecture',
+    authors: 'Vardaan Pahuja, <span class="highlight"><strong>Weidi Luo</strong></span>, Yu Gu, Cheng-Hao Tu, Hong-You Chen, Tanya Berger-Wolf, Charles Stewart, Song Gao, Wei-Lun Chao, Yu Su',
+    title: {
+      en: '<em>Reviving the Context: Camera Trap Species Classification as Link Prediction on Multimodal Knowledge Graphs</em>',
+      zh: '<em>重拾上下文：将相机陷阱物种分类转化为多模态知识图谱上的链接预测</em>'
+    },
+    links: [
+      { href: 'https://arxiv.org/abs/2401.00608', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://osu-nlp-group.github.io/COSMO/', label: { en: '[Project Page]', zh: '[项目主页]' } },
+      { href: 'https://github.com/OSU-NLP-Group/COSMO', label: { en: '[Code]', zh: '[代码]' } }
+    ]
   }
 ];
 
