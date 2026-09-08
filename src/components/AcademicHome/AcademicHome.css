@@ -252,7 +252,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
 @media (min-width: 761px) {
     .academic-news-awards {
         grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.6fr);
-        grid-template-rows: 1.618034fr 1fr;
         gap: 0 36px;
         align-items: stretch;
     }
@@ -268,7 +267,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-news-panel {
         grid-column: 2;
-        grid-row: 1 / span 2;
+        grid-row: 1;
         display: flex;
         flex-direction: column;
         min-height: 0;
@@ -278,7 +277,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
         flex: 0 0 auto;
     }
 
-    /* News spans both rows: the golden ratio of the natural height of Awards. */
+    /* Awards determines the row height; News scrolls within the same height. */
     .academic-news-panel .academic-news-list {
         flex: 1 1 0;
         height: 0;
