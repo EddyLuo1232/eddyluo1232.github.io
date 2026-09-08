@@ -440,21 +440,6 @@ const AcademicHome: React.FC = () => {
             </div>
           </section>
 
-          <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
-            <div className="academic-section-heading">
-              <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
-            </div>
-            <ul>
-              {awardItems.map((award) => (
-                <li key={award.id}>
-                  <span>{t(award.name)}</span>
-                  <em>{t(award.date)}</em>
-                  {award.detail && <p>{t(award.detail)}</p>}
-                </li>
-              ))}
-            </ul>
-          </section>
-
           <section className="academic-panel" id="publications">
             <div className="academic-section-heading">
               <h2>{t({ en: 'Selected Preprints', zh: '精选预印本' })}</h2>
@@ -497,8 +482,20 @@ const AcademicHome: React.FC = () => {
           </section>
 
           <section className="academic-panel" id="experience">
-            <div className="academic-card-body">
+            <div className="academic-card-body academic-experience-grid">
               <TimelineList title={t({ en: 'Education & Experience', zh: '教育与研究经历' })} items={educationAndExperienceItems} />
+              <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
+                <h3 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h3>
+                <ul>
+                  {awardItems.map((award) => (
+                    <li key={award.id}>
+                      <span>{t(award.name)}</span>
+                      <em>{t(award.date)}</em>
+                      {award.detail && <p>{t(award.detail)}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </section>
             </div>
           </section>
 

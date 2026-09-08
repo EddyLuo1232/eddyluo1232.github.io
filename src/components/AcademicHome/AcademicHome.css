@@ -305,13 +305,31 @@ html[lang="zh-CN"] .academic-quote blockquote {
     padding: 0;
 }
 
+#experience {
+    container: experience / inline-size;
+}
+
+.academic-experience-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+}
+
+/* Stack the columns when the content area becomes too narrow. */
+@container experience (min-width: 48rem) {
+    .academic-experience-grid {
+        grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+    }
+}
+
 .academic-timeline-column,
 .academic-awards {
     min-width: 0;
     overflow-wrap: anywhere;
 }
 
-.academic-timeline-column h3 {
+.academic-timeline-column h3,
+.academic-awards h3 {
     margin: 0 0 22px;
     font-size: 1.04rem;
     font-weight: 600;
