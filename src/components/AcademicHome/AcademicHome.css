@@ -496,7 +496,8 @@ html[lang="zh-CN"] .academic-quote blockquote {
     padding-right: 12px;
     overflow-x: hidden;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    /* Continue scrolling the page when the timeline reaches either edge. */
+    overscroll-behavior: auto;
     scrollbar-color: #c6c6c6 transparent;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
