@@ -1,4 +1,4 @@
-import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, InterestGroup } from '../types';
+import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, StudentMentee, InterestGroup } from '../types';
 
 // Personal information
 export const personalInfo = {
@@ -41,6 +41,28 @@ export const quote = {
     right: '/images/assets/ttg.png'
   }
 };
+
+// Student mentees
+export const studentMentees: StudentMentee[] = [
+  {
+    id: 'qiming-zhang',
+    name: 'Qiming Zhang',
+    href: 'https://qimingzhang.com/',
+    destination: {
+      en: 'CS Ph.D., University of South Florida',
+      zh: '南佛罗里达大学，计算机科学博士'
+    }
+  },
+  {
+    id: 'tianyu-lu',
+    name: 'Tianyu Lu',
+    href: 'https://github.com/lutianyu2001',
+    destination: {
+      en: 'BME M.S., Johns Hopkins University',
+      zh: '约翰霍普金斯大学，生物医学工程硕士'
+    }
+  }
+];
 
 // Interests
 export const interestIntro = {

@@ -79,6 +79,13 @@ export interface AwardItem {
   detail?: TranslatableText;
 }
 
+export interface StudentMentee {
+  id: string;
+  name: string;
+  href: string;
+  destination: TranslatableText;
+}
+
 export interface InterestItem {
   id: string;
   creator?: TranslatableText;

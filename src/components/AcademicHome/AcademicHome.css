@@ -769,6 +769,46 @@ html[lang="zh-CN"] .academic-quote blockquote {
     font-size: 0.82rem !important;
 }
 
+.academic-mentee-list {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.academic-mentee-list li {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 12px;
+}
+
+.academic-mentee-list a {
+    width: fit-content;
+    color: #161616;
+    font-weight: 500;
+    text-decoration-color: #c5c5c5;
+    text-underline-offset: 3px;
+}
+
+.academic-mentee-list a:hover {
+    text-decoration-color: currentColor;
+}
+
+.academic-mentee-destination {
+    display: flex;
+    gap: 12px;
+    min-width: 0;
+    color: #555555;
+    overflow-wrap: anywhere;
+}
+
+.academic-mentee-destination > [aria-hidden] {
+    flex-shrink: 0;
+    color: #888888;
+}
+
 .academic-interests {
     display: grid;
     gap: 15px;
@@ -1140,6 +1180,11 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-timeline-heading strong {
         flex-basis: 100%;
+    }
+
+    .academic-mentee-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
     }
 
     .academic-interest-row summary {

@@ -14,7 +14,8 @@ import {
   preprints,
   publications,
   quote,
-  socialLinks
+  socialLinks,
+  studentMentees
 } from '../../data';
 import type { NewsItem, Publication, TimelineItem } from '../../types';
 import './AcademicHome.css';
@@ -459,6 +460,25 @@ const AcademicHome: React.FC = () => {
                 <PublicationItem key={publication.id} publication={publication} />
               ))}
             </div>
+          </section>
+
+          <section className="academic-panel" id="mentees" aria-labelledby="mentees-heading">
+            <div className="academic-section-heading">
+              <h2 id="mentees-heading">{t({ en: 'Student Mentees', zh: '指导学生' })}</h2>
+            </div>
+            <ul className="academic-mentee-list">
+              {studentMentees.map((student) => (
+                <li key={student.id}>
+                  <a href={student.href} target="_blank" rel="noopener noreferrer">
+                    {student.name}
+                  </a>
+                  <span className="academic-mentee-destination">
+                    <span aria-hidden="true">→</span>
+                    <span>{t(student.destination)}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className="academic-panel" id="experience">
