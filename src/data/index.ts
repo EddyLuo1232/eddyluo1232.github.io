@@ -476,6 +476,28 @@ export const awardItems: AwardItem[] = [
       en: '2025',
       zh: '2025'
     }
+  },
+  {
+    id: 'xjtlu-data-science-competition',
+    name: {
+      en: 'First Prize, Data Science Competition, Xi’an Jiaotong-Liverpool University',
+      zh: '西交利物浦大学数据科学比赛一等奖'
+    },
+    date: {
+      en: '2022',
+      zh: '2022'
+    }
+  },
+  {
+    id: 'imperial-summer-school-scholarship',
+    name: {
+      en: '£800 Summer School Scholarship, Imperial College London (declined)',
+      zh: '帝国理工学院暑校 £800 奖学金（已婉拒）'
+    },
+    date: {
+      en: '2021',
+      zh: '2021'
+    }
   }
 ];
 
