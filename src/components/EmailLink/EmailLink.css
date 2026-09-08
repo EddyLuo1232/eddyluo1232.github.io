@@ -1,0 +1,48 @@
+.email-feedback {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1100;
+    max-width: min(360px, calc(100vw - 40px));
+    color: #ffffff;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.email-feedback:not(:empty) {
+    padding: 16px 48px 16px 18px;
+    border-radius: 4px;
+    background: #202020;
+}
+
+.email-feedback-address {
+    display: block;
+    margin: 10px 0;
+    user-select: all;
+}
+
+.email-feedback a {
+    color: inherit;
+    text-underline-offset: 3px;
+}
+
+.email-feedback-dismiss {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.email-feedback :focus-visible {
+    outline-color: #ffffff;
+}

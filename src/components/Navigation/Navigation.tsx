@@ -1,24 +1,22 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Navigation.css';
 
 interface NavigationProps {
   activeSection: string;
-  onSectionClick: (sectionId: string) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }) => {
+const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
   const { language, setLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
-  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   const navItems = [
     { id: 'about', label: { en: 'About', zh: '简介' } },
-    { id: 'experience', label: { en: 'Experience', zh: '经历' } },
     { id: 'news', label: { en: 'News', zh: '动态' } },
     { id: 'publications', label: { en: 'Publications', zh: '论文' } },
+    { id: 'experience', label: { en: 'Experience', zh: '经历' } },
     { id: 'interests', label: { en: 'Interests', zh: '兴趣' } }
   ];
 
@@ -38,35 +36,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isMobileMenuOpen) setIsMobileMenuOpen(false);
+      if (event.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+        hamburgerRef.current?.focus();
+      }
     };
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isMobileMenuOpen]);
-
-  useLayoutEffect(() => {
-    const navMenu = navMenuRef.current;
-    const activeLink = linkRefs.current[activeSection];
-    if (!navMenu || !activeLink) {
-      return;
-    }
-
-    const updateIndicator = () => {
-      const menuRect = navMenu.getBoundingClientRect();
-      const linkRect = activeLink.getBoundingClientRect();
-      navMenu.style.setProperty('--indicator-left', `${linkRect.left - menuRect.left}px`);
-      navMenu.style.setProperty('--indicator-width', `${linkRect.width}px`);
-    };
-
-    updateIndicator();
-    window.addEventListener('resize', updateIndicator);
-    return () => window.removeEventListener('resize', updateIndicator);
-  }, [activeSection, language, isMobileMenuOpen]);
-
-  const handleNavClick = (sectionId: string) => {
-    onSectionClick(sectionId);
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <nav className="navbar">
@@ -75,12 +52,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
           <div className={`nav-language nav-language-${language}`} role="group" aria-label="Language">
             <button
               className={`nav-lang-btn ${language === 'en' ? 'active' : ''}`}
+              aria-pressed={language === 'en'}
               onClick={() => setLanguage('en')}
             >
               EN
             </button>
             <button
               className={`nav-lang-btn ${language === 'zh' ? 'active' : ''}`}
+              aria-pressed={language === 'zh'}
               onClick={() => setLanguage('zh')}
             >
               中
@@ -91,20 +70,15 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionClick }
         <div
           ref={navMenuRef}
           id="mobile-navigation"
-          className={`nav-menu ${isMobileMenuOpen ? 'active' : ''} ${activeSection ? 'has-active' : ''}`}
+          className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}
         >
           {navItems.map((item) => (
             <a
               key={item.id}
-              ref={(node) => {
-                linkRefs.current[item.id] = node;
-              }}
               href={`#${item.id}`}
               className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.id);
-              }}
+              aria-current={activeSection === item.id ? 'location' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {t(item.label)}
             </a>

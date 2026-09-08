@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import EmailLink from '../EmailLink/EmailLink';
 import {
   aboutContent,
   awardItems,
@@ -82,7 +83,7 @@ const AcademicHome: React.FC = () => {
   const [isAnimeAvatar, setIsAnimeAvatar] = useState(false);
   const [newsMode, setNewsMode] = useState<'good' | 'bad'>('good');
 
-  const groupedNews = useMemo(() => {
+  const sortedNews = useMemo(() => {
     const activeNewsItems = newsMode === 'good' ? goodNewsItems : badNewsItems;
 
     return [...activeNewsItems]
@@ -93,8 +94,11 @@ const AcademicHome: React.FC = () => {
         };
 
         return toSortableDate(second.date) - toSortableDate(first.date);
-      })
-      .reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
+      });
+  }, [newsMode]);
+
+  const groupedNews = useMemo(() => {
+    return sortedNews.reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
       const year = item.date.split('.')[0];
       const group = groups.find((entry) => entry.year === year);
       if (group) {
@@ -104,7 +108,7 @@ const AcademicHome: React.FC = () => {
       }
       return groups;
     }, []);
-  }, [newsMode]);
+  }, [sortedNews]);
 
   const formatDate = (date: string) => {
     const [, month, day] = date.split('.');
@@ -245,7 +249,7 @@ const AcademicHome: React.FC = () => {
     const badgeContent = (
       <>
         {publication.badgeLogo ? (
-          <img src={publication.badgeLogo} alt={publication.badge} />
+          <img src={publication.badgeLogo} alt={publication.badge} loading="lazy" decoding="async" />
         ) : null}
         <em>{getVenueLabel(publication.badge)}</em>
       </>
@@ -254,7 +258,7 @@ const AcademicHome: React.FC = () => {
       <article className="academic-publication">
         <div className="academic-publication-media">
           <a className="academic-publication-image" href={paperLink?.href} target="_blank" rel="noopener noreferrer">
-            <img src={publication.image} alt={publication.alt} />
+            <img src={publication.image} alt={publication.alt} loading="lazy" decoding="async" />
           </a>
         </div>
         <div className="academic-publication-body">
@@ -348,17 +352,15 @@ const AcademicHome: React.FC = () => {
                 <i className="fas fa-location-dot" aria-hidden="true"></i>
                 {t(personalInfo.location)}
               </p>
-              <a className="academic-email" href={`mailto:${personalInfo.email}`}>
-                {personalInfo.email.replace('@', '(at)')}
-              </a>
-              <div className="academic-socials">
-                {socialLinks.map((link) => (
-                  <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer">
-                    <i className={link.icon} aria-hidden="true"></i>
-                    <span>{t(link.label)}</span>
-                  </a>
-                ))}
-              </div>
+              <EmailLink email={personalInfo.email} />
+            </div>
+            <div className="academic-socials">
+              {socialLinks.map((link) => (
+                <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={t(link.label)}>
+                  <i className={link.icon} aria-hidden="true"></i>
+                  <span>{t(link.label)}</span>
+                </a>
+              ))}
             </div>
           </div>
         </aside>
@@ -367,42 +369,21 @@ const AcademicHome: React.FC = () => {
           <section className="academic-panel academic-intro" id="about">
             <div className="academic-bio">
               <div dangerouslySetInnerHTML={{ __html: t(aboutContent.bio) }} />
-              <div dangerouslySetInnerHTML={{ __html: t(aboutContent.contact) }} />
             </div>
           </section>
 
-          <section className="academic-panel academic-anime-banner" aria-label={t({ en: 'Quote', zh: '引语' })}>
-            <img src={quote.images.left} alt="" className="academic-banner-character left" />
+          <section className="academic-panel academic-quote" aria-label={t({ en: 'Quote', zh: '引语' })}>
             <blockquote>
               <p>{t(quote.text)}</p>
               <cite>{t(quote.author)}</cite>
             </blockquote>
-            <img src={quote.images.right} alt="" className="academic-banner-character right" />
-          </section>
-
-          <section className="academic-panel" id="experience">
-            <div className="academic-card-body academic-experience-grid">
-              <TimelineList title={t({ en: 'Education & Experience', zh: '教育与研究经历' })} items={educationAndExperienceItems} />
-              <div className="academic-awards">
-                <h3>{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h3>
-                <ul>
-                  {awardItems.map((award) => (
-                    <li key={award.id}>
-                      <span>{t(award.name)}</span>
-                      <em>{t(award.date)}</em>
-                      {award.detail && <p>{t(award.detail)}</p>}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </section>
 
           <section className="academic-panel" id="news">
             <div className="academic-section-heading academic-news-heading">
               <h2>{t({ en: 'News', zh: '动态' })}</h2>
               <div
-                className={`academic-news-toggle academic-news-toggle-${newsMode}`}
+                className="academic-news-toggle"
                 role="group"
                 aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
               >
@@ -426,7 +407,9 @@ const AcademicHome: React.FC = () => {
             </div>
             <div
               key={newsMode}
+              id="news-timeline"
               className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
+              role="region"
               aria-live="polite"
               aria-label={t(newsMode === 'good'
                 ? { en: 'Milestones timeline', zh: '里程碑时间线' }
@@ -478,6 +461,24 @@ const AcademicHome: React.FC = () => {
             </div>
           </section>
 
+          <section className="academic-panel" id="experience">
+            <div className="academic-card-body academic-experience-grid">
+              <TimelineList title={t({ en: 'Education & Experience', zh: '教育与研究经历' })} items={educationAndExperienceItems} />
+              <div className="academic-awards">
+                <h3>{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h3>
+                <ul>
+                  {awardItems.map((award) => (
+                    <li key={award.id}>
+                      <span>{t(award.name)}</span>
+                      <em>{t(award.date)}</em>
+                      {award.detail && <p>{t(award.detail)}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
           <section className="academic-panel" id="interests">
             <div className="academic-section-heading">
               <h2 className="academic-interest-heading-title">
@@ -488,7 +489,7 @@ const AcademicHome: React.FC = () => {
               </h2>
             </div>
             <div className="academic-card-body academic-interests">
-              <p className="academic-interest-intro">{t(interestIntro)}</p>
+              <p className="academic-interest-intro" dangerouslySetInnerHTML={{ __html: t(interestIntro) }} />
               <div className="academic-interest-listing">
                 {interestGroups.map((group) => (
                   <details

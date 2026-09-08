@@ -4,8 +4,8 @@ import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, Intere
 export const personalInfo = {
   name: 'Weidi (Eddy) Luo',
   title: {
-    en: 'CS PhD student @ The University of Georgia',
-    zh: '佐治亚大学计算机科学博士研究生'
+    en: 'CS PhD student',
+    zh: '计算机科学博士研究生'
   },
   location: {
     en: 'Athens, GA, United States',
@@ -21,12 +21,8 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA).`,
-    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。`
-  },
-  contact: {
-    en: `Beyond research, I am a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I warmly welcome collaboration opportunities and am happy to support undergraduates planning to apply to Ph.D. programs. I hope we can pursue meaningful research together. Please feel free to contact me at luo.1455[shift+2]uga[dot]edu. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
-    zh: `研究之外，我也是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我欢迎各类合作机会，也乐于支持计划申请博士项目的本科生。期待我们有机会一起做有意义的研究。欢迎通过邮箱 luo.1455[shift+2]uga[dot]edu 与我联系。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
+    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA). I hope we can pursue meaningful research together. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
+    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。期待我们有机会一起做有意义的研究。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
   }
 };
 
@@ -48,8 +44,8 @@ export const quote = {
 
 // Interests
 export const interestIntro = {
-  en: 'Outside research, I am drawn to avant-garde art, anti-fashion design, classical music, and visual communication. I am equally interested in how cognitive science, philosophy, psychology, sociology, and language shape perception and form.',
-  zh: '科研之外，我喜欢先锋艺术、反时尚设计、古典音乐与视觉传达。我也关注认知科学、哲学、心理学、社会学和语言如何塑造感知与形式。'
+  en: 'Beyond research, I am a violinist (Level 10, Sichuan Musicians Association), proudly advised by <a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu</a>. I am drawn to avant-garde art, anti-fashion design, classical music, and visual communication. I am equally interested in how cognitive science, philosophy, psychology, sociology, and language shape perception and form.',
+  zh: '研究之外，我也是一名小提琴手（四川省音乐家协会十级），师从<a href="https://www.xiaohongshu.com/user/profile/5b82d671bced64000175907a?xsec_token=ABmARYBZrXyQ87uzzA7CCwODns1tLOerFGI4QDmBSDK9s%3D&xsec_source=pc_note">Weiyi Hu 老师</a>。我喜欢先锋艺术、反时尚设计、古典音乐与视觉传达。我也关注认知科学、哲学、心理学、社会学和语言如何塑造感知与形式。'
 };
 
 export const interestGroups: InterestGroup[] = [
@@ -477,8 +473,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.07.20',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I will join <strong>Meta Superintelligence Labs</strong> as a <strong>Research Scientist Intern</strong> in <strong>Menlo Park, CA, USA</strong>, where I will work on AI <strong>agent red-teaming</strong>.`,
-      zh: `我将以<strong>研究科学家实习生</strong>的身份加入位于<strong>美国加州门洛帕克</strong>的 <strong>Meta Superintelligence Labs</strong>，开展 AI <strong>智能体红队测试</strong>相关研究。`
+      en: `I will join <strong>Meta Superintelligence Labs</strong> as a Research Scientist Intern in Menlo Park, CA, USA, where I will work on AI agent red-teaming.`,
+      zh: `我将以研究科学家实习生的身份加入位于美国加州门洛帕克的 <strong>Meta Superintelligence Labs</strong>，开展 AI 智能体红队测试相关研究。`
     }
   },
   {
@@ -495,8 +491,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.05.23',
     tag: { en: 'Workshop', zh: '研讨会' },
     content: {
-      en: `Our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> has been accepted by the <strong>Second Workshop on Agents in the Wild: Safety, Security, and Beyond (ICML 2026 AIWILD)</strong> as an <strong>Oral Presentation (Top 1.22%)</strong>.`,
-      zh: `我们的工作 <em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em> 被 <strong>第二届 Agents in the Wild：Safety, Security, and Beyond 研讨会（ICML 2026 AIWILD）</strong> 接收为<strong>口头报告（Top 1.22%）</strong>。`
+      en: `Our work <em>Your Harness is Not Secure: Benchmarking Real-world threat of Command Line Interface Agent</em> has been accepted by the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (ICML 2026 AIWILD) as an <strong>Oral Presentation (Top 1.22%)</strong>.`,
+      zh: `我们的工作 <em>你的智能体执行框架并不安全：命令行界面智能体真实世界威胁基准评测</em> 被 第二届 Agents in the Wild：Safety, Security, and Beyond 研讨会（ICML 2026 AIWILD） 接收为<strong>口头报告（Top 1.22%）</strong>。`
     }
   },
   {
@@ -504,8 +500,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.05.07',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I will join <strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong> as a <strong>Research Scientist Intern</strong> in <strong>San Francisco, CA, USA</strong>.`,
-      zh: `我将以<strong>研究科学家实习生</strong>的身份加入位于<strong>美国加州旧金山</strong>的 <strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong>。`
+      en: `I will join <strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong> as a Research Scientist Intern in San Francisco, CA, USA.`,
+      zh: `我将以研究科学家实习生的身份加入位于美国加州旧金山的 <strong><a href="https://www.virtueai.com/" target="_blank">Virtue AI</a></strong>。`
     }
   },
   {
@@ -513,8 +509,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.04.10',
     tag: { en: 'Award', zh: '获奖' },
     content: {
-      en: `I received the <strong>SoC Graduate Student Research Award</strong> from the <strong>University of Georgia</strong>.`,
-      zh: `我获得了<strong>佐治亚大学</strong>颁发的 <strong>SoC Graduate Student Research Award</strong>。`
+      en: `I received the <strong>SoC Graduate Student Research Award</strong> from the University of Georgia.`,
+      zh: `我获得了佐治亚大学颁发的 <strong>SoC Graduate Student Research Award</strong>。`
     }
   },
   {
@@ -531,8 +527,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2025.08.16',
     tag: { en: 'Workshop', zh: '研讨会' },
     content: {
-      en: `Our work <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> has been accepted by the <strong>ICCV Trustworthy FMs Workshop</strong> as an <strong>Oral Presentation</strong>.`,
-      zh: `我们的工作 <em>镜头中的开盒风险：揭示多模态大型推理模型中的位置相关隐私泄露</em> 被 <strong>ICCV Trustworthy FMs Workshop</strong> 接收为<strong>口头报告</strong>。`
+      en: `Our work <em>Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models</em> has been accepted by the ICCV Trustworthy FMs Workshop as an <strong>Oral Presentation</strong>.`,
+      zh: `我们的工作 <em>镜头中的开盒风险：揭示多模态大型推理模型中的位置相关隐私泄露</em> 被 ICCV Trustworthy FMs Workshop 接收为<strong>口头报告</strong>。`
     }
   },
   {
@@ -558,8 +554,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2025.04.15',
     tag: { en: 'Award', zh: '获奖' },
     content: {
-      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> wins <strong>$20,000</strong> SafeBench Prize for Advancing MultiModal Large Language Model Security Benchmarking from <strong>Center for AI Safety</strong>.`,
-      zh: `我们的工作 <em>JailBreakV-28K：面向多模态大语言模型越狱攻击鲁棒性评估的基准</em> 获得 <strong>Center for AI Safety</strong> 颁发的 <strong>20,000 美元</strong> SafeBench 奖，以表彰其对多模态大语言模型安全基准评测的贡献。`
+      en: `Our work <em>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks</em> wins <strong>$20,000</strong> SafeBench Prize for Advancing MultiModal Large Language Model Security Benchmarking from Center for AI Safety.`,
+      zh: `我们的工作 <em>JailBreakV-28K：面向多模态大语言模型越狱攻击鲁棒性评估的基准</em> 获得 Center for AI Safety 颁发的 <strong>20,000 美元</strong> SafeBench 奖，以表彰其对多模态大语言模型安全基准评测的贡献。`
     }
   },
   {
@@ -585,8 +581,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2024.07',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I joined the <strong>International Digital Economy Academy (IDEA)</strong> in Shenzhen, Guangdong, as a <strong>Machine Learning Engineer</strong>.`,
-      zh: `我以<strong>机器学习工程师</strong>的身份加入位于广东深圳的 <strong>International Digital Economy Academy（IDEA）</strong>。`
+      en: `I joined the <strong>International Digital Economy Academy (IDEA)</strong> in Shenzhen, Guangdong, as a Machine Learning Engineer.`,
+      zh: `我以机器学习工程师的身份加入位于广东深圳的 <strong>International Digital Economy Academy（IDEA）</strong>。`
     }
   },
   {
@@ -612,8 +608,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2024.05',
     tag: { en: 'Workshop', zh: '研讨会' },
     content: {
-      en: `My first work, <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em>, was accepted by the <strong>CVPR 2024 CV4Animals Workshop</strong> as an <strong>Oral Presentation</strong>. Thanks to my collaborators.`,
-      zh: `我的第一项工作 <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> 被 <strong>CVPR 2024 CV4Animals Workshop</strong> 接收为<strong>口头报告</strong>。感谢所有合作者。`
+      en: `My first work, <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em>, was accepted by the CVPR 2024 CV4Animals Workshop as an <strong>Oral Presentation</strong>. Thanks to my collaborators.`,
+      zh: `我的第一项工作 <em>Bringing Back the Context: Camera Trap Species Identification as Link Prediction on Multimodal Knowledge Graphs</em> 被 CVPR 2024 CV4Animals Workshop 接收为<strong>口头报告</strong>。感谢所有合作者。`
     }
   },
   {
@@ -621,8 +617,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2023.12',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I joined <strong>SaFo Lab</strong> as a <strong>Research Student Intern</strong> at the <strong>University of Wisconsin–Madison</strong>, advised by <strong>Prof. Chaowei Xiao</strong>.`,
-      zh: `我以<strong>研究实习生</strong>身份加入<strong>威斯康星大学麦迪逊分校</strong>的 <strong>SaFo Lab</strong>，师从 <strong>Chaowei Xiao 教授</strong>。`
+      en: `I joined <strong>SaFo Lab</strong> as a Research Student Intern at the University of Wisconsin–Madison, advised by Prof. Chaowei Xiao.`,
+      zh: `我以研究实习生身份加入威斯康星大学麦迪逊分校的 <strong>SaFo Lab</strong>，师从 Chaowei Xiao 教授。`
     }
   },
   {
@@ -630,8 +626,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2022.08',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I joined the <strong>OSU NLP Group</strong> and <strong>ICICLE</strong> under the guidance of <strong>Prof. Yu Su</strong>. This was my first experience with formal academic research.`,
-      zh: `我加入了 <strong>OSU NLP Group</strong> 和 <strong>ICICLE</strong>，接受 <strong>Yu Su 教授</strong>的指导。这是我第一次接触正式的学术研究。`
+      en: `I joined the <strong>OSU NLP Group</strong> and <strong>ICICLE</strong> under the guidance of Prof. Yu Su. This was my first experience with formal academic research.`,
+      zh: `我加入了 <strong>OSU NLP Group</strong> 和 <strong>ICICLE</strong>，接受 Yu Su 教授的指导。这是我第一次接触正式的学术研究。`
     }
   },
   {
@@ -639,8 +635,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2022.08',
     tag: { en: 'Position', zh: '职位' },
     content: {
-      en: `I will join the <strong>College of Arts and Sciences</strong> at <strong>The Ohio State University</strong> as an undergraduate student in <strong>Computer and Information Science</strong> in August 2022.`,
-      zh: `我将于 2022 年 8 月加入<strong>俄亥俄州立大学文理学院</strong>，攻读<strong>计算机与信息科学</strong>本科学位。`
+      en: `I will join the College of Arts and Sciences at <strong>The Ohio State University</strong> as an undergraduate student in Computer and Information Science in August 2022.`,
+      zh: `我将于 2022 年 8 月加入<strong>俄亥俄州立大学文理学院</strong>，攻读计算机与信息科学本科学位。`
     }
   },
   {
@@ -648,8 +644,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2021.06',
     tag: { en: 'Award', zh: '奖学金' },
     content: {
-      en: `I was admitted to the <strong>Imperial Data Science Online Summer School</strong> at <strong>Imperial College London</strong> with an <strong>£800 scholarship</strong>, though I ultimately declined the offer.`,
-      zh: `我被<strong>帝国理工学院</strong>的 <strong>Imperial Data Science Online Summer School</strong> 录取，并获得了 <strong>800 英镑奖学金</strong>，但最终选择放弃这一机会。`
+      en: `I was admitted to the <strong>Imperial Data Science Online Summer School</strong> at Imperial College London with an <strong>£800 scholarship</strong>, though I ultimately declined the offer.`,
+      zh: `我被帝国理工学院的 <strong>Imperial Data Science Online Summer School</strong> 录取，并获得了 <strong>800 英镑奖学金</strong>，但最终选择放弃这一机会。`
     }
   },
   {
