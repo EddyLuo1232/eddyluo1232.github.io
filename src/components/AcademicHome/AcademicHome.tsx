@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import EmailLink from '../EmailLink/EmailLink';
 import {
   aboutContent,
   awardItems,
@@ -84,7 +83,7 @@ const TimelineList: React.FC<{ title: string; items: TimelineItem[] }> = ({ titl
 
   return (
     <div className="academic-timeline-column">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <ul className="academic-timeline-list">
         {items.map((item) => {
           const itemName = t(item.name);
@@ -246,21 +245,23 @@ const AcademicHome: React.FC = () => {
       });
   }, [newsMode]);
 
-  const groupedNews = useMemo(() => {
-    return sortedNews.reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
+  const groupedNews = useMemo(() => (
+    sortedNews.reduce<Array<{ year: string; items: NewsItem[] }>>((groups, item) => {
       const year = item.date.split('.')[0];
-      const group = groups.find((entry) => entry.year === year);
-      if (group) {
-        group.items.push(item);
+      const previousGroup = groups[groups.length - 1];
+
+      if (previousGroup?.year === year) {
+        previousGroup.items.push(item);
       } else {
         groups.push({ year, items: [item] });
       }
-      return groups;
-    }, []);
-  }, [sortedNews]);
 
-  const formatDate = (date: string) => {
-    const [, month, day] = date.split('.');
+      return groups;
+    }, [])
+  ), [sortedNews]);
+
+  const formatNewsMonth = (date: string) => {
+    const [, month] = date.split('.');
 
     if (!month) {
       return '';
@@ -269,12 +270,7 @@ const AcademicHome: React.FC = () => {
     const monthIndex = Number(month) - 1;
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    if (!day) {
-      return language === 'zh' ? `${Number(month)}月` : monthNames[monthIndex];
-    }
-
-    const dayNumber = Number(day);
-    return language === 'zh' ? `${Number(month)}月${dayNumber}日` : `${monthNames[monthIndex]} ${dayNumber}`;
+    return language === 'zh' ? `${Number(month)}月` : monthNames[monthIndex];
   };
 
   const handleInterestToggle = (event: React.MouseEvent<HTMLElement>) => {
@@ -341,13 +337,11 @@ const AcademicHome: React.FC = () => {
     }, { once: true });
   };
 
-  const educationAndExperienceItems = [...educationItems, ...experienceItems];
-
   return (
     <main className="academic-page">
       <div className="academic-shell">
-        <aside className="academic-sidebar" aria-label={t({ en: 'Profile', zh: '个人信息' })}>
-          <div className="academic-profile-card">
+        <div className="academic-main">
+          <section className="academic-panel academic-intro" id="about" aria-label={personalInfo.name}>
             <button
               className="academic-avatar-button"
               onClick={() => setIsAnimeAvatar((value) => !value)}
@@ -358,31 +352,16 @@ const AcademicHome: React.FC = () => {
                 alt={isAnimeAvatar ? 'Eddy anime avatar' : 'Eddy Luo'}
               />
             </button>
-            <div className="academic-profile-meta">
-              <h1>{personalInfo.name}</h1>
-              <p className="academic-profile-subtitle">{t(personalInfo.title)}</p>
-              <p className="academic-profile-location">
-                <i className="fas fa-location-dot" aria-hidden="true"></i>
-                {t(personalInfo.location)}
-              </p>
-              <EmailLink email={personalInfo.email} />
-            </div>
-            <div className="academic-socials">
-              {socialLinks.map((link) => (
-                <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={t(link.label)}>
-                  <i className={link.icon} aria-hidden="true"></i>
-                  <span>{t(link.label)}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </aside>
-
-        <div className="academic-main">
-          <section className="academic-panel academic-intro" id="about">
             <div className="academic-bio">
               <div dangerouslySetInnerHTML={{ __html: t(aboutContent.bio) }} />
             </div>
+            <nav className="academic-socials" aria-label={t({ en: 'Profiles and resume', zh: '个人主页与简历' })}>
+              {socialLinks.map((link) => (
+                <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={t(link.label)} title={t(link.label)}>
+                  <i className={link.icon} aria-hidden="true"></i>
+                </a>
+              ))}
+            </nav>
           </section>
 
           <section className="academic-panel academic-quote" aria-label={t({ en: 'Quote', zh: '引语' })}>
@@ -392,47 +371,68 @@ const AcademicHome: React.FC = () => {
             </blockquote>
           </section>
 
-          <section className="academic-panel" id="news">
-            <div className="academic-section-heading academic-news-heading">
-              <h2>{t({ en: 'News', zh: '动态' })}</h2>
-              <div
-                className="academic-news-toggle"
-                role="group"
-                aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
-              >
-                <button
-                  type="button"
-                  className={`academic-news-toggle-button academic-news-toggle-good${newsMode === 'good' ? ' is-active' : ''}`}
-                  aria-pressed={newsMode === 'good'}
-                  onClick={() => setNewsMode('good')}
-                >
-                  {t({ en: 'Milestones', zh: '里程碑' })}
-                </button>
-                <button
-                  type="button"
-                  className={`academic-news-toggle-button academic-news-toggle-bad${newsMode === 'bad' ? ' is-active' : ''}`}
-                  aria-pressed={newsMode === 'bad'}
-                  onClick={() => setNewsMode('bad')}
-                >
-                  {t({ en: 'Detours', zh: '转折' })}
-                </button>
+          <div className="academic-news-awards">
+            <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
+              <div className="academic-section-heading">
+                <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
               </div>
-            </div>
-            <div
-              key={newsMode}
-              id="news-timeline"
-              className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
-              role="region"
-              aria-live="polite"
-              aria-label={t(newsMode === 'good'
-                ? { en: 'Milestones timeline', zh: '里程碑时间线' }
-                : { en: 'Detours timeline', zh: '转折时间线' })}
-              tabIndex={0}
-            >
-              {groupedNews.map((group) => (
-                <div key={group.year} className="academic-news-year">
-                  <div className="academic-news-year-label">{group.year}</div>
-                  <div className="academic-news-items">
+              <ul>
+                {awardItems.map((award) => (
+                  <li key={award.id}>
+                    <div className="academic-award-body">
+                      <span>{t(award.name)}</span>
+                      <span className="academic-award-institution">{t(award.institution)}</span>
+                    </div>
+                    <span className="academic-award-date">{t(award.date)}</span>
+                    {award.detail && <p>{t(award.detail)}</p>}
+                  </li>
+                ))}
+              </ul>
+            </section>
+            <section className="academic-panel academic-news-panel" id="news">
+              <div className="academic-section-heading academic-news-heading">
+                <h2>{t({ en: 'News', zh: '动态' })}</h2>
+                <div
+                  className="academic-news-toggle"
+                  role="group"
+                  aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
+                >
+                  <button
+                    type="button"
+                    className={`academic-news-toggle-button academic-news-toggle-good${newsMode === 'good' ? ' is-active' : ''}`}
+                    aria-pressed={newsMode === 'good'}
+                    onClick={() => setNewsMode('good')}
+                  >
+                    {t({ en: 'Milestones', zh: '里程碑' })}
+                  </button>
+                  <button
+                    type="button"
+                    className={`academic-news-toggle-button academic-news-toggle-bad${newsMode === 'bad' ? ' is-active' : ''}`}
+                    aria-pressed={newsMode === 'bad'}
+                    onClick={() => setNewsMode('bad')}
+                  >
+                    {t({ en: 'Detours', zh: '转折' })}
+                  </button>
+                </div>
+              </div>
+              <div
+                key={newsMode}
+                id="news-timeline"
+                className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
+                role="region"
+                aria-live="polite"
+                aria-label={t(newsMode === 'good'
+                  ? { en: 'Milestones timeline', zh: '里程碑时间线' }
+                  : { en: 'Detours timeline', zh: '转折时间线' })}
+                tabIndex={0}
+              >
+                {groupedNews.map((group) => (
+                  <div
+                    key={group.year}
+                    className="academic-news-year-group"
+                    role="group"
+                    aria-labelledby={`news-${newsMode}-${group.year}`}
+                  >
                     {group.items.map((item) => (
                       <article key={item.id} className="academic-news-item">
                         <div className="academic-news-copy">
@@ -443,14 +443,21 @@ const AcademicHome: React.FC = () => {
                           )}
                           <span dangerouslySetInnerHTML={{ __html: t(item.content) }} />
                         </div>
-                        {formatDate(item.date) && <time dateTime={item.date.replaceAll('.', '-')}>{formatDate(item.date)}</time>}
+                        {formatNewsMonth(item.date) && (
+                          <time dateTime={item.date.split('.').slice(0, 2).join('-')}>
+                            {formatNewsMonth(item.date)}
+                          </time>
+                        )}
                       </article>
                     ))}
+                    <div className="academic-news-year-marker" id={`news-${newsMode}-${group.year}`}>
+                      <time dateTime={group.year}>{group.year}</time>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
+          </div>
 
           <section className="academic-panel" id="publications">
             <div className="academic-section-heading">
@@ -493,22 +500,9 @@ const AcademicHome: React.FC = () => {
             </ul>
           </section>
 
-          <section className="academic-panel" id="experience">
-            <div className="academic-card-body academic-experience-grid">
-              <TimelineList title={t({ en: 'Education & Experience', zh: '教育与研究经历' })} items={educationAndExperienceItems} />
-              <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
-                <h3 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h3>
-                <ul>
-                  {awardItems.map((award) => (
-                    <li key={award.id}>
-                      <span>{t(award.name)}</span>
-                      <em>{t(award.date)}</em>
-                      {award.detail && <p>{t(award.detail)}</p>}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </div>
+          <section className="academic-panel academic-experience-grid" id="experience">
+            <TimelineList title={t({ en: 'Education', zh: '教育经历' })} items={educationItems} />
+            <TimelineList title={t({ en: 'Internships', zh: '实习经历' })} items={experienceItems} />
           </section>
 
           <section className="academic-panel" id="interests">

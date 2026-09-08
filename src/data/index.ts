@@ -21,8 +21,8 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a first-year Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA). I hope we can pursue meaningful research together. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
-    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学一年级博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。期待我们有机会一起做有意义的研究。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
+    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a CS Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA). I hope we can pursue meaningful research together. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
+    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。期待我们有机会一起做有意义的研究。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
   }
 };
 
@@ -384,8 +384,8 @@ export const educationItems: TimelineItem[] = [
       zh: '计算机与信息科学学士（B.A.）'
     },
     date: {
-      en: 'Aug 2022 - Jul 2025',
-      zh: '2022.08 - 2025.07'
+      en: 'Aug 2022 - May 2025',
+      zh: '2022.08 - 2025.05'
     }
   }
 ];
@@ -460,8 +460,12 @@ export const awardItems: AwardItem[] = [
   {
     id: 'uga-research-award',
     name: {
-      en: 'SoC Graduate Student Research Award, University of Georgia',
-      zh: '佐治亚大学 SoC Graduate Student Research Award'
+      en: 'Graduate Student Research Award',
+      zh: 'Graduate Student Research Award'
+    },
+    institution: {
+      en: 'School of Computing, University of Georgia',
+      zh: '佐治亚大学计算学院'
     },
     date: {
       en: '2026',
@@ -471,8 +475,42 @@ export const awardItems: AwardItem[] = [
   {
     id: 'safebench-prize',
     name: {
-      en: '$20,000 SafeBench Prize, Center for AI Safety',
-      zh: 'Center for AI Safety $20,000 SafeBench 奖'
+      en: '$20,000 SafeBench Prize',
+      zh: '$20,000 SafeBench 奖'
+    },
+    institution: {
+      en: 'Center for AI Safety',
+      zh: 'Center for AI Safety'
+    },
+    date: {
+      en: '2025',
+      zh: '2025'
+    }
+  },
+  {
+    id: 'osu-deans-list',
+    name: {
+      en: 'Dean’s List',
+      zh: '院长嘉许名单'
+    },
+    institution: {
+      en: 'College of Arts and Sciences, The Ohio State University',
+      zh: '俄亥俄州立大学文理学院'
+    },
+    date: {
+      en: '2023, 2025',
+      zh: '2023、2025'
+    }
+  },
+  {
+    id: 'osu-cum-laude',
+    name: {
+      en: 'Cum Laude',
+      zh: '荣誉毕业（Cum Laude）'
+    },
+    institution: {
+      en: 'The Ohio State University',
+      zh: '俄亥俄州立大学'
     },
     date: {
       en: '2025',
@@ -482,8 +520,12 @@ export const awardItems: AwardItem[] = [
   {
     id: 'xjtlu-data-science-competition',
     name: {
-      en: 'First Prize, Data Science Competition, Xi’an Jiaotong-Liverpool University',
-      zh: '西交利物浦大学数据科学比赛一等奖'
+      en: 'First Prize, Data Science Competition',
+      zh: '数据科学比赛一等奖'
+    },
+    institution: {
+      en: 'Xi’an Jiaotong-Liverpool University',
+      zh: '西交利物浦大学'
     },
     date: {
       en: '2022',
@@ -493,8 +535,12 @@ export const awardItems: AwardItem[] = [
   {
     id: 'imperial-summer-school-scholarship',
     name: {
-      en: '£800 Summer School Scholarship, Imperial College London',
-      zh: '帝国理工学院暑校 £800 奖学金'
+      en: '£800 Summer School Scholarship',
+      zh: '暑校 £800 奖学金'
+    },
+    institution: {
+      en: 'Imperial College London',
+      zh: '帝国理工学院'
     },
     date: {
       en: '2021',
@@ -555,8 +601,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.04.10',
     tag: { en: 'Award', zh: '获奖' },
     content: {
-      en: `I received the <strong>SoC Graduate Student Research Award</strong> from the University of Georgia.`,
-      zh: `我获得了佐治亚大学颁发的 <strong>SoC Graduate Student Research Award</strong>。`
+      en: `I received the <strong>Graduate Student Research Award</strong> from the School of Computing at the University of Georgia.`,
+      zh: `我获得了佐治亚大学计算学院颁发的 <strong>Graduate Student Research Award</strong>。`
     }
   },
   {
@@ -593,6 +639,15 @@ export const goodNewsItems: NewsItem[] = [
     content: {
       en: `Two of our works, <em>AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection</em> and <em>Disentangling Memory and Reasoning Ability in Large Language Models</em> have been accepted by <strong>ACL'2025</strong> main conference. Thanks to my collaborators.`,
       zh: `我们的两项工作 <em>AGrail：面向终身智能体的护栏与有效自适应安全检测</em> 和 <em>解耦大语言模型中的记忆与推理能力</em> 被 <strong>ACL 2025</strong> 主会接收。感谢所有合作者。`
+    }
+  },
+  {
+    id: 'osu-graduation-2025',
+    date: '2025.05',
+    tag: { en: 'Education', zh: '毕业' },
+    content: {
+      en: `I graduated from <strong>The Ohio State University</strong> with a B.A. in Computer and Information Science, earning <strong>Cum Laude</strong> honors. I was also named to the College of Arts and Sciences <strong>Dean’s List</strong> again.`,
+      zh: `我从<strong>俄亥俄州立大学</strong>毕业，获得计算机与信息科学学士学位（B.A.），并获授 <strong>Cum Laude</strong> 毕业荣誉。同月，我再次入选文理学院的<strong>院长嘉许名单（Dean’s List）</strong>。`
     }
   },
   {
@@ -665,6 +720,15 @@ export const goodNewsItems: NewsItem[] = [
     content: {
       en: `I joined <strong>SaFo Lab</strong> as a Research Student Intern at the University of Wisconsin–Madison, advised by Prof. Chaowei Xiao.`,
       zh: `我以研究实习生身份加入威斯康星大学麦迪逊分校的 <strong>SaFo Lab</strong>，师从 Chaowei Xiao 教授。`
+    }
+  },
+  {
+    id: 'osu-deans-list-2023',
+    date: '2023.01',
+    tag: { en: 'Award', zh: '荣誉' },
+    content: {
+      en: `I was named to the College of Arts and Sciences <strong>Dean’s List</strong> at <strong>The Ohio State University</strong>.`,
+      zh: `我入选了<strong>俄亥俄州立大学文理学院</strong>的<strong>院长嘉许名单（Dean’s List）</strong>。`
     }
   },
   {

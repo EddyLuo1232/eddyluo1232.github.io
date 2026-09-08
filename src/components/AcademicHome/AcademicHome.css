@@ -6,40 +6,24 @@
 }
 
 .academic-shell {
-    width: min(1100px, calc(100% - 64px));
+    width: min(960px, calc(100% - 64px));
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 64px;
-    align-items: start;
 }
 
-.academic-sidebar {
-    position: sticky;
-    top: 108px;
-}
-
-.academic-profile-card,
 .academic-panel {
     background: transparent;
 }
 
-.academic-profile-card {
-    display: grid;
-    grid-template-areas: 'avatar' 'meta' 'socials';
-    text-align: left;
-}
-
-.academic-profile-meta {
-    grid-area: meta;
-    min-width: 0;
+.academic-intro {
+    display: flow-root;
 }
 
 .academic-avatar-button {
-    grid-area: avatar;
-    width: 172px;
-    aspect-ratio: 1;
-    margin: 0 0 22px;
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 28px 12px 0;
     display: block;
     padding: 0;
     background: #ffffff;
@@ -50,56 +34,14 @@
 }
 
 .academic-avatar-button img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.academic-profile-card h1 {
-    margin: 0 0 7px;
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    color: #111111;
-    letter-spacing: 0;
-}
-
-.academic-profile-subtitle,
-.academic-profile-location,
-.academic-email {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    color: #555555;
-}
-
-.academic-profile-subtitle {
-    margin: 0 0 9px;
-    white-space: pre-line;
-    overflow-wrap: anywhere;
-}
-
-.academic-profile-location {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 6px;
-    margin: 0 0 8px;
-}
-
-.academic-email {
-    display: block;
-    width: fit-content;
-    max-width: 100%;
-    margin: 0;
-    font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: #303030;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
-
-.academic-email:hover,
 .academic-socials a:hover,
 .academic-bio a:hover,
 .academic-interest-intro a:hover,
@@ -110,35 +52,33 @@
 }
 
 .academic-socials {
-    grid-area: socials;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 4px;
-    margin-top: 16px;
-    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 .academic-socials a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    min-height: 36px;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
     padding: 0;
+    border-radius: 4px;
     color: #555555;
     text-decoration: none;
-    font-size: 0.8rem;
 }
 
 .academic-socials i {
     width: 20px;
     flex: 0 0 20px;
-    color: #777777;
-    font-size: 0.8rem;
+    color: inherit;
+    font-size: 1.125rem;
     text-align: center;
-}
-
-.academic-socials span {
-    flex: 1;
 }
 
 .academic-socials a:hover {
@@ -148,8 +88,9 @@
 }
 
 .academic-main {
+    --academic-section-gap: 44px;
     display: grid;
-    gap: 44px;
+    gap: var(--academic-section-gap);
     min-width: 0;
 }
 
@@ -160,8 +101,8 @@
 }
 
 .academic-bio {
-    display: grid;
-    gap: 14px;
+    min-width: 0;
+    display: block;
     margin-top: 0;
     padding: 0;
     color: #242424;
@@ -298,21 +239,59 @@ html[lang="zh-CN"] .academic-quote blockquote {
     padding: 0;
 }
 
-#experience {
-    container: experience / inline-size;
+.academic-news-awards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+}
+
+.academic-news-awards + #publications {
+    margin-top: calc(24px - var(--academic-section-gap));
+}
+
+@media (min-width: 761px) {
+    .academic-news-awards {
+        grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.6fr);
+        grid-template-rows: 1.618034fr 1fr;
+        gap: 0 36px;
+        align-items: stretch;
+    }
+
+    .academic-awards {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .academic-news-awards .academic-section-heading {
+        min-height: 58px;
+    }
+
+    .academic-news-panel {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .academic-news-panel .academic-section-heading {
+        flex: 0 0 auto;
+    }
+
+    /* News spans both rows: the golden ratio of the natural height of Awards. */
+    .academic-news-panel .academic-news-list {
+        flex: 1 1 0;
+        height: 0;
+        min-height: 0;
+        max-height: none;
+    }
 }
 
 .academic-experience-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-}
-
-/* Stack the columns when the content area becomes too narrow. */
-@container experience (min-width: 48rem) {
-    .academic-experience-grid {
-        grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+    align-items: start;
 }
 
 .academic-timeline-column,
@@ -321,8 +300,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
     overflow-wrap: anywhere;
 }
 
-.academic-timeline-column h3,
-.academic-awards h3 {
+.academic-timeline-column h2 {
     margin: 0 0 22px;
     font-size: 1.04rem;
     font-weight: 600;
@@ -447,8 +425,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
     line-height: 1.35;
 }
 
-.academic-timeline-heading span,
-.academic-awards em {
+.academic-timeline-heading span {
     color: #777777;
     font-size: 0.78rem;
     font-style: normal;
@@ -476,15 +453,39 @@ html[lang="zh-CN"] .academic-quote blockquote {
 .academic-awards li {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px;
+    align-items: baseline;
+    gap: 2px 14px;
     color: #2b2b2b;
     font-size: 0.86rem;
     line-height: 1.48;
 }
 
+.academic-award-date {
+    color: #777777;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.academic-award-body {
+    min-width: 0;
+}
+
+.academic-award-institution {
+    display: block;
+    margin-top: 3px;
+    color: #777777;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.academic-awards li > p {
+    grid-column: 1 / -1;
+}
+
 .academic-news-list {
     display: grid;
-    gap: 22px;
+    align-content: start;
+    gap: 16px;
     max-height: 520px;
     padding-right: 12px;
     overflow-x: hidden;
@@ -546,26 +547,27 @@ html[lang="zh-CN"] .academic-quote blockquote {
     }
 }
 
-.academic-news-year {
-    display: grid;
-    grid-template-columns: 58px minmax(0, 1fr);
-    gap: 18px;
-    padding-top: 8px;
-}
-
-.academic-news-year:first-child {
-    padding-top: 0;
-}
-
-.academic-news-year-label {
-    color: #6f6f6f;
-    font-size: 0.86rem;
-    font-weight: 600;
-}
-
-.academic-news-items {
+.academic-news-year-group {
     display: grid;
     gap: 16px;
+    min-width: 0;
+}
+
+.academic-news-year-marker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0;
+    color: #8a8a8a;
+    font-size: 0.72rem;
+}
+
+.academic-news-year-marker::before,
+.academic-news-year-marker::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e8e8e8;
 }
 
 .academic-news-item {
@@ -809,7 +811,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
 }
 
 .academic-interest-intro {
-    max-width: 780px;
     margin: 0;
     color: #303030;
     font-size: 0.92rem;
@@ -874,7 +875,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
 .academic-interest-content {
     min-width: 0;
-    margin-left: 190px;
+    margin-left: 0;
     padding: 0 0 13px;
 }
 
@@ -883,7 +884,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
     grid-row: 2;
     margin-left: 0;
     padding-top: 0;
-    padding-left: 14px;
 }
 
 .academic-interest-list {
@@ -982,7 +982,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
 }
 
 .academic-interest-photo-grid {
-    width: min(620px, 100%);
+    width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 9fr) minmax(0, 9fr) minmax(0, 16fr);
     align-items: stretch;
@@ -1016,31 +1016,17 @@ html[lang="zh-CN"] .academic-quote blockquote {
     max-width: none;
 }
 
-@media (max-width: 980px) {
-    .academic-shell {
-        width: min(760px, calc(100% - 48px));
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .academic-sidebar {
-        position: static;
-    }
-
-    .academic-profile-card {
-        grid-template-columns: 120px minmax(0, 1fr);
-        grid-template-areas: 'avatar meta' 'avatar socials';
-        gap: 0 24px;
-        align-items: start;
-        padding-bottom: 28px;
-        border-bottom: 1px solid #ededed;
+@media (max-width: 760px) {
+    .academic-experience-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .academic-avatar-button {
-        width: 120px;
-        margin: 0;
+        float: none;
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 24px;
     }
-
 }
 
 @media (max-width: 680px) {
@@ -1050,73 +1036,14 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-shell {
         width: calc(100% - 40px);
-        gap: 28px;
     }
 
     .academic-main {
-        gap: 36px;
-    }
-
-    .academic-profile-card {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: 'avatar' 'meta' 'socials';
-        gap: 0;
-        padding-bottom: 22px;
-        align-items: start;
-    }
-
-    .academic-profile-meta {
-        text-align: center;
-    }
-
-    .academic-profile-location {
-        justify-content: center;
-    }
-
-    .academic-email {
-        margin-inline: auto;
-    }
-
-    .academic-profile-card h1 {
-        font-size: 1.3rem;
-    }
-
-    .academic-profile-subtitle,
-    .academic-profile-location,
-    .academic-email {
-        font-size: 0.78rem;
-    }
-
-    .academic-profile-subtitle,
-    .academic-profile-location {
-        margin-bottom: 6px;
-    }
-
-    .academic-avatar-button {
-        width: 88px;
-        margin-bottom: 14px;
-        justify-self: center;
+        --academic-section-gap: 36px;
     }
 
     .academic-socials {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 4px 20px;
-    }
-
-    .academic-socials a {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        min-height: 44px;
-        justify-content: flex-start;
-        gap: 7px;
-        padding: 0;
-        font-size: 0.82rem;
-    }
-
-    .academic-socials span {
-        min-width: 0;
-        overflow-wrap: anywhere;
+        gap: 2px;
     }
 
     .academic-bio {
@@ -1137,11 +1064,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-section-heading {
         padding-bottom: 18px;
-    }
-
-    .academic-news-year {
-        grid-template-columns: 1fr;
-        gap: 12px;
     }
 
     .academic-news-item {

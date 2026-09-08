@@ -79,6 +79,7 @@ export interface TimelineItem {
 export interface AwardItem {
   id: string;
   name: TranslatableText;
+  institution: TranslatableText;
   date: TranslatableText;
   detail?: TranslatableText;
 }
