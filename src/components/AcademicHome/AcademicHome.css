@@ -1026,6 +1026,10 @@ html[lang="zh-CN"] .academic-quote blockquote {
         height: 180px;
         margin: 0 auto 24px;
     }
+
+    .academic-socials {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 680px) {
