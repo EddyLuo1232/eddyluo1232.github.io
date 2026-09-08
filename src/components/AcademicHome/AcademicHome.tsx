@@ -380,21 +380,6 @@ const AcademicHome: React.FC = () => {
             </blockquote>
           </section>
 
-          <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
-            <div className="academic-section-heading">
-              <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
-            </div>
-            <ul>
-              {awardItems.map((award) => (
-                <li key={award.id}>
-                  <span>{t(award.name)}</span>
-                  <em>{t(award.date)}</em>
-                  {award.detail && <p>{t(award.detail)}</p>}
-                </li>
-              ))}
-            </ul>
-          </section>
-
           <section className="academic-panel" id="news">
             <div className="academic-section-heading academic-news-heading">
               <h2>{t({ en: 'News', zh: '动态' })}</h2>
@@ -453,6 +438,21 @@ const AcademicHome: React.FC = () => {
                 </div>
               ))}
             </div>
+          </section>
+
+          <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
+            <div className="academic-section-heading">
+              <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
+            </div>
+            <ul>
+              {awardItems.map((award) => (
+                <li key={award.id}>
+                  <span>{t(award.name)}</span>
+                  <em>{t(award.date)}</em>
+                  {award.detail && <p>{t(award.detail)}</p>}
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className="academic-panel" id="publications">
