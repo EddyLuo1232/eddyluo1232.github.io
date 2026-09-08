@@ -491,8 +491,8 @@ export const awardItems: AwardItem[] = [
   {
     id: 'imperial-summer-school-scholarship',
     name: {
-      en: '£800 Summer School Scholarship, Imperial College London (declined)',
-      zh: '帝国理工学院暑校 £800 奖学金（已婉拒）'
+      en: '£800 Summer School Scholarship, Imperial College London',
+      zh: '帝国理工学院暑校 £800 奖学金'
     },
     date: {
       en: '2021',
