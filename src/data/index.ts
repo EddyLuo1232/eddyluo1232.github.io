@@ -48,6 +48,7 @@ export const studentMentees: StudentMentee[] = [
     id: 'qiming-zhang',
     name: 'Qiming Zhang',
     href: 'https://qimingzhang.com/',
+    year: '2026',
     destination: {
       en: 'CS Ph.D., University of South Florida',
       zh: '南佛罗里达大学，计算机科学博士'
@@ -57,6 +58,7 @@ export const studentMentees: StudentMentee[] = [
     id: 'tianyu-lu',
     name: 'Tianyu Lu',
     href: 'https://github.com/lutianyu2001',
+    year: '2026',
     destination: {
       en: 'BME M.S., Johns Hopkins University',
       zh: '约翰霍普金斯大学，生物医学工程硕士'

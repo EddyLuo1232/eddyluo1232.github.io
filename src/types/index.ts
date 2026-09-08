@@ -83,6 +83,7 @@ export interface StudentMentee {
   id: string;
   name: string;
   href: string;
+  year: string;
   destination: TranslatableText;
 }
 

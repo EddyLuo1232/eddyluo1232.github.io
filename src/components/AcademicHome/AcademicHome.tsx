@@ -479,7 +479,7 @@ const AcademicHome: React.FC = () => {
                   </a>
                   <span className="academic-mentee-destination">
                     <span aria-hidden="true">→</span>
-                    <span>{t(student.destination)}</span>
+                    <span>{t(student.destination)} <time dateTime={student.year}>({student.year})</time></span>
                   </span>
                 </li>
               ))}
