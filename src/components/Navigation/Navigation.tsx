@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useScrollSpy } from '../../hooks/useScrollSpy';
 import './Navigation.css';
 
-interface NavigationProps {
-  activeSection: string;
-}
+const SECTION_IDS = ['about', 'news', 'publications', 'mentees', 'experience', 'interests'];
 
-const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
+const Navigation: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
+  // Scroll highlighting should update navigation without rerendering page content.
+  const activeSection = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);

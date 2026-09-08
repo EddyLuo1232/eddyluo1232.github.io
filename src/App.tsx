@@ -3,14 +3,9 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Navigation from './components/Navigation/Navigation';
 import AcademicHome from './components/AcademicHome/AcademicHome';
 import Footer from './components/Footer/Footer';
-import { useScrollSpy } from './hooks/useScrollSpy';
 import './styles/global.css';
 
-const SECTION_IDS = ['about', 'news', 'publications', 'mentees', 'experience', 'interests'];
-
 const AppContent: React.FC = () => {
-  const activeSection = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });
-
   useEffect(() => {
     document.body.classList.remove('dark-mode');
     localStorage.removeItem('darkMode');
@@ -18,7 +13,7 @@ const AppContent: React.FC = () => {
 
   return (
     <>
-      <Navigation activeSection={activeSection} />
+      <Navigation />
       <AcademicHome />
       <Footer />
     </>

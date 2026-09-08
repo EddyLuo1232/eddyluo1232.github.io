@@ -79,6 +79,147 @@ const VisitorMap: React.FC = () => {
   return <div ref={containerRef} className="academic-visitor-map" />;
 };
 
+const TimelineList: React.FC<{ title: string; items: TimelineItem[] }> = ({ title, items }) => {
+  const { t } = useLanguage();
+
+  return (
+    <div className="academic-timeline-column">
+      <h3>{title}</h3>
+      <ul className="academic-timeline-list">
+        {items.map((item) => {
+          const itemName = t(item.name);
+
+          return (
+            <li key={item.id} className="academic-timeline-item">
+              {item.logo ? (
+                <div className={`academic-logo-mark academic-logo-${item.id}`}>
+                  <img src={item.logo} alt={itemName} />
+                </div>
+              ) : (
+                <div className={`academic-initials ${getInitialClass(item.initials)}`}>{item.initials}</div>
+              )}
+              <div className="academic-timeline-body">
+                <div className="academic-timeline-heading">
+                  <strong>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        {itemName}
+                      </a>
+                    ) : (
+                      itemName
+                    )}
+                  </strong>
+                  <span>{t(item.date)}</span>
+                </div>
+                {item.dept && <p className="academic-muted">{t(item.dept)}</p>}
+                <p>{t(item.position)}</p>
+                {item.detail && <p className="academic-detail">{t(item.detail)}</p>}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }) => {
+  const { t } = useLanguage();
+  const paperLink = publication.links.find((link) => link.label.en === '[Paper]');
+  const pressLink = publication.links.find((link) => link.label.en === '[机器之心 Synced]');
+  const actionLinks = publication.links.filter((link) => (
+    link.label.en !== '[Paper]' && link.label.en !== '[机器之心 Synced]'
+  ));
+  const badgeClassName = [
+    'academic-publication-badge',
+    publication.badge.includes('ACL') ? 'academic-publication-badge-acl' : '',
+    publication.badge.includes('CIKM') ? 'academic-publication-badge-cikm' : '',
+    publication.badge === 'Arxiv' ? 'academic-publication-badge-arxiv' : ''
+  ].filter(Boolean).join(' ');
+  const badgeContent = (
+    <>
+      {publication.badgeLogo ? (
+        <img src={publication.badgeLogo} alt={publication.badge} loading="lazy" decoding="async" />
+      ) : null}
+      <em>{getVenueLabel(publication.badge)}</em>
+    </>
+  );
+  return (
+    <article className="academic-publication">
+      <div className="academic-publication-media">
+        <a className="academic-publication-image" href={paperLink?.href} target="_blank" rel="noopener noreferrer">
+          <img src={publication.image} alt={publication.alt} loading="lazy" decoding="async" />
+        </a>
+      </div>
+      <div className="academic-publication-body">
+        <h3 dangerouslySetInnerHTML={{ __html: t(publication.title) }} />
+        <p dangerouslySetInnerHTML={{ __html: publication.authors }} />
+        <div className="academic-publication-links">
+          {paperLink?.href ? (
+            <a className={badgeClassName} href={paperLink.href} target="_blank" rel="noopener noreferrer" title={getVenueLabel(publication.badge)}>
+              {badgeContent}
+            </a>
+          ) : (
+            <span className={badgeClassName} title={getVenueLabel(publication.badge)}>
+              {badgeContent}
+            </span>
+          )}
+          {actionLinks.map((link) => (
+            link.href ? (() => {
+              const iconClassName = getPublicationActionIcon(link.label.en);
+              const actionLabel = getPublicationActionLabel(t(link.label));
+              const isIconAction = Boolean(iconClassName);
+
+              return (
+                <a
+                  key={`${publication.id}-${link.href}`}
+                  className={isIconAction ? 'academic-publication-icon-link' : undefined}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={isIconAction ? actionLabel : undefined}
+                  title={isIconAction ? actionLabel : undefined}
+                >
+                  {iconClassName ? (
+                    <i className={iconClassName} aria-hidden="true"></i>
+                  ) : (
+                    t(link.label)
+                  )}
+                </a>
+              );
+            })() : (
+              <span key={`${publication.id}-${t(link.label)}`}>{t(link.label)}</span>
+            )
+          ))}
+        </div>
+        {publication.award && <p className="academic-publication-note">{t(publication.award)}</p>}
+        {publication.integrations && (
+          <p className="academic-publication-note">
+            {t({ en: 'Integrated into: ', zh: '已集成到：' })}
+            {publication.integrations.map((integration, index) => (
+              <React.Fragment key={integration.href}>
+                {index > 0 && ' · '}
+                <a href={integration.href} target="_blank" rel="noopener noreferrer">{t(integration.label)}</a>
+              </React.Fragment>
+            ))}
+          </p>
+        )}
+        {(publication.stats || pressLink) && (
+          <p className="academic-publication-note">
+            {publication.stats && t(publication.stats)}
+            {publication.stats && pressLink?.href && ' · '}
+            {pressLink?.href && (
+              <a href={pressLink.href} target="_blank" rel="noopener noreferrer">
+                {getPublicationActionLabel(t(pressLink.label))}
+              </a>
+            )}
+          </p>
+        )}
+      </div>
+    </article>
+  );
+};
+
 const AcademicHome: React.FC = () => {
   const { language, t } = useLanguage();
   const [isAnimeAvatar, setIsAnimeAvatar] = useState(false);
@@ -194,142 +335,6 @@ const AcademicHome: React.FC = () => {
   };
 
   const educationAndExperienceItems = [...educationItems, ...experienceItems];
-
-  const TimelineList: React.FC<{ title: string; items: TimelineItem[] }> = ({ title, items }) => (
-    <div className="academic-timeline-column">
-      <h3>{title}</h3>
-      <ul className="academic-timeline-list">
-        {items.map((item) => {
-          const itemName = t(item.name);
-
-          return (
-            <li key={item.id} className="academic-timeline-item">
-              {item.logo ? (
-                <div className={`academic-logo-mark academic-logo-${item.id}`}>
-                  <img src={item.logo} alt={itemName} />
-                </div>
-              ) : (
-                <div className={`academic-initials ${getInitialClass(item.initials)}`}>{item.initials}</div>
-              )}
-              <div className="academic-timeline-body">
-                <div className="academic-timeline-heading">
-                  <strong>
-                    {item.href ? (
-                      <a href={item.href} target="_blank" rel="noopener noreferrer">
-                        {itemName}
-                      </a>
-                    ) : (
-                      itemName
-                    )}
-                  </strong>
-                  <span>{t(item.date)}</span>
-                </div>
-                {item.dept && <p className="academic-muted">{t(item.dept)}</p>}
-                <p>{t(item.position)}</p>
-                {item.detail && <p className="academic-detail">{t(item.detail)}</p>}
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-
-  const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }) => {
-    const paperLink = publication.links.find((link) => link.label.en === '[Paper]');
-    const pressLink = publication.links.find((link) => link.label.en === '[机器之心 Synced]');
-    const actionLinks = publication.links.filter((link) => (
-      link.label.en !== '[Paper]' && link.label.en !== '[机器之心 Synced]'
-    ));
-    const badgeClassName = [
-      'academic-publication-badge',
-      publication.badge.includes('ACL') ? 'academic-publication-badge-acl' : '',
-      publication.badge.includes('CIKM') ? 'academic-publication-badge-cikm' : '',
-      publication.badge === 'Arxiv' ? 'academic-publication-badge-arxiv' : ''
-    ].filter(Boolean).join(' ');
-    const badgeContent = (
-      <>
-        {publication.badgeLogo ? (
-          <img src={publication.badgeLogo} alt={publication.badge} loading="lazy" decoding="async" />
-        ) : null}
-        <em>{getVenueLabel(publication.badge)}</em>
-      </>
-    );
-    return (
-      <article className="academic-publication">
-        <div className="academic-publication-media">
-          <a className="academic-publication-image" href={paperLink?.href} target="_blank" rel="noopener noreferrer">
-            <img src={publication.image} alt={publication.alt} loading="lazy" decoding="async" />
-          </a>
-        </div>
-        <div className="academic-publication-body">
-          <h3 dangerouslySetInnerHTML={{ __html: t(publication.title) }} />
-          <p dangerouslySetInnerHTML={{ __html: publication.authors }} />
-          <div className="academic-publication-links">
-            {paperLink?.href ? (
-              <a className={badgeClassName} href={paperLink.href} target="_blank" rel="noopener noreferrer" title={getVenueLabel(publication.badge)}>
-                {badgeContent}
-              </a>
-            ) : (
-              <span className={badgeClassName} title={getVenueLabel(publication.badge)}>
-                {badgeContent}
-              </span>
-            )}
-            {actionLinks.map((link) => (
-              link.href ? (() => {
-                const iconClassName = getPublicationActionIcon(link.label.en);
-                const actionLabel = getPublicationActionLabel(t(link.label));
-                const isIconAction = Boolean(iconClassName);
-
-                return (
-                  <a
-                    key={`${publication.id}-${link.href}`}
-                    className={isIconAction ? 'academic-publication-icon-link' : undefined}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={isIconAction ? actionLabel : undefined}
-                    title={isIconAction ? actionLabel : undefined}
-                  >
-                    {iconClassName ? (
-                      <i className={iconClassName} aria-hidden="true"></i>
-                    ) : (
-                      t(link.label)
-                    )}
-                  </a>
-                );
-              })() : (
-                <span key={`${publication.id}-${t(link.label)}`}>{t(link.label)}</span>
-              )
-            ))}
-          </div>
-          {publication.award && <p className="academic-publication-note">{t(publication.award)}</p>}
-          {publication.integrations && (
-            <p className="academic-publication-note">
-              {t({ en: 'Integrated into: ', zh: '已集成到：' })}
-              {publication.integrations.map((integration, index) => (
-                <React.Fragment key={integration.href}>
-                  {index > 0 && ' · '}
-                  <a href={integration.href} target="_blank" rel="noopener noreferrer">{t(integration.label)}</a>
-              </React.Fragment>
-            ))}
-          </p>
-        )}
-          {(publication.stats || pressLink) && (
-            <p className="academic-publication-note">
-              {publication.stats && t(publication.stats)}
-              {publication.stats && pressLink?.href && ' · '}
-              {pressLink?.href && (
-                <a href={pressLink.href} target="_blank" rel="noopener noreferrer">
-                  {getPublicationActionLabel(t(pressLink.label))}
-                </a>
-              )}
-            </p>
-          )}
-        </div>
-      </article>
-    );
-  };
 
   return (
     <main className="academic-page">
