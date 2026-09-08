@@ -192,6 +192,13 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
             )
           ))}
         </div>
+        {publication.presentation && (
+          <p className="academic-publication-note academic-publication-presentation">
+            <span>{publication.presentation.venue}</span>
+            <span className="academic-publication-presentation-separator" aria-hidden="true"> · </span>
+            <strong>{t(publication.presentation.distinction)}</strong>
+          </p>
+        )}
         {publication.award && <p className="academic-publication-note">{t(publication.award)}</p>}
         {publication.integrations && (
           <p className="academic-publication-note">

@@ -786,6 +786,13 @@ export const publications: Publication[] = [
   {
     id: 'advcua',
     badge: 'EMNLP\'2026',
+    presentation: {
+      venue: 'ICML 2026 AIWILD',
+      distinction: {
+        en: 'Oral Presentation (Top 1.22%)',
+        zh: '口头报告（Top 1.22%）'
+      }
+    },
     badgeLogo: '/images/conference/ACL.svg.png',
     image: '/images/publications/advcua.png',
     alt: 'AdvCUA',
@@ -803,6 +810,13 @@ export const publications: Publication[] = [
   {
     id: 'doxing',
     badge: 'ICLR\'2026',
+    presentation: {
+      venue: 'ICCV Trustworthy FMs Workshop',
+      distinction: {
+        en: 'Oral Presentation',
+        zh: '口头报告'
+      }
+    },
     badgeLogo: '/images/conference/ICLR.jpeg',
     image: '/images/publications/doxing_via_the_lens.png',
     alt: 'Doxing via the Lens',

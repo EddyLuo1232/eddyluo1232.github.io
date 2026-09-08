@@ -20,6 +20,10 @@ export interface Publication {
       zh: string;
     };
   }>;
+  presentation?: {
+    venue: string;
+    distinction: TranslatableText;
+  };
   award?: {
     en: string;
     zh: string;

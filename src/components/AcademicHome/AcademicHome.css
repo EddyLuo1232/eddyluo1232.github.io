@@ -141,13 +141,6 @@
     flex: 1;
 }
 
-.academic-socials a::after {
-    content: '↗';
-    flex-shrink: 0;
-    color: #777777;
-    font-size: 0.75rem;
-}
-
 .academic-socials a:hover {
     color: #111111;
     background: #f7f7f7;
@@ -1238,5 +1231,17 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-interest-work-name {
         line-height: 1.48;
+    }
+}
+
+@media (max-width: 380px) {
+    .academic-publication-presentation {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .academic-publication-presentation-separator {
+        display: none;
     }
 }
