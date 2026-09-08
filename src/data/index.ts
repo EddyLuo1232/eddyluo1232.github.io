@@ -684,6 +684,15 @@ export const goodNewsItems: NewsItem[] = [
     }
   },
   {
+    id: 'xjtlu-data-science-competition',
+    date: '2022',
+    tag: { en: 'Award', zh: '获奖' },
+    content: {
+      en: 'I won <strong>First Prize</strong> in the Data Science Competition at Xi’an Jiaotong-Liverpool University.',
+      zh: '我获得了西交利物浦大学数据科学比赛<strong>一等奖</strong>。'
+    }
+  },
+  {
     id: 'imperial-data-science-summer-school',
     date: '2021.06',
     tag: { en: 'Award', zh: '奖学金' },

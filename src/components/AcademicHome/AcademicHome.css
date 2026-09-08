@@ -265,45 +265,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
     gap: 12px;
 }
 
-.academic-updates {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 44px;
-    min-width: 0;
-    align-items: start;
-}
-
-.academic-updates .academic-news-year {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-}
-
-@media (min-width: 681px) {
-    .academic-updates {
-        grid-template-columns: minmax(0, 2.5fr) minmax(180px, 1fr);
-        gap: 32px;
-    }
-
-    .academic-updates > #news {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .academic-updates > #awards {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .academic-updates .academic-section-heading {
-        min-height: 58px;
-    }
-
-    .academic-updates .academic-awards li {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 4px;
-    }
-}
-
 .academic-news-toggle {
     display: inline-flex;
     gap: 16px;
@@ -1080,8 +1041,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
         gap: 28px;
     }
 
-    .academic-main,
-    .academic-updates {
+    .academic-main {
         gap: 36px;
     }
 

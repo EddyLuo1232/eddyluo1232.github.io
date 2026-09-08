@@ -380,82 +380,80 @@ const AcademicHome: React.FC = () => {
             </blockquote>
           </section>
 
-          <div className="academic-updates">
-            <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
-              <div className="academic-section-heading">
-                <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
-              </div>
-              <ul>
-                {awardItems.map((award) => (
-                  <li key={award.id}>
-                    <span>{t(award.name)}</span>
-                    <em>{t(award.date)}</em>
-                    {award.detail && <p>{t(award.detail)}</p>}
-                  </li>
-                ))}
-              </ul>
-            </section>
+          <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
+            <div className="academic-section-heading">
+              <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
+            </div>
+            <ul>
+              {awardItems.map((award) => (
+                <li key={award.id}>
+                  <span>{t(award.name)}</span>
+                  <em>{t(award.date)}</em>
+                  {award.detail && <p>{t(award.detail)}</p>}
+                </li>
+              ))}
+            </ul>
+          </section>
 
-            <section className="academic-panel" id="news">
-              <div className="academic-section-heading academic-news-heading">
-                <h2>{t({ en: 'News', zh: '动态' })}</h2>
-                <div
-                  className="academic-news-toggle"
-                  role="group"
-                  aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
-                >
-                  <button
-                    type="button"
-                    className={`academic-news-toggle-button academic-news-toggle-good${newsMode === 'good' ? ' is-active' : ''}`}
-                    aria-pressed={newsMode === 'good'}
-                    onClick={() => setNewsMode('good')}
-                  >
-                    {t({ en: 'Milestones', zh: '里程碑' })}
-                  </button>
-                  <button
-                    type="button"
-                    className={`academic-news-toggle-button academic-news-toggle-bad${newsMode === 'bad' ? ' is-active' : ''}`}
-                    aria-pressed={newsMode === 'bad'}
-                    onClick={() => setNewsMode('bad')}
-                  >
-                    {t({ en: 'Detours', zh: '转折' })}
-                  </button>
-                </div>
-              </div>
+          <section className="academic-panel" id="news">
+            <div className="academic-section-heading academic-news-heading">
+              <h2>{t({ en: 'News', zh: '动态' })}</h2>
               <div
-                key={newsMode}
-                id="news-timeline"
-                className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
-                role="region"
-                aria-live="polite"
-                aria-label={t(newsMode === 'good'
-                  ? { en: 'Milestones timeline', zh: '里程碑时间线' }
-                  : { en: 'Detours timeline', zh: '转折时间线' })}
-                tabIndex={0}
+                className="academic-news-toggle"
+                role="group"
+                aria-label={t({ en: 'Choose a timeline view', zh: '选择时间线视角' })}
               >
-                {groupedNews.map((group) => (
-                  <div key={group.year} className="academic-news-year">
-                    <div className="academic-news-year-label">{group.year}</div>
-                    <div className="academic-news-items">
-                      {group.items.map((item) => (
-                        <article key={item.id} className="academic-news-item">
-                          <div className="academic-news-copy">
-                            {item.tag && (
-                              <span className={`academic-news-tag academic-news-tag-${item.tag.en.toLowerCase()}`}>
-                                {t(item.tag)}
-                              </span>
-                            )}
-                            <span dangerouslySetInnerHTML={{ __html: t(item.content) }} />
-                          </div>
-                          {formatDate(item.date) && <time dateTime={item.date.replaceAll('.', '-')}>{formatDate(item.date)}</time>}
-                        </article>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                <button
+                  type="button"
+                  className={`academic-news-toggle-button academic-news-toggle-good${newsMode === 'good' ? ' is-active' : ''}`}
+                  aria-pressed={newsMode === 'good'}
+                  onClick={() => setNewsMode('good')}
+                >
+                  {t({ en: 'Milestones', zh: '里程碑' })}
+                </button>
+                <button
+                  type="button"
+                  className={`academic-news-toggle-button academic-news-toggle-bad${newsMode === 'bad' ? ' is-active' : ''}`}
+                  aria-pressed={newsMode === 'bad'}
+                  onClick={() => setNewsMode('bad')}
+                >
+                  {t({ en: 'Detours', zh: '转折' })}
+                </button>
               </div>
-            </section>
-          </div>
+            </div>
+            <div
+              key={newsMode}
+              id="news-timeline"
+              className={`academic-card-body academic-news-list academic-news-list-${newsMode}`}
+              role="region"
+              aria-live="polite"
+              aria-label={t(newsMode === 'good'
+                ? { en: 'Milestones timeline', zh: '里程碑时间线' }
+                : { en: 'Detours timeline', zh: '转折时间线' })}
+              tabIndex={0}
+            >
+              {groupedNews.map((group) => (
+                <div key={group.year} className="academic-news-year">
+                  <div className="academic-news-year-label">{group.year}</div>
+                  <div className="academic-news-items">
+                    {group.items.map((item) => (
+                      <article key={item.id} className="academic-news-item">
+                        <div className="academic-news-copy">
+                          {item.tag && (
+                            <span className={`academic-news-tag academic-news-tag-${item.tag.en.toLowerCase()}`}>
+                              {t(item.tag)}
+                            </span>
+                          )}
+                          <span dangerouslySetInnerHTML={{ __html: t(item.content) }} />
+                        </div>
+                        {formatDate(item.date) && <time dateTime={item.date.replaceAll('.', '-')}>{formatDate(item.date)}</time>}
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <section className="academic-panel" id="publications">
             <div className="academic-section-heading">
