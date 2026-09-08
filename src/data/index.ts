@@ -340,7 +340,7 @@ export const socialLinks: SocialLink[] = [
     id: 'cv',
     href: '/docs/pdfs/CV_Eddy.pdf',
     icon: 'fas fa-file-lines',
-    label: { en: 'Curriculum Vitae', zh: '简历' }
+    label: { en: 'Resume', zh: '简历' }
   }
 ];
 

@@ -1058,11 +1058,23 @@ html[lang="zh-CN"] .academic-quote blockquote {
     }
 
     .academic-profile-card {
-        grid-template-columns: 88px minmax(0, 1fr);
-        grid-template-areas: 'avatar meta' 'socials socials';
-        gap: 0 18px;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 'avatar' 'meta' 'socials';
+        gap: 0;
         padding-bottom: 22px;
         align-items: start;
+    }
+
+    .academic-profile-meta {
+        text-align: center;
+    }
+
+    .academic-profile-location {
+        justify-content: center;
+    }
+
+    .academic-email {
+        margin-inline: auto;
     }
 
     .academic-profile-card h1 {
@@ -1082,6 +1094,8 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-avatar-button {
         width: 88px;
+        margin-bottom: 14px;
+        justify-self: center;
     }
 
     .academic-socials {
