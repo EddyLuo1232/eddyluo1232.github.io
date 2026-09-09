@@ -56,7 +56,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 2px;
     margin-top: 10px;
 }
 
@@ -195,6 +195,21 @@ html[lang="zh-CN"] .academic-quote blockquote {
     letter-spacing: 0;
 }
 
+.academic-heading-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+}
+
+.academic-heading-icon {
+    display: block;
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    color: #777777;
+}
+
 .academic-news-heading {
     gap: 12px;
 }
@@ -250,6 +265,17 @@ html[lang="zh-CN"] .academic-quote blockquote {
 }
 
 @media (min-width: 761px) {
+    /* Keep the bio and profile links together beside the 200px photo and 28px gap. */
+    .academic-bio,
+    .academic-socials {
+        margin-left: 228px;
+    }
+
+    /* Align the visible icon with the text while retaining its 44px hit area. */
+    .academic-socials a:first-child {
+        margin-left: -12px;
+    }
+
     .academic-news-awards {
         grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.6fr);
         gap: 0 36px;
@@ -1043,10 +1069,6 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
     .academic-main {
         --academic-section-gap: 36px;
-    }
-
-    .academic-socials {
-        gap: 2px;
     }
 
     .academic-bio {

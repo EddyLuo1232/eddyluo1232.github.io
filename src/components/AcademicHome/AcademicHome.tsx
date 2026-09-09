@@ -17,6 +17,7 @@ import {
   studentMentees
 } from '../../data';
 import type { NewsItem, Publication, TimelineItem } from '../../types';
+import HeadingLabel, { type HeadingIcon } from './HeadingLabel';
 import './AcademicHome.css';
 
 const getInitialClass = (initials: string) => initials.length > 2 ? 'wide' : '';
@@ -78,12 +79,12 @@ const VisitorMap: React.FC = () => {
   return <div ref={containerRef} className="academic-visitor-map" />;
 };
 
-const TimelineList: React.FC<{ title: string; items: TimelineItem[] }> = ({ title, items }) => {
+const TimelineList: React.FC<{ title: string; icon: HeadingIcon; items: TimelineItem[] }> = ({ title, icon, items }) => {
   const { t } = useLanguage();
 
   return (
     <div className="academic-timeline-column">
-      <h2>{title}</h2>
+      <h2><HeadingLabel icon={icon}>{title}</HeadingLabel></h2>
       <ul className="academic-timeline-list">
         {items.map((item) => {
           const itemName = t(item.name);
@@ -374,7 +375,7 @@ const AcademicHome: React.FC = () => {
           <div className="academic-news-awards">
             <section className="academic-panel academic-awards" id="awards" aria-labelledby="awards-heading">
               <div className="academic-section-heading">
-                <h2 id="awards-heading">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</h2>
+                <h2 id="awards-heading"><HeadingLabel icon="awards">{t({ en: 'Honors & Awards', zh: '荣誉与奖项' })}</HeadingLabel></h2>
               </div>
               <ul>
                 {awardItems.map((award) => (
@@ -391,7 +392,7 @@ const AcademicHome: React.FC = () => {
             </section>
             <section className="academic-panel academic-news-panel" id="news">
               <div className="academic-section-heading academic-news-heading">
-                <h2>{t({ en: 'News', zh: '动态' })}</h2>
+                <h2><HeadingLabel icon="news">{t({ en: 'News', zh: '动态' })}</HeadingLabel></h2>
                 <div
                   className="academic-news-toggle"
                   role="group"
@@ -461,7 +462,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel" id="publications">
             <div className="academic-section-heading">
-              <h2>{t({ en: 'Selected Preprints', zh: '精选预印本' })}</h2>
+              <h2><HeadingLabel icon="preprints">{t({ en: 'Selected Preprints', zh: '精选预印本' })}</HeadingLabel></h2>
             </div>
             <div className="academic-card-body academic-publication-list">
               {preprints.map((publication) => (
@@ -472,7 +473,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel">
             <div className="academic-section-heading">
-              <h2>{t({ en: 'Selected Publications', zh: '精选发表论文' })}</h2>
+              <h2><HeadingLabel icon="publications">{t({ en: 'Selected Publications', zh: '精选发表论文' })}</HeadingLabel></h2>
             </div>
             <div className="academic-card-body academic-publication-list">
               {publications.map((publication) => (
@@ -483,7 +484,7 @@ const AcademicHome: React.FC = () => {
 
           <section className="academic-panel" id="mentees" aria-labelledby="mentees-heading">
             <div className="academic-section-heading">
-              <h2 id="mentees-heading">{t({ en: 'Student Mentees', zh: '指导学生' })}</h2>
+              <h2 id="mentees-heading"><HeadingLabel icon="mentees">{t({ en: 'Student Mentees', zh: '指导学生' })}</HeadingLabel></h2>
             </div>
             <ul className="academic-mentee-list">
               {studentMentees.map((student) => (
@@ -501,14 +502,14 @@ const AcademicHome: React.FC = () => {
           </section>
 
           <section className="academic-panel academic-experience-grid" id="experience">
-            <TimelineList title={t({ en: 'Education', zh: '教育经历' })} items={educationItems} />
-            <TimelineList title={t({ en: 'Internships', zh: '实习经历' })} items={experienceItems} />
+            <TimelineList title={t({ en: 'Education', zh: '教育经历' })} icon="education" items={educationItems} />
+            <TimelineList title={t({ en: 'Internships', zh: '实习经历' })} icon="internships" items={experienceItems} />
           </section>
 
           <section className="academic-panel" id="interests">
             <div className="academic-section-heading">
               <h2 className="academic-interest-heading-title">
-                <span>{t({ en: 'Interests', zh: '兴趣' })}</span>
+                <HeadingLabel icon="interests">{t({ en: 'Interests', zh: '兴趣' })}</HeadingLabel>
                 <span className="academic-interest-heading-note">
                   {t({ en: '(If You’d Like to Know Me)', zh: '（如果你想了解我）' })}
                 </span>

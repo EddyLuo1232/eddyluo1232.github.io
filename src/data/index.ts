@@ -2,7 +2,7 @@ import type { Publication, NewsItem, SocialLink, TimelineItem, AwardItem, Studen
 
 // Personal information
 export const personalInfo = {
-  name: 'Weidi (Eddy) Luo',
+  name: 'Weidi(Eddy) Luo',
   title: {
     en: 'CS PhD student',
     zh: '计算机科学博士研究生'
@@ -21,8 +21,8 @@ export const personalInfo = {
 // About section content
 export const aboutContent = {
   bio: {
-    en: `I am Eddy Luo (罗威迪 & 一ノ瀬 エイジ), a CS Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA). I hope we can pursue meaningful research together. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
-    zh: `我是罗威迪（Eddy Luo，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。期待我们有机会一起做有意义的研究。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
+    en: `I am ${personalInfo.name} (罗威迪 & 一ノ瀬 エイジ), a CS Ph.D. student at the <a href="https://www.uga.edu/">University of Georgia</a>, advised by Prof. <a href="https://zhenxianglance.github.io/">Xiang Zhen</a>. I am also fortunate to be co-advised by <a href="https://xiaocw11.github.io/">Prof. Chaowei Xiao</a> at <a href="https://www.jhu.edu/">Johns Hopkins University</a>, a mentor I deeply respect and am sincerely grateful to. My research focuses on <strong>AI Safety and Security</strong>, including foundation models and AI agents. I previously worked as an intern at Meta Superintelligence Labs, Virtue AI, and the International Digital Economy Academy (IDEA). I hope we can pursue meaningful research together. <span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`,
+    zh: `我是罗威迪（${personalInfo.name}，也使用 一ノ瀬 エイジ），现为<a href="https://www.uga.edu/">佐治亚大学</a>计算机科学博士研究生，师从<a href="https://zhenxianglance.github.io/">Xiang Zhen 教授</a>。我也很荣幸接受<a href="https://www.jhu.edu/">约翰霍普金斯大学</a><a href="https://xiaocw11.github.io/">Chaowei Xiao 教授</a>的共同指导；他是我非常敬重并由衷感激的导师。我的研究聚焦于<strong>AI 安全与安全防护</strong>，包括基础模型与 AI 智能体。此前，我曾在 Meta Superintelligence Labs、Virtue AI 和 International Digital Economy Academy（IDEA）实习。期待我们有机会一起做有意义的研究。<span class="academic-japanese-signoff" lang="ja">どうぞよろしくお願いします!</span>`
   }
 };
 
