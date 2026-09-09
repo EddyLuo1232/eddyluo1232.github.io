@@ -1,19 +1,14 @@
 import type { ReactNode } from 'react';
 
 const icons = {
-  awards: (
-    <>
-      <circle cx="12" cy="8" r="5" />
-      <path d="m8.5 12-1.5 9 5-3 5 3-1.5-9" />
-    </>
-  ),
+  awards: <path d="M7 3h10v6a5 5 0 0 1-10 0ZM7 5H3v2a4 4 0 0 0 4 4M17 5h4v2a4 4 0 0 1-4 4M12 14v7M8 21h8" />,
   news: (
     <>
       <rect x="3" y="4" width="18" height="16" rx="1.5" />
       <path d="M7 8h4v4H7zM14 8h3M14 11h3M7 16h10" />
     </>
   ),
-  preprints: <path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6" />,
+  preprints: <path d="m12 3 10 5-10 5L2 8ZM2 12l10 5 10-5M2 16l10 5 10-5" />,
   publications: <path d="M12 6C9 4 6 4 3 5v15c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1ZM12 6v15" />,
   mentees: (
     <>
