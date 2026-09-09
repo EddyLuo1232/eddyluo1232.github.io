@@ -8,7 +8,7 @@ const SECTION_IDS = ['about', 'news', 'publications', 'mentees', 'experience', '
 const Navigation: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   // Scroll highlighting should update navigation without rerendering page content.
-  const activeSection = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });
+  const { activeSection, selectSection } = useScrollSpy({ sectionIds: SECTION_IDS, offset: 100 });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
@@ -47,6 +47,15 @@ const Navigation: React.FC = () => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    const mobileLayout = window.matchMedia('(max-width: 760px)');
+    const closeDesktopMenu = () => {
+      if (!mobileLayout.matches) setIsMobileMenuOpen(false);
+    };
+    mobileLayout.addEventListener('change', closeDesktopMenu);
+    return () => mobileLayout.removeEventListener('change', closeDesktopMenu);
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -80,7 +89,11 @@ const Navigation: React.FC = () => {
               href={`#${item.id}`}
               className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
               aria-current={activeSection === item.id ? 'location' : undefined}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                selectSection(item.id);
+                setIsMobileMenuOpen(false);
+              }}
             >
               {t(item.label)}
             </a>

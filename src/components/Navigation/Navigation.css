@@ -146,6 +146,9 @@
         align-items: stretch;
         gap: 0;
         padding: 10px 12px 14px;
+        max-height: calc(100vh - 64px);
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
         background: #ffffff;
         border-bottom: 1px solid #eeeeee;
         transform: translateY(-8px);

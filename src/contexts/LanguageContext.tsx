@@ -20,10 +20,14 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   // Initialize language from localStorage
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('preferred-language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'zh')) {
-      setLanguageState(savedLanguage);
-      updateDocumentLanguage(savedLanguage);
+    try {
+      const savedLanguage = localStorage.getItem('preferred-language');
+      if (savedLanguage === 'en' || savedLanguage === 'zh') {
+        setLanguageState(savedLanguage);
+        updateDocumentLanguage(savedLanguage);
+      }
+    } catch {
+      // The page remains usable when browser storage is unavailable.
     }
   }, []);
 
@@ -35,7 +39,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const setLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
     updateDocumentLanguage(newLanguage);
-    localStorage.setItem('preferred-language', newLanguage);
+    try {
+      localStorage.setItem('preferred-language', newLanguage);
+    } catch {
+      // Language switching still works for this visit without persistence.
+    }
   };
 
   // Translation function

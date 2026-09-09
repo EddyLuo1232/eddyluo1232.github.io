@@ -8,7 +8,11 @@ import './styles/global.css';
 const AppContent: React.FC = () => {
   useEffect(() => {
     document.body.classList.remove('dark-mode');
-    localStorage.removeItem('darkMode');
+    try {
+      localStorage.removeItem('darkMode');
+    } catch {
+      // Clearing a legacy preference must not prevent the page from rendering.
+    }
   }, []);
 
   return (
