@@ -94,7 +94,8 @@ export const interestGroups: InterestGroup[] = [
       { id: 'deconstruction', title: { en: 'Deconstruction', zh: '解构主义' } },
       { id: 'psychoanalysis', title: { en: 'Psychoanalysis', zh: '精神分析' } },
       { id: 'phenomenology', title: { en: 'Phenomenology', zh: '现象学' } },
-      { id: 'semiotics', title: { en: 'Semiotics', zh: '符号学' } }
+      { id: 'semiotics', title: { en: 'Semiotics', zh: '符号学' } },
+      { id: 'frankfurt-school', title: { en: 'Frankfurt School', zh: '法兰克福学派' } }
     ]
   },
   {
