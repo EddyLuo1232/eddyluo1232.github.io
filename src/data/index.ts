@@ -859,6 +859,7 @@ export const badNewsItems: NewsItem[] = [
 export const publications: Publication[] = [
   {
     id: 'agentlens',
+    badge: 'NeurIPS',
     badgeLogo: '/images/conference/NeurIPS.svg',
     badgeLogoAlt: 'NeurIPS',
     image: '/images/publications/agentlens.png',
