@@ -4,8 +4,9 @@ export type Language = 'en' | 'zh';
 
 export interface Publication {
   id: string;
-  badge: string;
+  badge?: string;
   badgeLogo?: string;
+  badgeLogoAlt?: string;
   image: string;
   alt: string;
   authors: string;

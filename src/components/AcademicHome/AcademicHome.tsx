@@ -130,18 +130,21 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
   const actionLinks = publication.links.filter((link) => (
     link.label.en !== '[Paper]' && link.label.en !== '[机器之心 Synced]'
   ));
+  const venueLabel = publication.badge
+    ? getVenueLabel(publication.badge)
+    : publication.badgeLogoAlt ?? t({ en: 'Paper', zh: '论文' });
   const badgeClassName = [
     'academic-publication-badge',
-    publication.badge.includes('ACL') ? 'academic-publication-badge-acl' : '',
-    publication.badge.includes('CIKM') ? 'academic-publication-badge-cikm' : '',
+    publication.badge?.includes('ACL') ? 'academic-publication-badge-acl' : '',
+    publication.badge?.includes('CIKM') ? 'academic-publication-badge-cikm' : '',
     publication.badge === 'Arxiv' ? 'academic-publication-badge-arxiv' : ''
   ].filter(Boolean).join(' ');
   const badgeContent = (
     <>
       {publication.badgeLogo ? (
-        <img src={publication.badgeLogo} alt={publication.badge} loading="lazy" decoding="async" />
+        <img src={publication.badgeLogo} alt={publication.badgeLogoAlt ?? publication.badge ?? venueLabel} loading="lazy" decoding="async" />
       ) : null}
-      <em>{getVenueLabel(publication.badge)}</em>
+      {(publication.badge || !publication.badgeLogo) && <em>{venueLabel}</em>}
     </>
   );
   return (
@@ -156,11 +159,11 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
         <p dangerouslySetInnerHTML={{ __html: publication.authors }} />
         <div className="academic-publication-links">
           {paperLink?.href ? (
-            <a className={badgeClassName} href={paperLink.href} target="_blank" rel="noopener noreferrer" title={getVenueLabel(publication.badge)}>
+            <a className={badgeClassName} href={paperLink.href} target="_blank" rel="noopener noreferrer" title={venueLabel}>
               {badgeContent}
             </a>
           ) : (
-            <span className={badgeClassName} title={getVenueLabel(publication.badge)}>
+            <span className={badgeClassName} title={venueLabel}>
               {badgeContent}
             </span>
           )}
