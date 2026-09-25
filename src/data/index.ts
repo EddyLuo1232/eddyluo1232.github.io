@@ -871,6 +871,7 @@ export const publications: Publication[] = [
     },
     links: [
       { href: 'https://arxiv.org/pdf/2606.22673', label: { en: '[Paper]', zh: '[论文]' } },
+      { href: 'https://eddyluo.com/agentlensweb/', label: { en: '[Project Page]', zh: '[项目主页]' } },
       { href: 'https://github.com/EddyLuo1232/AgentLens', label: { en: '[Code]', zh: '[代码]' } }
     ]
   },
