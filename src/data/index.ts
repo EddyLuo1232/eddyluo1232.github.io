@@ -947,9 +947,9 @@ export const publications: Publication[] = [
     educationalUses: [
       {
         // Listed under More Materials for the November 21, 2024 class.
-        label: { en: 'Course reading: ', zh: '课程阅读材料：' },
+        label: { en: 'Course coverage (reading material): ', zh: '课程涵盖（阅读材料）：' },
         institution: { en: 'University of Maryland, College Park', zh: '马里兰大学帕克分校' },
-        summary: { en: 'CMSC 818I · Fall 2024 · Course reading', zh: 'CMSC 818I · 2024 秋季 · 课程阅读' },
+        summary: { en: 'CMSC 818I · Fall 2024 · Course coverage', zh: 'CMSC 818I · 2024 秋季 · 课程涵盖' },
         context: {
           en: 'CMSC 818I: Large Language Models, Security, and Privacy (Fall 2024; Yizheng Chen)',
           zh: 'CMSC 818I：大语言模型、安全与隐私（2024 秋季；Yizheng Chen）'
@@ -1014,9 +1014,9 @@ export const publications: Publication[] = [
     // https://agents4science.github.io/Class/curriculum#lecture-11-failures-and-safety
     educationalUses: [
       {
-        label: { en: 'Covered in course: ', zh: '课程讲解：' },
+        label: { en: 'Course coverage: ', zh: '课程涵盖：' },
         institution: { en: 'University of Chicago', zh: '芝加哥大学' },
-        summary: { en: 'CMSC 35370 · Fall 2025 · Course coverage', zh: 'CMSC 35370 · 2025 秋季 · 课程讲解' },
+        summary: { en: 'CMSC 35370 · Fall 2025 · Course coverage', zh: 'CMSC 35370 · 2025 秋季 · 课程涵盖' },
         context: {
           en: 'CMSC 35370: AI Agents for Science (Lecture 11: Failures and Safety)',
           zh: 'CMSC 35370：AI Agents for Science（第 11 讲：Failures and Safety）'
