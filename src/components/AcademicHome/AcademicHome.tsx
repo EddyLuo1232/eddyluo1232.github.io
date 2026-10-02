@@ -214,6 +214,18 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
             ))}
           </p>
         )}
+        {publication.educationalUses?.map((educationalUse) => {
+          const description = `${t(educationalUse.label)}${t(educationalUse.institution)} · ${t(educationalUse.context)}`;
+
+          return (
+            <p className="academic-publication-note academic-publication-education" key={educationalUse.href}>
+              <a href={educationalUse.href} target="_blank" rel="noopener noreferrer" title={description} aria-label={description}>
+                <span className="academic-education-institution">{t(educationalUse.institution)}</span>
+                <span className="academic-education-summary">{t(educationalUse.summary)}</span>
+              </a>
+            </p>
+          );
+        })}
         {(publication.stats || pressLink) && (
           <p className="academic-publication-note">
             {publication.stats && t(publication.stats)}

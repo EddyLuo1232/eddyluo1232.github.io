@@ -790,6 +790,23 @@ html[lang="zh-CN"] .academic-quote blockquote {
     font-size: 0.82rem !important;
 }
 
+.academic-publication-education a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1px 10px;
+    font-size: inherit;
+    font-weight: 400;
+}
+
+.academic-education-institution {
+    font-weight: 500;
+}
+
+.academic-education-summary {
+    color: #555555;
+}
+
 .academic-mentee-list {
     display: grid;
     gap: 14px;
@@ -1039,6 +1056,13 @@ html[lang="zh-CN"] .academic-quote blockquote {
 
 .academic-visitor-map #mapmyvisitors-widget {
     max-width: none;
+}
+
+@media (max-width: 900px) {
+    .academic-publication-education a {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 760px) {

@@ -25,6 +25,13 @@ export interface Publication {
     venue: string;
     distinction: TranslatableText;
   };
+  educationalUses?: Array<{
+    label: TranslatableText;
+    institution: TranslatableText;
+    summary: TranslatableText;
+    context: TranslatableText;
+    href: string;
+  }>;
   award?: {
     en: string;
     zh: string;

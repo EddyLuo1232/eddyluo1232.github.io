@@ -944,6 +944,41 @@ export const publications: Publication[] = [
       { href: 'https://eddyluo1232.github.io/JailBreakV28K/', label: { en: '[Project Page]', zh: '[项目主页]' } },
       { href: 'https://github.com/EddyLuo1232/JailBreakV_28K', label: { en: '[Code]', zh: '[代码]' } }
     ],
+    educationalUses: [
+      {
+        // Listed under More Materials for the November 21, 2024 class.
+        label: { en: 'Course reading: ', zh: '课程阅读材料：' },
+        institution: { en: 'University of Maryland, College Park', zh: '马里兰大学帕克分校' },
+        summary: { en: 'CMSC 818I · Fall 2024 · Course reading', zh: 'CMSC 818I · 2024 秋季 · 课程阅读' },
+        context: {
+          en: 'CMSC 818I: Large Language Models, Security, and Privacy (Fall 2024; Yizheng Chen)',
+          zh: 'CMSC 818I：大语言模型、安全与隐私（2024 秋季；Yizheng Chen）'
+        },
+        href: 'https://surrealyz.github.io/classes/llmsec-fall24/llmsec.html'
+      },
+      {
+        // UCR presenters and reading list: https://llm-vulnerability.github.io/
+        label: { en: 'Covered in tutorial: ', zh: '教程介绍：' },
+        institution: { en: 'University of California, Riverside', zh: '加州大学河滨分校' },
+        summary: { en: 'ACL 2024 · Tutorial', zh: 'ACL 2024 · 教程介绍' },
+        context: {
+          en: 'ACL 2024 Tutorial: LLM Vulnerabilities (Multimodal Attacks)',
+          zh: 'ACL 2024 大语言模型漏洞教程（多模态攻击）'
+        },
+        href: 'https://llm-vulnerability.github.io/slides/4-vlm-attack.pdf#page=29'
+      },
+      {
+        // The project author's page documents student use, not instructor adoption.
+        label: { en: 'Dataset used in a student project: ', zh: '学生课程项目使用数据集：' },
+        institution: { en: 'University of California, Berkeley', zh: '加州大学伯克利分校' },
+        summary: { en: 'DATASCI 207 · 2025 · Student project', zh: 'DATASCI 207 · 2025 · 学生课程项目' },
+        context: {
+          en: 'DATASCI 207: Applied Machine Learning (2025)',
+          zh: 'DATASCI 207：应用机器学习（2025）'
+        },
+        href: 'https://oleksiilavrenin.ai/projects/jailbreak-detection/'
+      }
+    ],
     award: {
       en: '$20,000 SafeBench Award from Center for AI Safety',
       zh: 'Center for AI Safety $20,000 SafeBench 奖'
@@ -974,6 +1009,20 @@ export const publications: Publication[] = [
       { href: 'https://arxiv.org/abs/2502.11448', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://eddyluo1232.github.io/AGrail/', label: { en: '[Project Page]', zh: '[项目主页]' } },
       { href: 'https://github.com/EddyLuo1232/AGrail4Agent', label: { en: '[Code]', zh: '[代码]' } }
+    ],
+    // Course affiliation and reading list: https://agents4science.github.io/Class/
+    // https://agents4science.github.io/Class/curriculum#lecture-11-failures-and-safety
+    educationalUses: [
+      {
+        label: { en: 'Covered in course: ', zh: '课程讲解：' },
+        institution: { en: 'University of Chicago', zh: '芝加哥大学' },
+        summary: { en: 'CMSC 35370 · Fall 2025 · Course coverage', zh: 'CMSC 35370 · 2025 秋季 · 课程讲解' },
+        context: {
+          en: 'CMSC 35370: AI Agents for Science (Lecture 11: Failures and Safety)',
+          zh: 'CMSC 35370：AI Agents for Science（第 11 讲：Failures and Safety）'
+        },
+        href: 'https://agents4science.github.io/Class/Assets/Lecture_11_web.pdf#page=55'
+      }
     ]
   },
   {
