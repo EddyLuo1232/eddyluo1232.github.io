@@ -557,8 +557,8 @@ export const goodNewsItems: NewsItem[] = [
     date: '2026.09.24',
     tag: { en: 'Paper', zh: '论文' },
     content: {
-      en: `Our work <em>AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent</em> has been accepted by <strong>NeurIPS'2026</strong>. Thanks to my collaborators.`,
-      zh: `我们的论文 <em>AgentLens：基于机制子空间的多轮代码智能体可解释安全引导</em> 被 <strong>NeurIPS 2026</strong> 接收。感谢所有合作者。`
+      en: `Our work <em>Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents</em> has been accepted by <strong>NeurIPS'2026</strong>. Thanks to my collaborators.`,
+      zh: `我们的论文 <em>Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents</em> 被 <strong>NeurIPS 2026</strong> 接收。感谢所有合作者。`
     }
   },
   {
@@ -863,15 +863,15 @@ export const publications: Publication[] = [
     badgeLogo: '/images/conference/NeurIPS.svg',
     badgeLogoAlt: 'NeurIPS',
     image: '/images/publications/agentlens.png',
-    alt: 'AgentLens',
+    alt: 'Agent MechSuits',
     authors: '<span class="highlight"><strong>Weidi Luo</strong></span>, Qiming Zhang, Yihao Quan, Mingyu Jin, Jie Cai, Chaowei Xiao, Jingcheng Niu, Zhen Xiang',
     title: {
-      en: '<em>AgentLens: Interpretable Safety Steering via Mechanistic Subspaces for Multi-Turn Coding Agent</em>',
-      zh: '<em>AgentLens：基于机制子空间的多轮代码智能体可解释安全引导</em>'
+      en: '<em>Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents</em>',
+      zh: '<em>Agent MechSuits: Mechanistic Subspace Safety Steering for Multi-Turn CLI Agents</em>'
     },
     links: [
       { href: 'https://arxiv.org/pdf/2606.22673', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://eddyluo.com/agentlensweb/', label: { en: '[Project Page]', zh: '[项目主页]' } },
+      { href: 'https://eddyluo.com/Agent-MechSuits/', label: { en: '[Project Page]', zh: '[项目主页]' } },
       { href: 'https://github.com/EddyLuo1232/AgentLens', label: { en: '[Code]', zh: '[代码]' } }
     ]
   },
