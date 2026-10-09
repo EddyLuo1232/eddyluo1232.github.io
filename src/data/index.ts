@@ -459,6 +459,21 @@ export const experienceItems: TimelineItem[] = [
 
 export const awardItems: AwardItem[] = [
   {
+    id: 'neurips-2026-top-reviewer',
+    name: {
+      en: 'Top Reviewer',
+      zh: 'Top Reviewer（优秀审稿人）'
+    },
+    institution: {
+      en: 'NeurIPS',
+      zh: 'NeurIPS'
+    },
+    date: {
+      en: '2026',
+      zh: '2026'
+    }
+  },
+  {
     id: 'uga-research-award',
     name: {
       en: 'Graduate Student Research Award',
@@ -516,21 +531,6 @@ export const awardItems: AwardItem[] = [
     date: {
       en: '2025',
       zh: '2025'
-    }
-  },
-  {
-    id: 'xjtlu-data-science-competition',
-    name: {
-      en: 'First Prize, Data Science Competition',
-      zh: '数据科学比赛一等奖'
-    },
-    institution: {
-      en: 'Xi’an Jiaotong-Liverpool University',
-      zh: '西交利物浦大学'
-    },
-    date: {
-      en: '2022',
-      zh: '2022'
     }
   },
   {
