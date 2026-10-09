@@ -553,6 +553,15 @@ export const awardItems: AwardItem[] = [
 // Good news items
 export const goodNewsItems: NewsItem[] = [
   {
+    id: 'neurips-2026-top-reviewer',
+    date: '2026.10',
+    tag: { en: 'Honor', zh: '荣誉' },
+    content: {
+      en: `I have been recognized as a <strong>Top Reviewer</strong> at <strong>NeurIPS 2026</strong>.`,
+      zh: `我被 <strong>NeurIPS 2026</strong> 评为 <strong>Top Reviewer（优秀审稿人）</strong>。`
+    }
+  },
+  {
     id: 'agentlens-neurips-2026',
     date: '2026.09.24',
     tag: { en: 'Paper', zh: '论文' },
