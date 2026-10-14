@@ -1091,16 +1091,18 @@ export const preprints: Publication[] = [
     id: 'foodguardbench',
     badge: 'Arxiv',
     badgeLogo: '/images/conference/Arxiv.jpeg',
-    image: '/images/publications/foodguardbench.png',
-    alt: 'FoodGuardBench',
-    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Xiaofei Wen*, Tenghao Huang*, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligorić, Muhao Chen',
+    image: '/images/publications/foodguardbench-20261013.jpg',
+    alt: 'FoodGuardBench data construction pipeline and FoodGuard food-safety evaluation',
+    authors: '<span class="highlight"><strong>Weidi Luo*</strong></span>, Xiaofei Wen*, Tenghao Huang*, Hao Li, Hongyi Wang, Zhen Xiang, Chaowei Xiao, Kristina Gligorić, Muhao Chen',
     title: {
       en: '<em>Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models</em>',
       zh: '<em>烹调风险：大语言模型食品安全风险的基准评测与缓解</em>'
     },
     links: [
       { href: 'https://arxiv.org/pdf/2604.01444', label: { en: '[Paper]', zh: '[论文]' } },
-      { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } }
+      { href: 'https://github.com/tenghaohuang/FoodGuardBench', label: { en: '[Code]', zh: '[代码]' } },
+      { href: 'https://huggingface.co/EddyLuo/FoodGuard-4B', label: { en: '[🤗 Model]', zh: '[🤗 模型]' } },
+      { href: 'https://huggingface.co/datasets/EddyLuo/FoodGuardBench', label: { en: '[🤗 Dataset]', zh: '[🤗 数据集]' } }
     ]
   },
   {
