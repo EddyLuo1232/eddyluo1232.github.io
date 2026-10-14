@@ -951,7 +951,8 @@ export const publications: Publication[] = [
     links: [
       { href: 'https://arxiv.org/abs/2404.03027', label: { en: '[Paper]', zh: '[论文]' } },
       { href: 'https://eddyluo1232.github.io/JailBreakV28K/', label: { en: '[Project Page]', zh: '[项目主页]' } },
-      { href: 'https://github.com/EddyLuo1232/JailBreakV_28K', label: { en: '[Code]', zh: '[代码]' } }
+      { href: 'https://github.com/EddyLuo1232/JailBreakV_28K', label: { en: '[Code]', zh: '[代码]' } },
+      { href: 'https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k', label: { en: '[🤗 Dataset]', zh: '[🤗 数据集]' } }
     ],
     educationalUses: [
       {
