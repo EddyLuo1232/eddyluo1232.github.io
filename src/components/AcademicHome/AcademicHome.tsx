@@ -171,7 +171,8 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
             link.href ? (() => {
               const iconClassName = getPublicationActionIcon(link.label.en);
               const actionLabel = getPublicationActionLabel(t(link.label));
-              const isIconAction = Boolean(iconClassName);
+              const isHuggingFaceDataset = link.icon === 'huggingface';
+              const isIconAction = Boolean(iconClassName) || isHuggingFaceDataset;
 
               return (
                 <a
@@ -183,7 +184,14 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
                   aria-label={isIconAction ? actionLabel : undefined}
                   title={isIconAction ? actionLabel : undefined}
                 >
-                  {iconClassName ? (
+                  {isHuggingFaceDataset ? (
+                    <img
+                      className="academic-publication-huggingface-icon"
+                      src="/images/icons/huggingface.png"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  ) : iconClassName ? (
                     <i className={iconClassName} aria-hidden="true"></i>
                   ) : (
                     t(link.label)

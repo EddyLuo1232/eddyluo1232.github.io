@@ -784,6 +784,13 @@ html[lang="zh-CN"] .academic-quote blockquote {
     text-decoration: none;
 }
 
+.academic-publication-huggingface-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 .academic-publication-note {
     margin-top: 7px !important;
     color: #555555 !important;

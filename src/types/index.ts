@@ -16,6 +16,7 @@ export interface Publication {
   };
   links: Array<{
     href?: string;
+    icon?: 'huggingface';
     label: {
       en: string;
       zh: string;
