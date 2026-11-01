@@ -380,6 +380,7 @@ const AcademicHome: React.FC = () => {
               <div dangerouslySetInnerHTML={{ __html: t(aboutContent.bio) }} />
               <p className="academic-phd-notice">
                 {t({ en: 'I am seeking PhD opportunities for Fall 2027.', zh: '我正在寻找 2027 年秋季入学的 PhD 机会。' })}
+                {' '}{t({ en: 'You can contact me by email: ', zh: '这是我的联系方式：邮箱 ' })}luo.1455[at]uga[dot]edu
               </p>
             </div>
             <nav className="academic-socials" aria-label={t({ en: 'Profiles and resume', zh: '个人主页与简历' })}>
