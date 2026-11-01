@@ -378,6 +378,9 @@ const AcademicHome: React.FC = () => {
             </button>
             <div className="academic-bio">
               <div dangerouslySetInnerHTML={{ __html: t(aboutContent.bio) }} />
+              <p className="academic-phd-notice">
+                {t({ en: 'I am seeking PhD opportunities for Fall 2027.', zh: '我正在寻找 2027 年秋季入学的 PhD 机会。' })}
+              </p>
             </div>
             <nav className="academic-socials" aria-label={t({ en: 'Profiles and resume', zh: '个人主页与简历' })}>
               {socialLinks.map((link) => (

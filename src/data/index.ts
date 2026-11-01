@@ -941,6 +941,7 @@ export const publications: Publication[] = [
   },
   {
     id: 'jailbreakv',
+    stats: { en: '300+ citations', zh: '引用量 300+' },
     badge: 'COLM\'2024',
     badgeLogo: '/images/conference/COLM.png',
     image: '/images/publications/jbv.png',
@@ -1008,6 +1009,7 @@ export const publications: Publication[] = [
   },
   {
     id: 'agrail',
+    stats: { en: '100+ citations', zh: '引用量 100+' },
     badge: 'ACL\'2025',
     badgeLogo: '/images/conference/ACL.svg.png',
     image: '/images/publications/agrail.png',
@@ -1109,6 +1111,7 @@ export const preprints: Publication[] = [
   },
   {
     id: 'visual-roleplay',
+    stats: { en: '100+ citations', zh: '引用量 100+' },
     badge: 'Arxiv',
     badgeLogo: '/images/conference/Arxiv.jpeg',
     image: '/images/publications/vrp.png',

@@ -1237,3 +1237,7 @@ html[lang="zh-CN"] .academic-quote blockquote {
         display: none;
     }
 }
+.academic-bio .academic-phd-notice {
+    color: #c62828;
+    font-weight: 600;
+}
